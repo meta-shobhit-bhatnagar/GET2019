@@ -1,4 +1,4 @@
-package com.Shobhit;
+package com.shobhit;
 
 public class Item {
 
@@ -12,3 +12,4 @@ public class Item {
         this.price = price;
     }
 }
+

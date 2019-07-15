@@ -1,28 +1,53 @@
-package com.Shobhit;
+package com.shobhit;
 
 import java.util.*;
 
 public class ShoppingCart {
+	
+	private Scanner sc= new Scanner(System.in); 
     private ArrayList<Item> shopList= new ArrayList<Item>();
 
     private ArrayList<Item> stockList= new ArrayList<Item>();
 
     public void createList(){
-        Item Item1= new Item("bread",24, 25);
-        stockList.add(Item1);
+    	
+    	System.out.println("Creating a stockList: \n Enter the no. of items :");
+    	int noOfItem= sc.nextInt();
+    	sc.nextLine();
+    	for(int i=0; i<noOfItem; i++){
+    		System.out.println("Enter item name "+ (i+1)+" : ");
+    		String name= sc.nextLine();
+    		System.out.println("Enter item price : ");
+    		double price= sc.nextDouble();
+    		System.out.println("Enter item Quantity :");
+    		int qty= validate();
+    		sc.nextLine();
+    		
+    		Item Item1= new Item(name, qty, price);
+    		stockList.add(Item1);
+    	}
 
-        Item Item2= new Item("egg",50, 7);
-        stockList.add(Item2);
-
-        Item Item3= new Item("butter",12, 30);
-        stockList.add(Item3);
-
-        Item Item4= new Item("chips",40, 10);
-        stockList.add(Item4);
+    	
+        
 
 
     }
 
+    public int validate(){
+        int validateEntry=0;
+        do{
+        	if(validateEntry <0)
+            System.out.println("!Enter positive number :");
+            while(!sc.hasNextInt()){
+                System.out.println("Enter integer only :");
+                sc.next();
+            }validateEntry= sc.nextInt();
+        }while(validateEntry<0);
+
+        return validateEntry;
+    }
+    
+    
     public void addShopItem(String item, int qty){
         int position= findItem(stockList, item);
         if(position<0)

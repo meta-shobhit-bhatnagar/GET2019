@@ -1,8 +1,8 @@
-package com.Shobhit;
+package com.shobhit;
 
 import java.util.*;
 
-public class main {
+public class Main {
 
     private static ShoppingCart shopCart = new ShoppingCart();
     private static Scanner scanner = new Scanner(System.in);
@@ -19,7 +19,8 @@ public class main {
 
         while (!quit) {
             System.out.println("Enter your choice:");
-            choice = scanner.nextInt();
+            
+            choice = validate();
             scanner.nextLine();
             switch (choice) {
                 case 0:
@@ -39,8 +40,10 @@ public class main {
                     break;
                 case 5:
                     printStockList();
+                    break;
                 case 6:
                     generateBill();
+                    break;
                 case 7:
                     quit = true;
                     break;
@@ -51,29 +54,42 @@ public class main {
 
     public static void printInstructions() {
         System.out.println("\t 0.  To print Instructions");
-        System.out.println("\t 1.  To add item");
-        System.out.println("\t 2.  To remove item");
-        System.out.println("\t 3.  To update/modify item");
+        System.out.println("\t 1.  To add item to your shopping cart");
+        System.out.println("\t 2.  To remove item from your shopping cart");
+        System.out.println("\t 3.  To update/modify item from your shopping cart");
         System.out.println("\t 4.  To print list");
         System.out.println("\t 5.  To print Stock list");
         System.out.println("\t 6.  To generate Bill");
         System.out.println("\t 7.  To quit");
     }
 
+    public static int validate(){
+        int validateEntry=0;
+        do{
+        	if(validateEntry <0)
+            System.out.println("!Enter positive number :");
+            while(!scanner.hasNextInt()){
+                System.out.println("Enter integer only :");
+                scanner.next();
+            }validateEntry= scanner.nextInt();
+        }while(validateEntry<0);
+
+        return validateEntry;
+    }
 
     public static void addItem() {
         System.out.println("Enter item name:");
         String item = scanner.nextLine();
         int qty;
         System.out.println("How much Qty do you need:");
-        qty = scanner.nextInt();
-        shopCart.addShopItem(item, qty);
+        qty = validate();
+        shopCart.addShopItem(item.toLowerCase(), qty);
     }
 
     public static void removeItem() {
         System.out.print("Enter item name: ");
         String itemName = scanner.nextLine();
-        shopCart.removeShopItem(itemName);
+        shopCart.removeShopItem(itemName.toLowerCase());
     }
 
     public static void updateItem() {
@@ -82,11 +98,11 @@ public class main {
         String itemName = scanner.nextLine();
         System.out.print("Enter new item: ");
         String newItem = scanner.nextLine();
-        shopCart.modifyShopItem(itemName, newItem);
+        shopCart.modifyShopItem(itemName.toLowerCase(), newItem);
         int qty;
         System.out.println("How much Qty do you need:");
-        qty = scanner.nextInt();
-        shopCart.addShopItem(newItem, qty);
+        qty = validate();
+        shopCart.addShopItem(newItem.toLowerCase(), qty);
 
 
 
