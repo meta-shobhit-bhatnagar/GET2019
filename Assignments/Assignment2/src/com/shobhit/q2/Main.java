@@ -25,52 +25,10 @@ public class Main {
         jsArray.completionTime();
 
 
-        /*int choice=0;
-        boolean quit=false;*/
-
-        //printInstructions();
-
-
-        /*while(!quit){
-            System.out.println("Enter choice: ");
-            choice= scanner.nextInt();
-
-            printInstructions();
-
-            switch(choice){
-                case 1:
-                    jsArray.completionTime();
-                    break;
-                case 2:
-                    jsArray.waitingTime();
-                    break;
-                case 3:
-                    jsArray.turnAroundTime();
-                    break;
-                case 4:
-                    jsArray.averageWaitingTime();
-                    break;
-                case 5:
-                    jsArray.maxWaitTime();
-                    break;
-                case 6:
-                    quit= true;
-                    break;
-
-
-            }*/
+        
 
     }
 
-
-   /* public static void printInstructions(){
-        System.out.println("1. completion time");
-        System.out.println("2. waiting time");
-        System.out.println("3. turn around time");
-        System.out.println("4. average waiting time");
-        System.out.println("5. max wait time");
-        System.out.println("6. Quit");
-    }*/
 
 
 

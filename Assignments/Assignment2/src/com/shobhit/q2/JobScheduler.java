@@ -1,7 +1,5 @@
 package com.shobhit.q2;
 
-import java.sql.SQLOutput;
-
 public class JobScheduler {
 
     private int[] wt;
@@ -26,7 +24,13 @@ public class JobScheduler {
 
     public void completionTime(){
             initArray();
-            ct[0]= array[0][1];
+            
+            if(array[0][0]==0)
+            	ct[0]= array[0][1];
+            else
+            	ct[0]= array[0][1]+ array[0][0];
+            
+            
             for (int i=1; i<size; i++){
                 if(array[i][0] < ct[i-1])
                     ct[i]= array[i][1] + ct[i-1];

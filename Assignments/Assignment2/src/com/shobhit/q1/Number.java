@@ -2,8 +2,6 @@ package com.shobhit.q1;
 import java.util.*;
 
 public class Number {
-    //private String n1;
-    //private String n2;
     private int base;
     
     private Scanner sc= new Scanner(System.in);
