@@ -2,3 +2,5 @@
 *.class
 # Log file
 *.log
+# Bin Folder
+bin/
