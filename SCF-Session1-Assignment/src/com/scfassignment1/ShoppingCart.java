@@ -1,4 +1,4 @@
-package com.shobhit;
+package com.scfassignment1;
 
 import java.util.*;
 

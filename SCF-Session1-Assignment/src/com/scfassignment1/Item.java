@@ -1,4 +1,4 @@
-package com.shobhit;
+package com.scfassignment1;
 
 public class Item {
 
