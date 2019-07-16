@@ -11,17 +11,46 @@ public class ShoppingCart {
 
     public void createList(){
     	
-    	System.out.println("Creating a stockList: \n Enter the no. of items :");
-    	int noOfItem= sc.nextInt();
-    	sc.nextLine();
+    	System.out.println("Creating a stockList: \n");
+    	int noOfItem=0;
+    	do {
+    	    try {
+    	        System.out.println("Enter the no. of items : ");
+    	        noOfItem = sc.nextInt();
+    	    } catch (InputMismatchException e) {
+    	        System.out.println("Invalid number of items ");
+    	    }
+    	    sc.nextLine(); 
+    	} while (noOfItem <= 0);
+    	
     	for(int i=0; i<noOfItem; i++){
     		System.out.println("Enter item name "+ (i+1)+" : ");
     		String name= sc.nextLine();
-    		System.out.println("Enter item price : ");
-    		double price= sc.nextDouble();
-    		System.out.println("Enter item Quantity :");
-    		int qty= validate();
-    		sc.nextLine();
+    		
+    		double price=0;
+    		do {
+        	    try {
+        	        System.out.println("Enter the item price : ");
+        	        price = sc.nextDouble();
+        	    } catch (InputMismatchException e) {
+        	        System.out.println("Invalid price! ");
+        	    }
+        	    sc.nextLine(); 
+        	} while (price <= 0);
+    		
+    		
+    		int qty=0;
+    		do {
+        	    try {
+        	        System.out.println("Enter the item quantity : ");
+        	        qty = sc.nextInt();
+        	    } catch (InputMismatchException e) {
+        	        System.out.println("Invalid quantity! ");
+        	    }
+        	    sc.nextLine(); 
+        	} while (qty <= 0);
+    		
+    		
     		
     		Item Item1= new Item(name, qty, price);
     		stockList.add(Item1);
@@ -32,8 +61,10 @@ public class ShoppingCart {
 
 
     }
-
-    public int validate(){
+    
+    
+    
+    /*public int validate(){
         int validateEntry=0;
         do{
         	if(validateEntry <0)
@@ -45,7 +76,7 @@ public class ShoppingCart {
         }while(validateEntry<0);
 
         return validateEntry;
-    }
+    }*/
     
     
     public void addShopItem(String item, int qty){
@@ -83,7 +114,8 @@ public class ShoppingCart {
     private int findItem(ArrayList<Item> shop,String searchItem){
         int index=-1;
         for(int i=0; i<shop.size(); i++){
-            if(shop.get(i).name.equals(searchItem))
+        	if(shop.get(i).name.equalsIgnoreCase(searchItem))
+            //if(shop.get(i).name.equals(searchItem))
                  index=i;
         }
 

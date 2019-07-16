@@ -18,10 +18,18 @@ public class Main {
         printInstructions();
 
         while (!quit) {
-            System.out.println("Enter your choice:");
+        	
+            do {
+        	    try {
+        	    	System.out.println("Enter your choice:");
+        	    	choice = scanner.nextInt();
+        	    } catch (InputMismatchException e) {
+        	        System.out.println("Invalid quantity! ");
+        	    }
+        	    scanner.nextLine(); 
+        	} while (choice <= 0);
             
-            choice = validate();
-            scanner.nextLine();
+            
             switch (choice) {
                 case 0:
                     printInstructions();
@@ -62,8 +70,10 @@ public class Main {
         System.out.println("\t 6.  To generate Bill");
         System.out.println("\t 7.  To quit");
     }
+    
+    
 
-    public static int validate(){
+    /*public static int validate(){
         int validateEntry=0;
         do{
         	if(validateEntry <0)
@@ -75,21 +85,29 @@ public class Main {
         }while(validateEntry<0);
 
         return validateEntry;
-    }
+    }*/
 
     public static void addItem() {
         System.out.println("Enter item name:");
         String item = scanner.nextLine();
-        int qty;
         System.out.println("How much Qty do you need:");
-        qty = validate();
-        shopCart.addShopItem(item.toLowerCase(), qty);
+        int qty=0;
+		do {
+    	    try {
+    	        System.out.println("Enter the item quantity : ");
+    	        qty = scanner.nextInt();
+    	    } catch (InputMismatchException e) {
+    	        System.out.println("Invalid quantity! ");
+    	    }
+    	    scanner.nextLine(); 
+    	} while (qty <= 0);
+        shopCart.addShopItem(item, qty);
     }
 
     public static void removeItem() {
         System.out.print("Enter item name: ");
         String itemName = scanner.nextLine();
-        shopCart.removeShopItem(itemName.toLowerCase());
+        shopCart.removeShopItem(itemName);
     }
 
     public static void updateItem() {
@@ -98,11 +116,19 @@ public class Main {
         String itemName = scanner.nextLine();
         System.out.print("Enter new item: ");
         String newItem = scanner.nextLine();
-        shopCart.modifyShopItem(itemName.toLowerCase(), newItem);
-        int qty;
+        shopCart.modifyShopItem(itemName, newItem);
         System.out.println("How much Qty do you need:");
-        qty = validate();
-        shopCart.addShopItem(newItem.toLowerCase(), qty);
+        int qty=0;
+		do {
+    	    try {
+    	    	System.out.println("How much Qty do you need:");
+    	        qty = scanner.nextInt();
+    	    } catch (InputMismatchException e) {
+    	        System.out.println("Invalid quantity! ");
+    	    }
+    	    scanner.nextLine(); 
+    	} while (qty <= 0);
+        shopCart.addShopItem(newItem, qty);
 
 
 
