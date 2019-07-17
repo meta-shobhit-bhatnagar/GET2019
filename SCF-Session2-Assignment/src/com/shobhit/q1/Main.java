@@ -64,9 +64,31 @@ public class Main {
                     break;
                 case 5:
                 	Hex.setInput();
-                	Hex.compare();
+                	if(Hex.equalTo()){
+                  		 System.out.println("hex numbers are equal");
+                  		 
+                  	 }
+                	else{
+                		System.out.println("hex numbers are not equal");
+                	}
                 	break;
                 case 6:
+                	Hex.setInput();
+                	if(Hex.greaterThan()){
+                  		 System.out.println("hex number1: " + Hex.geth1() + " is greater than "+ Hex.geth2());
+                  	 }else{
+                  		System.out.println("hex number1: " + Hex.geth1() + " is not greater than "+ Hex.geth2());
+                  	 }
+                	break;
+                case 7:
+                	Hex.setInput();
+                	if(Hex.lessThan()){
+                  		 System.out.println("hex number1: " + Hex.geth1() + " is less than "+ Hex.geth2());
+                  	 }else{
+                  		System.out.println("hex number1: " +Hex.geth1() + " is not less than "+ Hex.geth2());
+                  	 }
+                	break;
+                case 8:
                 	int decVal=0;
                 	
                 	do {
@@ -83,13 +105,13 @@ public class Main {
                 	String hexVal= Hex.decToHex(decVal);
                 	System.out.println("converted to Hex:" + hexVal);
                 	break;
-                case 7:
+                case 9:
                 	System.out.println("Enter hexadecimal format number :");
                 	hexVal=scanner.nextLine();
                 	decVal=Hex.hexToDec(hexVal);
                 	System.out.println("converted to Dec :" + decVal);
                 	break;
-                case 8:
+                case 10:
                     quit= true;
                     break;
 
@@ -108,10 +130,12 @@ public class Main {
         System.out.println("\t 2. Subtract()");
         System.out.println("\t 3. Multiply()");
         System.out.println("\t 4. Divide()");
-		System.out.println("\t 5. Compare()");
-        System.out.println("\t 6. decimal to hex");
-        System.out.println("\t 7. hex to dec");
-        System.out.println("\t 8. Quit");
+		System.out.println("\t 5. equalto()");
+		System.out.println("\t 6. lessThan()");
+		System.out.println("\t 7. greaterThan()");
+        System.out.println("\t 8. decimal to hex");
+        System.out.println("\t 9. hex to dec");
+        System.out.println("\t 10. Quit");
     }
 
 

@@ -7,6 +7,15 @@ public class Number {
     private String h1, h2;
     
     private Scanner sc= new Scanner(System.in);
+    
+    public String geth1(){
+    	
+    	return h1;
+    }
+    
+    public String geth2(){
+    	return h2;
+    }
 
 
 
@@ -88,6 +97,8 @@ public class Number {
         
       
     public boolean equalTo(){
+    	this.h1= h1.toUpperCase();
+   	 	this.h2= h2.toUpperCase();
     	boolean flg=true;
     	if(h1.length()== h2.length()){
     		for(int i=h1.length()-1; i>=0; i--){
@@ -105,6 +116,8 @@ public class Number {
     
     
     public boolean greaterThan(){
+    	this.h1= h1.toUpperCase();
+   	 	this.h2= h2.toUpperCase();
     	boolean flg=true;
     	if(h1.length()== h2.length()){
     		for(int i=h1.length()-1; i>=0; i--){
@@ -122,6 +135,8 @@ public class Number {
     }
     
     public boolean lessThan(){
+    	this.h1= h1.toUpperCase();
+   	 	this.h2= h2.toUpperCase();
     	boolean flg=true;
     	if(h1.length()== h2.length()){
     		for(int i=h1.length()-1; i>=0; i--){
