@@ -14,9 +14,8 @@ public class Main {
         int[][] array = new int[size][2];
 
         for (int i = 0; i < size; i++) {
-            System.out.println("Enter the process " + (i + 1) + " arrival time :");
+            System.out.println("Enter the process " + (i + 1) + " arrival time and the burst time:");
             array[i][0] = scanner.nextInt();
-            System.out.println("Enter its burst time ");
             array[i][1] = scanner.nextInt();
 
         }

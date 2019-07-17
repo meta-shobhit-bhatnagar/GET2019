@@ -4,6 +4,8 @@ import java.util.*;
 public class Number {
     private int base;
     
+    private String h1, h2;
+    
     private Scanner sc= new Scanner(System.in);
 
 
@@ -18,9 +20,9 @@ public class Number {
     }
 
 
-    public void add(String h1, String h2){
-        int d1= hexToDec(h1);
-        int d2= hexToDec(h2);
+    public void add(){
+        int d1= hexToDec(this.h1);
+        int d2= hexToDec(this.h2);
         
        /* System.out.println(d1);
         System.out.println(d2);*/
@@ -32,9 +34,9 @@ public class Number {
     }
 
 
-    public void subtract(String h1, String h2){
-        int d1= hexToDec(h1);
-        int d2= hexToDec(h2);
+    public void subtract(){
+        int d1= hexToDec(this.h1);
+        int d2= hexToDec(this.h2);
 
         //Assuming d1 is greater than d2
         if(d1-d2 >0){
@@ -46,40 +48,120 @@ public class Number {
 
     }
 
-    public void divide(String h1, String h2){
-        int d1= hexToDec(h1);
-        int d2= hexToDec(h2);
-        int output;
+    public void divide(){
+        int d1= hexToDec(this.h1);
+        int d2= hexToDec(this.h2);
+        int output=0;
 
-        if(d1%d2 !=d1){
-        	//Arithmetic Exception Handling
-        	try{
-        		output= d1/d2;
-        		System.out.println("Dividing :"+ decToHex(output));
-        	}
-        	catch(ArithmeticException e){
-        		System.out.println("Can't divide by zero");
+        
+        	do{
+        		try{
+            		if(d1%d2 !=d1){
+                    	//Arithmetic Exception Handling
+            		output= d1/d2;
+            		//System.out.println("Checking output :"+ output);
+            		System.out.println("Dividing :"+ decToHex(output));
+            		}
+            		else{
+            			output= d2/d1;
+                		System.out.println("Dividing :"+ decToHex(output));
+            		}
+            	}
+            	catch(ArithmeticException e){
+            		System.out.println("Can't divide by zero"); 
+            		setInput();
+            		divide();
+            	}
         		
-        	}
+        		
+        	}while(output<0);
+        	
             
-        }
-        else{
-        	try{
-        		output= d2/d1;
-        		System.out.println("Dividing :"+ decToHex(output));
-        	}
-        	catch(ArithmeticException e){
-        		System.out.println("Can't divide by zero");
-        		
-        	}
-        }
-
-
+       }
+    
+    public void setInput(){
+    	System.out.println("Enter first hex number: ");
+        h1 = sc.nextLine();
+        System.out.println("Enter second hex number: ");
+        h2 = sc.nextLine();
     }
+        
+      
+    public boolean equalTo(){
+    	boolean flg=true;
+    	if(h1.length()== h2.length()){
+    		for(int i=h1.length()-1; i>=0; i--){
+    			if(h1.charAt(i)!= h2.charAt(i)){
+    				flg=false;
+    				break;
+    			}    				
+    		}		
+    		
+    	}
+    	else
+    		flg=false;
+    	return flg;
+    }
+    
+    
+    public boolean greaterThan(){
+    	boolean flg=true;
+    	if(h1.length()== h2.length()){
+    		for(int i=h1.length()-1; i>=0; i--){
+    			if(h1.charAt(i)< h2.charAt(i)){
+    				flg=false;
+    				break;
+    			}    				
+    		}		
+    		
+    	}
+    	else
+    		flg=false;
+    	
+    	return flg;
+    }
+    
+    public boolean lessThan(){
+    	boolean flg=true;
+    	if(h1.length()== h2.length()){
+    		for(int i=h1.length()-1; i>=0; i--){
+    			if(h1.charAt(i)> h2.charAt(i)){
+    				flg=false;
+    				break;
+    			}    				
+    		}		
+    		
+    	}
+    	else
+    		flg=false;
+    	
+    	return flg;
+    }
+        		
+     public void compare(){
+    	 this.h1= h1.toUpperCase();
+    	 this.h2= h2.toUpperCase();
+    	 
+    	 if(equalTo()){
+    		 System.out.println("hex numbers are equal");
+    		 
+    	 }
+    	 else if(greaterThan()){
+    		 System.out.println("hex number1: " + h1 + " is greater than "+ h2);
+    	 }
+    	 else if(lessThan()){
+    		 System.out.println("hex number1: " + h1 + " is less than "+ h2);
+    	 }
+    	 else
+    		 System.out.println("I don't know what to do. !!!Help");
+    	 
+     } 	
+        
+   
 
-    public void multiply(String h1, String h2){
-        int d1= hexToDec(h1);
-        int d2= hexToDec(h2);
+    public void multiply(){
+        int d1= hexToDec(this.h1);
+        int d2= hexToDec(this.h2);
 
         System.out.println("Multiplying :"+ decToHex(d1*d2));
 

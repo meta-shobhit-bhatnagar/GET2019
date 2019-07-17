@@ -62,7 +62,7 @@ public class JobScheduler {
 
     public void print(){
         // Display processes along with all details
-        System.out.print("Processes " + "\t Arrival Time " + " \tBurst Time " + " \t\tCompletion Time" + "\tWaiting Time " + " \tTurn-Around Time \n"
+        System.out.print("Processes " + "\t Arrival Time " + " \t\tBurst Time " + " \t\tCompletion Time" + "\t\tWaiting Time " + " \tTurn-Around Time \n"
                 );
         int total_wt = 0, max_wt = Integer.MIN_VALUE;
         for (int i = 0 ; i < size ; i++)
@@ -71,7 +71,7 @@ public class JobScheduler {
 //            max_wt = max_wt + tat[i];
 //            int compl_time = tat[i] + at[i];
             System.out.println(i+1 + "\t\t\t" + array[i][0] + "\t\t\t"
-                    + array[i][1] + "\t\t\t\t" + ct[i] +"\t\t\t" + wt[i] + "\t\t\t"
+                    + array[i][1] + "\t\t\t" + ct[i] +"\t\t\t" + wt[i] + "\t\t"
                     + tat[i] );
             // Calculating Max wait time
                 if(max_wt < wt[i])
