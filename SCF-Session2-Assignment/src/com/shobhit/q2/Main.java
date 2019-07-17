@@ -39,7 +39,7 @@ public class Main {
             		System.out.println("Invalid entry! ");
             	}
             	scanner.nextLine();
-            }while(array[i][0]<0 || array[i][1]<0);
+            }while(array[i][0]<=0 || array[i][1]<=0);
             
             
             
