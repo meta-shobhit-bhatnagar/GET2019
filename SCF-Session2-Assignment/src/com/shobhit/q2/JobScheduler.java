@@ -1,5 +1,7 @@
 package com.shobhit.q2;
-
+/**
+* It is a class which implements FCFS algorithm
+*/
 public class JobScheduler {
 
     private int[] wt;
@@ -7,13 +9,18 @@ public class JobScheduler {
     private int[] tat;
     private int[][] array;
     private int size;
-
+/**
+* sets array of arrival and burst time
+*@param array paramter as 2d array reference
+*/
     public void setArray(int[][] array) {
         this.array = array;
         this.size= array.length;
     }
 
-
+/**
+* initialises waiting, completion && turn-around time arrays
+*/
     public void initArray(){
         wt= new int[size];
         ct= new int[size];
@@ -21,7 +28,9 @@ public class JobScheduler {
 
 
     }
-
+    /**
+* calculates completion time of the processes
+*/
     public void completionTime(){
             initArray();
             
@@ -44,14 +53,18 @@ public class JobScheduler {
         print();
 
     }
-
+/**
+* calculates turn around time of the processes
+*/
     public void  turnAroundTime(){
 
         for(int i=0; i<size; i++){
             tat[i]= ct[i]- array[i][0];
         }
     }
-
+/**
+* calculates waiting time of the processes
+*/
     public void waitingTime(){
             for (int i=0; i<size; i++){
                 wt[i]= tat[i]- array[i][1];
@@ -59,7 +72,9 @@ public class JobScheduler {
 
     }
 
-
+/**
+* displays the tabular format of the computet waiting time completion time and turn around time
+*/
     public void print(){
         // Display processes along with all details
         System.out.print("Processes " + "\t Arrival Time " + " \t\tBurst Time " + " \t\tCompletion Time" + "\t\tWaiting Time " + " \tTurn-Around Time \n"
