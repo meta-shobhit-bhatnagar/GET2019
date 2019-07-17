@@ -1,7 +1,7 @@
 package com.shobhit.q2;
 
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -42,8 +42,12 @@ public class Main {
         grades.averageMarks();
         grades.maxMarks();
 
-        System.out.println("Enter passing marks: ");
-        int pass= sc.nextInt();
+        int pass=40;
+        do{
+        	System.out.println("Enter passing marks greater than equal 40: ");
+        	pass= sc.nextInt();
+        }while(pass<40);
+        
         grades.percentagePassing(pass);
 
     }

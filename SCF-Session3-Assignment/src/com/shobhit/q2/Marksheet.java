@@ -14,7 +14,15 @@ public class Marksheet {
         for (int i=0; i<marksArray.length; i++){
             sum+=marksArray[i];
         }
-        float avg= (float)sum/(float)marksArray.length;
+        
+        float avg=0f;
+        try{
+        	 avg= (float)sum/(float)marksArray.length;
+        }
+        catch(ArithmeticException e){
+        	System.out.println("Invalid average detected");
+        }
+        
         System.out.println("Average marks :" + String.format("%.2f", avg));
     }
 
@@ -39,8 +47,16 @@ public class Marksheet {
             if(marksArray[i] >= passMarks)
                 count++;
         }
-        float passed= (float)(count*100)/ (float)marksArray.length;
-        System.out.println("Percentage of passed students : " + String.format("%.2f", passed) );
+        float passed=0;
+        try{
+        	passed= (float)(count*100)/ (float)marksArray.length;;
+       }
+       catch(ArithmeticException e){
+       	System.out.println("Invalid number detected");
+       }
+        
+        
+        System.out.println("Percentage of passed students : " + String.format("%.2f", passed) +"%" );
 
     }
 }

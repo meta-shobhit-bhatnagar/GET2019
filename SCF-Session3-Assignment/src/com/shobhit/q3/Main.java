@@ -51,7 +51,7 @@ public class Main {
         System.out.println("\t 4.  Area of circle");
         System.out.println("\t 5.  To quit");
     }
-
+    //this method is optional. According to question height, width, radius are double format
     public static double validate(){
         double dimension;
         do{
