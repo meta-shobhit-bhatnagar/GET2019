@@ -2,6 +2,11 @@ package com.shobhit.q2;
 
 import java.util.*;
 
+/**
+    *JobScheduler to simulate FCFS (First Come First Serve) scheduling algorithm which means 
+    *the process which arrives first, gets executed first. 
+    *@author Shobhit
+*/
 public class Main {
 
     public static Scanner scanner = new Scanner(System.in);
