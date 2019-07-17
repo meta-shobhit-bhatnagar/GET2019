@@ -2,6 +2,12 @@ package com.shobhit.q1;
 
 import java.util.*;
 
+/**
+*The programs aims to do operations such as add, subtract, multiply, divide and comparison.
+*It also adds decimal to hex calculator and its vice versa
+*@author Shobhit
+*@version 1.0
+*/
 public class Main {
 
     private static Number Hex= new Number();
