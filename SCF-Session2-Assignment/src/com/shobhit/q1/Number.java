@@ -7,28 +7,38 @@ public class Number {
     private String h1, h2;
     
     private Scanner sc= new Scanner(System.in);
-    
+    /**
+	 fetches value of private String h1
+	 */
     public String geth1(){
     	
     	return h1;
     }
-    
+    /**
+	 fetches value of private String h2
+	 */
     public String geth2(){
     	return h2;
     }
 
 
 
-
+    /**
+	 fetches value of private int base variable
+	 */
     public int getBase() {
         return base;
     }
-
+    /**
+	 sets value of private int base variable
+	 */
     public void setBase(int base) {
         this.base = base;
     }
 
-
+    /**
+	 * Add two Hexadecimal Number and return their Addition value.
+	 */
     public void add(){
         int d1= hexToDec(this.h1);
         int d2= hexToDec(this.h2);
@@ -42,7 +52,9 @@ public class Number {
 
     }
 
-
+    /**
+	 * Subtract Two Hexadecimal Number and return their Subtract value.
+	 */
     public void subtract(){
         int d1= hexToDec(this.h1);
         int d2= hexToDec(this.h2);
@@ -56,7 +68,9 @@ public class Number {
         }
 
     }
-
+    /**
+	 * Divide Two Hexadecimal Number and return the Division Of Two Variable.
+	 */
     public void divide(){
         int d1= hexToDec(this.h1);
         int d2= hexToDec(this.h2);
@@ -87,7 +101,9 @@ public class Number {
         	
             
        }
-    
+    /**
+	 * This sets the value of String h1 and Strig h2
+	 */
     public void setInput(){
     	System.out.println("Enter first hex number: ");
         h1 = sc.nextLine();
@@ -95,7 +111,10 @@ public class Number {
         h2 = sc.nextLine();
     }
         
-      
+    /**
+	 checks if hexadecimal numbers are equal
+     @return flg Returns true if hexadecimal numbers are equal otherwise false
+	 */
     public boolean equalTo(){
     	this.h1= h1.toUpperCase();
    	 	this.h2= h2.toUpperCase();
@@ -114,7 +133,10 @@ public class Number {
     	return flg;
     }
     
-    
+    /**
+	 checks if first hexadecimal number is greater than second
+     @return flg Returns true if hexadecimal number 1 is greater than second
+	 */
     public boolean greaterThan(){
     	this.h1= h1.toUpperCase();
    	 	this.h2= h2.toUpperCase();
@@ -133,7 +155,10 @@ public class Number {
     	
     	return flg;
     }
-    
+    /**
+	 checks if first hexadecimal numbers is less than second
+     @return flg Returns true if hexadecimal number 1 is less than second
+	 */
     public boolean lessThan(){
     	this.h1= h1.toUpperCase();
    	 	this.h2= h2.toUpperCase();
@@ -153,7 +178,7 @@ public class Number {
     	return flg;
     }
         		
-     public void compare(){
+     /*public void compare(){
     	 this.h1= h1.toUpperCase();
     	 this.h2= h2.toUpperCase();
     	 
@@ -170,10 +195,12 @@ public class Number {
     	 else
     		 System.out.println("I don't know what to do. !!!Help");
     	 
-     } 	
+     } 	*/
         
    
-
+    /**
+	 * Multiply Two Hexadecimal Number and return the Multiplication Of Two Variable.
+	 */
     public void multiply(){
         int d1= hexToDec(this.h1);
         int d2= hexToDec(this.h2);
@@ -181,7 +208,11 @@ public class Number {
         System.out.println("Multiplying :"+ decToHex(d1*d2));
 
     }
-
+    /**
+	 * Converting Hexadecimal Number into Decimal Number.
+	 * @param  hexVal pass a Hexadecimal Number in the form of a String.
+	 * @return decVal return the Decimal value of the given Hexadecimal String.
+	 */
     public int hexToDec(String hexVal){
         int decVal=0;
         int baseVal=1;
@@ -216,6 +247,11 @@ public class Number {
         return decVal;
     }
 
+    /**
+	 * Converting Decimal Number into a Hexadecimal Number.
+	 * @param decVal Pass a Integer Decimal Number in integer format .
+	 * @return hexVal Return the Hexadecimal value of the given decimal number in a form of String.
+	 */
     public String decToHex(int decVal){
         char[] hex= new char[100];
         String hexVal="";
