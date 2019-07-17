@@ -47,9 +47,8 @@ public class Number {
         System.out.println(d2);*/
 
         int d3= d1+d2;
-        System.out.println("Adding :" + decToHex(d3));
-//        System.out.println(decToHex(d3));
-
+        System.out.println("Addition of " +h1 +" and " + h2+ " is "+ decToHex(d3));
+        
     }
 
     /**
@@ -61,10 +60,10 @@ public class Number {
 
         //Assuming d1 is greater than d2
         if(d1-d2 >0){
-            System.out.println("Subtracting :"+ decToHex(d1-d2));
+            System.out.println("Subtraction of"+ h1 +" and " + h2+ " is "+ decToHex(d1-d2));
         }
         else{
-            System.out.println("Subtracting :"+ "-" +decToHex(d2-d1));
+            System.out.println("Subtraction of"+ h1 +" and " + h2+ " is -" +decToHex(d2-d1));
         }
 
     }
@@ -83,11 +82,11 @@ public class Number {
                     	//Arithmetic Exception Handling
             		output= d1/d2;
             		//System.out.println("Checking output :"+ output);
-            		System.out.println("Dividing :"+ decToHex(output));
+            		System.out.println("Dividing "+ h1 +" and " + h2+ "\n. The result is: " + decToHex(output));
             		}
             		else{
             			output= d2/d1;
-                		System.out.println("Dividing :"+ decToHex(output));
+                		System.out.println("Dividing "+ h1 +" and " + h2+ "\n. The result is: " + decToHex(output));
             		}
             	}
             	catch(ArithmeticException e){
@@ -101,14 +100,73 @@ public class Number {
         	
             
        }
+    
     /**
-	 * This sets the value of String h1 and Strig h2
+	 * Multiply Two Hexadecimal Number and return the Multiplication Of Two Variable.
+	 */
+    public void multiply(){
+        int d1= hexToDec(this.h1);
+        int d2= hexToDec(this.h2);
+
+        System.out.println("Multiplying "+ h1 +" and " + h2+ "\n. The result is: " +decToHex(d1*d2));
+
+    }
+    
+    
+    
+    /**
+	 * This sets the value of String h1 and String h2
 	 */
     public void setInput(){
     	System.out.println("Enter first hex number: ");
         h1 = sc.nextLine();
+        h1=h1.toLowerCase();
+        
+        
+        for(int i=0; i<h1.length(); i++){
+//        	System.out.println(i);
+            if((h1.charAt(i)>='0' && h1.charAt(i)<='9')){
+            	
+            }else if(h1.charAt(i)>='a' && h1.charAt(i)<='f'){
+            }else{
+            	do{
+            		System.out.println("Enter a valid hex number");
+//                	System.out.println(i);
+                	h1= sc.nextLine();
+                	h1=h1.toLowerCase();
+                	i=-1;
+            	}while(h1.equals(" ")|| h1.equals("\t") || h1.equals(""));
+            	
+            }
+//            System.out.println(i);
+        }
+        
+        
+        
+        
+        
+        
         System.out.println("Enter second hex number: ");
         h2 = sc.nextLine();
+        h2=h2.toLowerCase();
+       ;
+       for(int i=0; i<h2.length(); i++){
+//       	System.out.println(i);
+           if((h2.charAt(i)>='0' && h2.charAt(i)<='9')){
+           	
+           }else if(h2.charAt(i)>='a' && h2.charAt(i)<='f'){
+           }else{
+           	do{
+           		System.out.println("Enter a valid hex number");
+//               	System.out.println(i);
+               	h2= sc.nextLine();
+               	h2=h2.toLowerCase();
+               	i=-1;
+           	}while(h2.equals(" ")|| h2.equals("\t") || h2.equals(""));
+           	
+           }
+//           System.out.println(i);
+       }
     }
         
     /**
@@ -178,36 +236,9 @@ public class Number {
     	return flg;
     }
         		
-     /*public void compare(){
-    	 this.h1= h1.toUpperCase();
-    	 this.h2= h2.toUpperCase();
-    	 
-    	 if(equalTo()){
-    		 System.out.println("hex numbers are equal");
-    		 
-    	 }
-    	 else if(greaterThan()){
-    		 System.out.println("hex number1: " + h1 + " is greater than "+ h2);
-    	 }
-    	 else if(lessThan()){
-    		 System.out.println("hex number1: " + h1 + " is less than "+ h2);
-    	 }
-    	 else
-    		 System.out.println("I don't know what to do. !!!Help");
-    	 
-     } 	*/
         
    
-    /**
-	 * Multiply Two Hexadecimal Number and return the Multiplication Of Two Variable.
-	 */
-    public void multiply(){
-        int d1= hexToDec(this.h1);
-        int d2= hexToDec(this.h2);
-
-        System.out.println("Multiplying :"+ decToHex(d1*d2));
-
-    }
+    
     /**
 	 * Converting Hexadecimal Number into Decimal Number.
 	 * @param  hexVal pass a Hexadecimal Number in the form of a String.
@@ -224,24 +255,24 @@ public class Number {
                 baseVal = baseVal * base;
             }
 
-            else if ((hexVal.charAt(i)>='A' && hexVal.charAt(i)<='F'))
+            /*else if ((hexVal.charAt(i)>='A' && hexVal.charAt(i)<='F'))
             {
                 decVal += (hexVal.charAt(i) - 'A' + 10)*baseVal;
 
                 // incrementing base by power
                 baseVal =baseVal*base;
-            }
+            }*/
             else if(hexVal.charAt(i)>='a' && hexVal.charAt(i)<='f'){
                 decVal += (hexVal.charAt(i) - 'a' + 10)*baseVal;
 
                 // incrementing base by power
                 baseVal =baseVal*base;
-            }else{
+            }/*else{
             	System.out.println("Enter a valid hex number");
             	hexVal= sc.nextLine();
             	i=hexVal.length()-1;
             			
-            }
+            }*/
         }
         //System.out.println(decVal);
         return decVal;

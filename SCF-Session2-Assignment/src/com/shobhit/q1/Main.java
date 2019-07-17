@@ -29,7 +29,6 @@ public class Main {
 
 
 
-
         printInstructions();
 
         while (!quit) {
@@ -103,6 +102,7 @@ public class Main {
                 	    	decVal=scanner.nextInt();
                 	    } catch (InputMismatchException e) {
                 	        System.out.println("Invalid decimal number! ");
+                	        decVal=-1;
                 	    }
                 	    scanner.nextLine(); 
                 	} while (decVal < 0);
@@ -113,8 +113,30 @@ public class Main {
                 	break;
                 case 9:
                 	System.out.println("Enter hexadecimal format number :");
-                	hexVal=scanner.nextLine();
-                	decVal=Hex.hexToDec(hexVal);
+                	
+                	String h1=scanner.nextLine();
+                	h1=h1.toLowerCase();
+                	
+                	
+                	
+                	for(int i=0; i<h1.length(); i++){
+                        if((h1.charAt(i)>='0' && h1.charAt(i)<='9')){
+                        	
+                        }else if(h1.charAt(i)>='a' && h1.charAt(i)<='f'){
+                        }else{
+                        	do{
+                        		System.out.println("Enter a valid hex number");
+
+                            	h1= scanner.nextLine();
+                            	h1=h1.toLowerCase();
+                            	i=-1;
+                        	}while(h1.equals(" ")|| h1.equals("\t") || h1.equals(""));
+                        	
+                        }
+                    }
+                	
+                	
+                	decVal=Hex.hexToDec(h1);
                 	System.out.println("converted to Dec :" + decVal);
                 	break;
                 case 10:
@@ -132,15 +154,15 @@ public class Main {
     
     public static void printInstructions() {
         System.out.println("\t 0. To print Instructions");
-        System.out.println("\t 1. Add()");
-        System.out.println("\t 2. Subtract()");
-        System.out.println("\t 3. Multiply()");
-        System.out.println("\t 4. Divide()");
-		System.out.println("\t 5. equalto()");
-		System.out.println("\t 6. lessThan()");
-		System.out.println("\t 7. greaterThan()");
-        System.out.println("\t 8. decimal to hex");
-        System.out.println("\t 9. hex to dec");
+        System.out.println("\t 1. Add 2 hexadecimal numbers");
+        System.out.println("\t 2. Subtract 2 hexadecimal numbers");
+        System.out.println("\t 3. Multiply 2 hexadecimal numbers");
+        System.out.println("\t 4. Divide 2 hexadecimal numbers");
+		System.out.println("\t 5. Compare if 2 hexadecimal numbers are equal");
+		System.out.println("\t 6. Compare if first hex is less than second");
+		System.out.println("\t 7. Compare if first hex is greaterThan second");
+        System.out.println("\t 8. Convert decimal to hex");
+        System.out.println("\t 9. Convert hex to decimal");
         System.out.println("\t 10. Quit");
     }
 
