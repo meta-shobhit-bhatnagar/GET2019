@@ -8,15 +8,41 @@ public class Main {
     public static JobScheduler jsArray = new JobScheduler();
 
     public static void main(String[] args) {
-        System.out.println("Enter the number of processes you wish: ");
-        int size = scanner.nextInt();
+        
+        int size = 0;
+        do{
+        	try{
+        		System.out.println("Enter the number of processes you wish: ");
+        		size= scanner.nextInt();
+        	}
+        	catch(InputMismatchException e){
+        		System.out.println("Invalid entry! ");
+        	}
+        	scanner.nextLine();
+        }while(size<=0);
+        
 
         int[][] array = new int[size][2];
 
         for (int i = 0; i < size; i++) {
-            System.out.println("Enter the process " + (i + 1) + " arrival time and the burst time:");
-            array[i][0] = scanner.nextInt();
-            array[i][1] = scanner.nextInt();
+            
+            
+            
+            do{
+            	try{
+            		System.out.println("Enter the process " + (i + 1) + " arrival time and the burst time:");
+            		array[i][0] = scanner.nextInt();
+            		//scanner.nextLine();
+            		array[i][1] = scanner.nextInt();
+            	}
+            	catch(InputMismatchException e){
+            		System.out.println("Invalid entry! ");
+            	}
+            	scanner.nextLine();
+            }while(array[i][0]<=0 || array[i][1]<=0);
+            
+            
+            
 
         }
 
