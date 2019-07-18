@@ -37,6 +37,8 @@ public class Main {
         	    try {
         	    	System.out.println("Enter your choice:");
         	    	choice = scanner.nextInt();
+			    if(choice<0 || choice>10)
+				    System.out.println("Invalid choice! ");
         	    } catch (InputMismatchException e) {
         	        System.out.println("Invalid choice! ");
 			    choice =-1;
