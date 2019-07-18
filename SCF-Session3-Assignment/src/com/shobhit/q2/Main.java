@@ -61,8 +61,18 @@ public class Main {
         
         int pass=40;
         do{
-        	System.out.println("Enter passing marks greater than equal 40: ");
-        	pass= sc.nextInt();
+        	try{
+        		System.out.println("Enter passing marks greater than equal 40: ");
+        		pass= sc.nextInt();
+        		if(pass<40 || pass>100)
+        			System.out.println("Passing marks should be entered between 40 and 100");
+        	}
+        	catch(InputMismatchException e){
+        		System.out.println("Invalid entry! Please check ");
+        		pass=-1;
+        	}
+        	sc.nextLine();
+        	
         }while(pass<40);
         
         grades.setMarksArray(marksArray);

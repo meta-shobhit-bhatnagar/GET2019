@@ -84,7 +84,7 @@ public class Main {
     	    try {
     	    	dimension = sc.nextDouble();
     	    } catch (InputMismatchException e) {
-    	        System.out.println("Invalid choice! Enter double only :");
+    	        System.out.println("Invalid ! Enter double only :");
     	        dimension= -0.10;
     	    }
     	    sc.nextLine(); 
