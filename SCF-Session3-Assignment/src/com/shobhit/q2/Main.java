@@ -19,13 +19,15 @@ public class Main {
         int n=0;
         
         do {
-        	if(n<0)
-        		System.out.println("Enter positive integer!");
+        	
     	    try {
     	    	System.out.println("Enter the no. of students :");
     	    	n= sc.nextInt();
+                if(n<0)
+        		System.out.println("Enter positive integer!");
     	    } catch (InputMismatchException e) {
     	        System.out.println("No. of students should be integer ");
+                n=-1;
     	    }
     	    sc.nextLine(); 
     	} while (n <=0);
