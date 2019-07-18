@@ -26,11 +26,12 @@ public class Main {
 while (!quit) {
         	
             do {
-            	if(choice<-1)
-            		System.out.println("Enter non-negative integer only! ");
+            	
         	    try {
         	    	System.out.println("Enter your choice:");
         	    	choice = sc.nextInt();
+                    if(choice<0 || choice>5)
+				        System.out.println("Invalid choice! ");
         	    } catch (InputMismatchException e) {
         	        System.out.println("Enter integer only! ");
         	        choice=-1;
