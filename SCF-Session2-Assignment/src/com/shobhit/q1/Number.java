@@ -287,34 +287,38 @@ public class Number {
         char[] hex= new char[100];
         String hexVal="";
         int i = 0;
-        while(decVal!=0)
-        {
-            // temporary variable to store remainder
-            int temp  = 0;
-
-            // storing remainder in temp variable.
-            temp = decVal % base;
-
-            // check if temp < 10
-            if(temp < 10)
-            {
-                hex[i] = (char)(temp + 48);
-                i++;
-            }
-            else
-            {
-                hex[i] = (char)(temp + 55);
-                i++;
-            }
-
-            decVal/=base;
-
+        if(decVal==0){
+        	hexVal= "0";
         }
-        for (int j=i; j>=0; j--){
-            hexVal= hexVal + hex[j];
-        }
+        else{
+        	while(decVal!=0)
+        	{
+        		// temporary variable to store remainder
+        		int temp  = 0;
 
-        //System.out.println("Hex Value: "+ hexVal);
+        		// storing remainder in temp variable.
+        		temp = decVal % base;
+
+        		// check if temp < 10
+        		if(temp < 10)
+        		{
+        			hex[i] = (char)(temp + 48);
+        			i++;
+        		}
+        		else
+        		{
+        			hex[i] = (char)(temp + 55);
+        			i++;
+        		}
+
+        			decVal/=base;
+
+        	}
+        		for (int j=i; j>=0; j--){
+        			hexVal= hexVal + hex[j];
+        			}
+        	}
+        
 
         return hexVal;
     }

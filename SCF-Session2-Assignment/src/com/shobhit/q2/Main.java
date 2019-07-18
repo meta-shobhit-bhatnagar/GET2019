@@ -35,9 +35,7 @@ public class Main {
             
             
             do{
-            	if(array[i][0]==0 && array[i][1]==0){
-            		System.out.println("Burst time can't be zero");
-            	}
+            	
             	try{
             		System.out.println("Enter the process " + (i + 1) + " arrival time and the burst time:");
             		array[i][0] = scanner.nextInt();
@@ -47,6 +45,12 @@ public class Main {
             		System.out.println("Enter integer only! ");
             	}
             	scanner.nextLine();
+            	if(array[i][0]==0 && array[i][1]==0){
+            		System.out.println("Burst time can't be zero");
+            	}
+            	if(array[i][1]==0){
+            		System.out.println("Burst time can't be zero");
+            	}
             }while(array[i][0]<0 || array[i][1]<=0);
             
             
