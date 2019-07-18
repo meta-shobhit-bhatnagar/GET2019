@@ -39,6 +39,7 @@ public class Main {
         	    	choice = scanner.nextInt();
         	    } catch (InputMismatchException e) {
         	        System.out.println("Invalid choice! ");
+			    choice =-1;
         	    }
         	    scanner.nextLine(); 
         	} while (choice < 0);
