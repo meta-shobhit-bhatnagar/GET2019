@@ -24,14 +24,15 @@ public class Main {
         	
         	
         	do {
-        		if(choice<-1)
-        			System.out.println("Enter non-negative integer only");
+        		
         	    try {
         	    	System.out.println("Enter your choice:");
         	    	  choice = sc.nextInt();
+                    if(choice<0 || choice >5)
+        			System.out.println("Invalid choice!");
         	    } catch (InputMismatchException e) {
         	        System.out.println("Invalid choice! Enter integer only");
-        	        choice=-10;
+        	        choice=-1;
         	    }
         	    sc.nextLine(); 
         	} while (choice < 0);
