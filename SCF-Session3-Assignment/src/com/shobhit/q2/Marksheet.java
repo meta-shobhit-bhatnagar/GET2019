@@ -1,6 +1,11 @@
 package com.shobhit.q2;
 
 
+/**
+ * This class contains methods for calculating average marks, maximum marks and percentage of students passed
+ * @author Shobhit
+ *
+ */
 public class Marksheet {
 
     private int[] marksArray;
@@ -8,7 +13,9 @@ public class Marksheet {
     public void setMarksArray(int[] marksArray) {
         this.marksArray = marksArray;
     }
-
+/**
+ * Calculates average marks of the students grades
+ */
     public void averageMarks(){
         int sum=0;
         for (int i=0; i<marksArray.length; i++){
@@ -26,6 +33,9 @@ public class Marksheet {
         System.out.println("Average marks :" + String.format("%.2f", avg));
     }
 
+    /**
+     * Calculates maximum marks amongst the students
+     */
     public void maxMarks(){
         int max= Integer.MIN_VALUE;
         int min= Integer.MAX_VALUE;
@@ -40,7 +50,10 @@ public class Marksheet {
         System.out.println("Max grades : "+ max);
         System.out.println("Min grades : "+ min);
     }
-
+    /**
+     * Calculates percentage of passed students
+     * @param passMarks the parameter passMarks sets the threshold value for passing
+     */
     public void percentagePassing(int passMarks){
         int count=0;
         for(int i=0 ;i<marksArray.length; i++){

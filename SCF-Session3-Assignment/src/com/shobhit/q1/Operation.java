@@ -1,6 +1,10 @@
 package com.shobhit.q1;
 
-
+/**
+ * The class contains various methods such as compare, reverse String, changeCase
+ * @author Shobhit
+ *@version 1.0
+ */
 public class Operation {
 
     private String s1;
@@ -10,7 +14,10 @@ public class Operation {
         this.s2= s2;
 
     }
-
+/**
+ * Checks if two strings are same
+ * @return flg if strings are same value 1 is returned
+ */
     public int compare(){
         int flg=0;
         if (s1.length()== s2.length()){
@@ -30,7 +37,11 @@ public class Operation {
         return flg;
     }
 
-
+/**
+ * Performs reverse of input string
+ * @param s1 It's a string on which operation is performed
+ * @return returns reversed string
+ */
     public String reverse(String s1) {
         this.s1 = s1;
         char[] tempArray= s1.toCharArray();
@@ -45,6 +56,11 @@ public class Operation {
         return s2;
     }
 
+    /**
+     * Changes case of letters in String
+     * @param str It's a string on which operation is performed
+     * @return returns reverse case string 
+     */
     public String reverseCase(String str){
         System.out.println(str);
         this.s1= str;
@@ -61,6 +77,10 @@ public class Operation {
         return s2;
     }
 
+    /**
+     * Computes longestWord in the string
+     * @param str It's a string on which operation is performed
+     */
     public void longestWord(String str){
         //point to be noted
         str= str +" ";
@@ -68,7 +88,7 @@ public class Operation {
             String longest= "";
 
             for (int i=0; i<str.length(); i++ ){
-                if(str.charAt(i)==' ' ){
+                if(str.charAt(i)==' ' || str.charAt(i)=='\t'){
                     if(longest.length()<= word.length()) {
                         longest = word;
                         word = "";

@@ -3,7 +3,11 @@ package com.shobhit.q1;
 
 import java.util.*;
 
-
+/**
+ * The program performs various operations on string such as reverse, changing case, comparing two strings
+ * @author Shobhit
+ *
+ */
 public class Main {
 
     public static Scanner sc= new Scanner(System.in);
@@ -22,11 +26,14 @@ public class Main {
 while (!quit) {
         	
             do {
+            	if(choice<-1)
+            		System.out.println("Enter non-negative integer only! ");
         	    try {
         	    	System.out.println("Enter your choice:");
         	    	choice = sc.nextInt();
         	    } catch (InputMismatchException e) {
-        	        System.out.println("Invalid choice! ");
+        	        System.out.println("Enter integer only! ");
+        	        choice=-1;
         	    }
         	    sc.nextLine(); 
         	} while (choice < 0);
@@ -37,7 +44,7 @@ while (!quit) {
                     printInstructions();
                     break;
                 case 1:
-                	System.out.println("Comparing :\nEnter first string: ");
+                	System.out.println("Comparing whether strings are equal \nEnter first string: ");
                     s1= sc.nextLine();
                     System.out.println("Enter second string: ");
                     s2= sc.nextLine();
@@ -45,9 +52,9 @@ while (!quit) {
                     op.set(s1,s2);
                     int flg= op.compare();
                     if(flg ==1)
-                        System.out.println("Same");
+                        System.out.println("Strings are same");
                     else
-                        System.out.println("Not same");
+                        System.out.println("Strings are different");
                     break;
                 case 2:
                 	System.out.println("Enter string to get reverse string: ");
@@ -58,10 +65,10 @@ while (!quit) {
                 	//change lower case to upper case and vice-versa
                     System.out.println("Enter string for changing case ");
                     s1= sc.nextLine();
-                    System.out.println("new string: "+ op.reverseCase(s1));
+                    System.out.println("Reversed string: "+ op.reverseCase(s1));
                     break;
                 case 4:
-                	 System.out.println("Enter the sentence: ");
+                	 System.out.println("Enter the sentence to find the longest word in it: ");
                      s1=sc.nextLine();
                      op.longestWord(s1);
                     break;
@@ -77,6 +84,9 @@ while (!quit) {
 
     }
     
+    /**
+     * To ask user what operation do they want to perform
+     */
     public static void printInstructions() {
         System.out.println("\t 0.  To print Instructions");
         System.out.println("\t 1.  To compare strings");
