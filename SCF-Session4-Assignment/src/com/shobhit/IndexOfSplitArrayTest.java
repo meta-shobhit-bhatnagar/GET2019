@@ -13,7 +13,13 @@ import org.junit.runners.Parameterized.Parameters;
 
 
 @RunWith(Parameterized.class)
-public class indexOfSplitArrayTest {
+
+/**
+ * test class for verifying Index Of SplitArray
+ * @author Shobhit
+ *
+ */
+public class IndexOfSplitArrayTest {
 	
 	
 	
@@ -30,7 +36,7 @@ public class indexOfSplitArrayTest {
     public int[] fInput;
     public int fExpected;
     
-    public indexOfSplitArrayTest(int input[], int expected) {
+    public IndexOfSplitArrayTest(int input[], int expected) {
         this.fInput = input;
         this.fExpected = expected;
     }
@@ -42,12 +48,9 @@ public class indexOfSplitArrayTest {
 	@Test
 	public void test() {
 		ArrOperation obj4 = new ArrOperation();
-		try{
-			assertEquals(fExpected,obj4.indexOfSplitArray(fInput));
-		}
-		catch (AssertionError e) {
-			System.out.println("Null Array, AssertionError");
-		}
+		
+			assertEquals(fExpected,obj4.IndexOfSplitArray(fInput));
+		
 	}
 
 }

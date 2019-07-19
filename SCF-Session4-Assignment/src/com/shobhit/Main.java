@@ -51,10 +51,10 @@ public class Main {
 				
 				switch(choice){
 				case 1: 
-					System.out.println("Size of the largest Mirror section : " + ArrOperation.largestMirrorSize(arr));
+					System.out.println("Size of the largest Mirror section : " + ArrOperation.LargestMirrorSize(arr));
 					break;
 				case 2:
-					System.out.println("Number of clumps :"+ ArrOperation.numberOfClumps(arr));
+					System.out.println("Number of clumps :"+ ArrOperation.NumberOfClumps(arr));
 					break;
 				case 3:
 					int X,Y;
@@ -62,7 +62,7 @@ public class Main {
 					X = sc.nextInt();
 					System.out.println("Enter value of Y:");
 					Y = sc.nextInt();
-					int[] rearrangedArray= ArrOperation.fixXY(X, Y, arr);
+					int[] rearrangedArray= ArrOperation.FixXY(X, Y, arr);
 					System.out.println("Rearranged array after fix :");
 					for(int i=0; i<arr.length; i++){
 						System.out.print(" " + rearrangedArray[i]);
@@ -70,7 +70,7 @@ public class Main {
 					
 					break;
 				case 4:
-					System.out.println("Split Index of array  : " + ArrOperation.indexOfSplitArray(arr));
+					System.out.println("Split Index of array  : " + ArrOperation.IndexOfSplitArray(arr));
 				
 				case 5:
 					break;

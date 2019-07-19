@@ -13,6 +13,11 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 
+/**
+ * test class for verifying LargestMirrorSize operation positive cases
+ * @author Shobhit
+ *
+ */
 @RunWith(Parameterized.class)
 public class LargestMirrorSizeTest {
 	
@@ -45,7 +50,7 @@ public class LargestMirrorSizeTest {
     
     @Test
 	public void test() {
-    	assertEquals(fExpected, obj1.largestMirrorSize(fInput));
+    	assertEquals(fExpected, obj1.LargestMirrorSize(fInput));
 	}
 
 }

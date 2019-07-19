@@ -15,7 +15,7 @@ public class ArrOperation {
 	 * @return lengthOfMirror
 	 * @throws AssertionError
 	 */
-	public static int largestMirrorSize(int[] arr)throws AssertionError {
+	public static int LargestMirrorSize(int[] arr)throws AssertionError {
 		
 		 
 			int lengthOfMirror = 0;
@@ -61,7 +61,7 @@ public class ArrOperation {
  * @return countClump
  * @throws AssertionError
  */
-	public static int numberOfClumps(int[] arrOfIntegers) throws AssertionError{
+	public static int NumberOfClumps(int[] arrOfIntegers) throws AssertionError{
 		int countAdjacent = 0;
 		int countClumps = 0;
 		if(arrOfIntegers.length == 0){
@@ -93,7 +93,7 @@ public class ArrOperation {
 	 * @return newArrayAfterFixXY
 	 * @throws AssertionError
 	 */
-	public static int[] fixXY(int X, int Y, int[] arrOfIntegers) throws AssertionError{
+	public static int[] FixXY(int X, int Y, int[] arrOfIntegers) throws AssertionError{
 		int newArrayAfterFixXY[] = new int[arrOfIntegers.length];
 		if(arrOfIntegers.length == 0){
 			throw new AssertionError("Empty Array Found");
@@ -143,7 +143,7 @@ public class ArrOperation {
 	 * @param arrOfIntegers
 	 * @return index
 	 */
-	public static int indexOfSplitArray(int[] arrOfIntegers){
+	public static int IndexOfSplitArray(int[] arrOfIntegers){
 		int index = -1;
 		if(arrOfIntegers.length == 0){
 			throw new AssertionError("Null Array Found");

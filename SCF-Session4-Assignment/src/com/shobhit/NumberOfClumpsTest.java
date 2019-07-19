@@ -11,8 +11,20 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+/**
+ * Parameterized test case NumberOfClumpsTest
+ * @author Shobhit
+ *
+ */
+
+
+/**
+ * test class for verifying Number of clumps in array
+ * @author Shobhit
+ *
+ */
 @RunWith(Parameterized.class)
-public class numberOfClumpsTest {
+public class NumberOfClumpsTest {
 	
 	@Parameters
     public static Collection<Object[]> data() {
@@ -28,7 +40,7 @@ public class numberOfClumpsTest {
     public int fExpected;
     
     
-    public numberOfClumpsTest(int input[], int expected) {
+    public NumberOfClumpsTest(int input[], int expected) {
         this.fInput = input;
         this.fExpected = expected;
     }
@@ -36,12 +48,9 @@ public class numberOfClumpsTest {
 	@Test
 	public void test() {
 		ArrOperation obj4 = new ArrOperation();
-		try{
-			assertEquals(fExpected,obj4.numberOfClumps(fInput));
-		}
-		catch (AssertionError e) {
-			System.out.println("Null Array, AssertionError "+ e);
-		}	
+		
+			assertEquals(fExpected,obj4.NumberOfClumps(fInput));
+		
 	}
 
 }

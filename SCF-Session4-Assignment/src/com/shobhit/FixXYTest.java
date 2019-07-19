@@ -11,8 +11,13 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+/**
+ * test class for verifying whether re-arranged array after FixXY operation is correct
+ * @author Shobhit
+ *
+ */
 @RunWith(Parameterized.class)
-public class fixXYTest {
+public class FixXYTest {
 
 	
 	@Parameters
@@ -35,7 +40,7 @@ public class fixXYTest {
     public int fY;
     
     
-    public fixXYTest(int input[], int []expected, int x, int y) {
+    public FixXYTest(int input[], int []expected, int x, int y) {
         this.fInput = input;
         this.fExpected = expected;
         this.fX = x;
@@ -46,12 +51,9 @@ public class fixXYTest {
 	@Test
 	public void test() {
 		ArrOperation obj4 = new ArrOperation();
-		try{
-			assertArrayEquals(fExpected,obj4.fixXY( fX, fY, fInput));
-		}
-		catch (AssertionError e) {
-			System.out.println("AssertionError." +e);
-		}
+		
+			assertArrayEquals(fExpected,obj4.FixXY( fX, fY, fInput));
+		
 	}
 
 }

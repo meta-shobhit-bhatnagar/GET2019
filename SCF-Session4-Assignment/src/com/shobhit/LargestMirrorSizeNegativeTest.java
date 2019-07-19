@@ -11,6 +11,11 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+/**
+ * test class for verifying LargestMirrorSize operation negative cases
+ * @author Shobhit
+ *
+ */
 @RunWith(Parameterized.class)
 public class LargestMirrorSizeNegativeTest {
 	
@@ -37,12 +42,9 @@ public class LargestMirrorSizeNegativeTest {
 	
 	@Test
 	public void test() {
-		try {
-    		assertEquals(fExpected, obj1.largestMirrorSize(fInput));
-    	}
-    	catch (AssertionError e) {
-    		System.out.println("Null Array Found, Hence Assertion Error , Error in mirrorSectionLength");
-    	} 
+		
+    		assertEquals(fExpected, obj1.LargestMirrorSize(fInput));
+    	
 	}
 
 }
