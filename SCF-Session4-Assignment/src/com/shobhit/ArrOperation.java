@@ -2,13 +2,19 @@ package com.shobhit;
 
 import java.util.*;
 /**
- * 
+ * contains methods for various array operations 
  * @author Shobhit
  *
  */
 
 public class ArrOperation {
 	
+	/**
+	 * Computes the largest section of mirror element that can be found in an array
+	 * @param arr
+	 * @return lengthOfMirror
+	 * @throws AssertionError
+	 */
 	public static int largestMirrorSize(int[] arr)throws AssertionError {
 		
 		 
@@ -49,7 +55,12 @@ public class ArrOperation {
 		}
 	
 	
-	
+/**
+ * 	Computes no. of same group elements in the input array
+ * @param arrOfIntegers
+ * @return countClump
+ * @throws AssertionError
+ */
 	public static int numberOfClumps(int[] arrOfIntegers) throws AssertionError{
 		int countAdjacent = 0;
 		int countClumps = 0;
@@ -74,7 +85,14 @@ public class ArrOperation {
 		return countClumps;
 	}
 	
-	
+	/**
+	 * computes an array where every X is immediately followed by a Y
+	 * @param X
+	 * @param Y
+	 * @param arrOfIntegers
+	 * @return newArrayAfterFixXY
+	 * @throws AssertionError
+	 */
 	public static int[] fixXY(int X, int Y, int[] arrOfIntegers) throws AssertionError{
 		int newArrayAfterFixXY[] = new int[arrOfIntegers.length];
 		if(arrOfIntegers.length == 0){
@@ -120,7 +138,11 @@ public class ArrOperation {
 		return newArrayAfterFixXY;
 	}
 	
-	
+	/**
+	 * Computes the index of the input array where it can be split so that sum on both sides of split index are equal
+	 * @param arrOfIntegers
+	 * @return index
+	 */
 	public static int indexOfSplitArray(int[] arrOfIntegers){
 		int index = -1;
 		if(arrOfIntegers.length == 0){

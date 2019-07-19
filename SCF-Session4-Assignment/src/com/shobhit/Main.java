@@ -3,7 +3,7 @@ package com.shobhit;
 import java.util.*;
 
 /**
- * 
+ * performs array operations i.e largest mirror section, split index where sum equals both sides, number of clumps,etc. 
  * @author Shobhit
  *
  */
@@ -90,7 +90,9 @@ public class Main {
 		
 	}
 	
-	
+	/**
+	 * prints options for the user to choose from
+	 */
 	public static void printInstructions(){
 		System.out.println("1.Largest Mirror Section");
 		System.out.println("2.Number of clumps");
