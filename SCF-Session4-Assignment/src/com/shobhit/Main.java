@@ -83,6 +83,8 @@ public class Main {
 				System.out.println("Assertion Error : " + e);
 			}catch(InputMismatchException e){
 				System.out.println("Enter integer only!");
+				choice=-1;
+				sc.nextLine();
 			}
 		}while(choice!=5);
 		
