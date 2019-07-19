@@ -96,7 +96,7 @@ public class ArrOperation {
 			if(indexListOfY.size() == 0){
 				throw new AssertionError("Y is not Found");
 			}else if(numberOfX != indexListOfY.size()){
-				throw new AssertionError("X and Y is unequal");
+				throw new AssertionError("X and Y unequal");
 			}else{
 				int indexOfList = 0;
 				for(int i=0; i<newArrayAfterFixXY.length ; i++){
@@ -105,7 +105,7 @@ public class ArrOperation {
 							throw new AssertionError("X occurs at last index");
 						}else{
 							if(newArrayAfterFixXY[i] == newArrayAfterFixXY[i+1]){
-								throw new AssertionError("Two Adjacent values is here");
+								throw new AssertionError("Two Adjacent X values here");
 							}else{
 								int tempValue = newArrayAfterFixXY[i+1];
 								newArrayAfterFixXY[i+1] = newArrayAfterFixXY[indexListOfY.get(indexOfList)];

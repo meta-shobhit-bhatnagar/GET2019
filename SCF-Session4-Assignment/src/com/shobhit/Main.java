@@ -65,7 +65,7 @@ public class Main {
 					int[] rearrangedArray= ArrOperation.fixXY(X, Y, arr);
 					System.out.println("Rearranged array after fix :");
 					for(int i=0; i<arr.length; i++){
-						System.out.print(" " + arr[i]);
+						System.out.print(" " + rearrangedArray[i]);
 					}
 					
 					break;
