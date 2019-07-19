@@ -8,7 +8,7 @@ import java.util.*;
  */
 
 public class ArrOperation {
-	
+
 	/**
 	 * Computes the largest section of mirror element that can be found in an array
 	 * @param arr
@@ -16,51 +16,51 @@ public class ArrOperation {
 	 * @throws AssertionError
 	 */
 	public static int largestMirrorSize(int[] arr)throws AssertionError {
-		
-		 
-			int lengthOfMirror = 0;
-			int tempLength = 0;
-			if(arr.length==0){
-				throw new AssertionError("Null Array Found");
-			}else{
-				for(int i=0; i<arr.length; i++){
-					int pivotIndex=i;
-					tempLength=0;
-					for(int j=arr.length-1; j>=i;){
-						if(arr[pivotIndex]==arr[j]){
-							tempLength++;
-							pivotIndex++;
-							j--;
-						}else if(tempLength > 0){
-								if(tempLength > lengthOfMirror){
-								lengthOfMirror = tempLength;
-								tempLength = 0;
-								pivotIndex = i;
-							}else{
-								tempLength = 0;
-								pivotIndex = i;
-							}	
+
+
+		int lengthOfMirror = 0;
+		int tempLength = 0;
+		if(arr.length==0){
+			throw new AssertionError("Null Array Found");
+		}else{
+			for(int i=0; i<arr.length; i++){
+				int pivotIndex=i;
+				tempLength=0;
+				for(int j=arr.length-1; j>=i;){
+					if(arr[pivotIndex]==arr[j]){
+						tempLength++;
+						pivotIndex++;
+						j--;
+					}else if(tempLength > 0){
+						if(tempLength > lengthOfMirror){
+							lengthOfMirror = tempLength;
+							tempLength = 0;
+							pivotIndex = i;
 						}else{
 							tempLength = 0;
 							pivotIndex = i;
-							j--;
-						}
+						}	
+					}else{
+						tempLength = 0;
+						pivotIndex = i;
+						j--;
 					}
-					if(tempLength>lengthOfMirror) lengthOfMirror=tempLength;
-					
 				}
+				if(tempLength>lengthOfMirror) lengthOfMirror=tempLength;
+
 			}
-			
-			return lengthOfMirror;
 		}
-	
-	
-/**
- * 	Computes no. of same group elements in the input array
- * @param arrOfIntegers
- * @return countClump
- * @throws AssertionError
- */
+
+		return lengthOfMirror;
+	}
+
+
+	/**
+	 * 	Computes no. of same group elements in the input array
+	 * @param arrOfIntegers
+	 * @return countClump
+	 * @throws AssertionError
+	 */
 	public static int numberOfClumps(int[] arrOfIntegers) throws AssertionError{
 		int countAdjacent = 0;
 		int countClumps = 0;
@@ -81,10 +81,10 @@ public class ArrOperation {
 				countClumps++;
 			}
 		}
-		
+
 		return countClumps;
 	}
-	
+
 	/**
 	 * computes an array where every X is immediately followed by a Y
 	 * @param X
@@ -137,7 +137,7 @@ public class ArrOperation {
 
 		return newArrayAfterFixXY;
 	}
-	
+
 	/**
 	 * Computes the index of the input array where it can be split so that sum on both sides of split index are equal
 	 * @param arrOfIntegers

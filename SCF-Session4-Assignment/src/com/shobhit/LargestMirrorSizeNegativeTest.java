@@ -13,36 +13,36 @@ import org.junit.runners.Parameterized.Parameters;
 
 @RunWith(Parameterized.class)
 public class LargestMirrorSizeNegativeTest {
-	
-	@Parameters
-    public static Collection<Object[]> data() {
-        return Arrays.asList(new Object[][] { 
-                 { new int [] {}, 2 }  
-           });
-    }
 
-	
+	@Parameters
+	public static Collection<Object[]> data() {
+		return Arrays.asList(new Object[][] { 
+			{ new int [] {}, 2 }  
+		});
+	}
+
+
 	ArrOperation obj1 = new ArrOperation();
-	
+
 	public int[] fInput;
-    public int fExpected;
-    
-    public LargestMirrorSizeNegativeTest(int input[], int expected) {
-        this.fInput = input;
-        this.fExpected = expected;
-    }
-	
-	
-	
-	
+	public int fExpected;
+
+	public LargestMirrorSizeNegativeTest(int input[], int expected) {
+		this.fInput = input;
+		this.fExpected = expected;
+	}
+
+
+
+
 	@Test
 	public void test() {
 		try {
-    		assertEquals(fExpected, obj1.largestMirrorSize(fInput));
-    	}
-    	catch (AssertionError e) {
-    		System.out.println("Null Array Found, Hence Assertion Error , Error in mirrorSectionLength");
-    	} 
+			assertEquals(fExpected, obj1.largestMirrorSize(fInput));
+		}
+		catch (AssertionError e) {
+			System.out.println("Null Array Found, Hence Assertion Error , Error in mirrorSectionLength");
+		} 
 	}
 
 }
