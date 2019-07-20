@@ -6,12 +6,9 @@ import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Collection;
-
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
-
-import com.shobhit.q1.RecursiveHCF_LCM;
 
 @RunWith(Parameterized.class)
 public class SearchElementTest {
@@ -29,15 +26,15 @@ public class SearchElementTest {
 
 	private int [] farr;
 	private int fsearchItem;
-	private int fsize;
+	private int findex;
 	private int fexpected;
 	private SearchElement obj1 = new SearchElement();
 
 
-	public SearchElementTest(int[] arr, int searchitem,int size, int expected) {
+	public SearchElementTest(int[] arr, int searchitem,int findex, int expected) {
 		this.farr = arr;
 		this.fsearchItem= searchitem;
-		this.fsize = size;
+		this.findex = findex;
 		this.fexpected= expected;
 	}
 
@@ -45,7 +42,7 @@ public class SearchElementTest {
 	
 	@Test
 	public void testSearchLinear() {
-		assertEquals(fexpected, obj1.linearSearch(farr, fsearchItem, fsize));
+		assertEquals(fexpected, obj1.linearSearch(farr, fsearchItem, findex));
 	}
 	
 	
