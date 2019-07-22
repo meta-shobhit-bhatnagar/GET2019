@@ -1,13 +1,20 @@
 package com.shobhit.q1;
 
 import java.util.*;
-
+/**
+ * IntSet class defines various methods like union complement on the set
+ * @author Shobhit
+ *
+ */
 public final class IntSet {
 
 	
 	private final int[] array;
 	private final int size;
-	
+/**
+ * It's a constructor IntSet which initializes object of IntSet type	
+ * @param setArray
+ */
 	public IntSet(int[] setArray) {
 		
 		this.array = removeDuplicate(setArray);
@@ -15,7 +22,9 @@ public final class IntSet {
 	}
 	
 
-	
+/*
+ * This method removes duplicates from the set initialized
+ */
 	int[] removeDuplicate(int input[])
 	{
 		
@@ -63,7 +72,12 @@ public final class IntSet {
 		}
 		return isMember;
 	}
-	
+/**
+ * The method performs union operation on sets passed as parameter	
+ * @param s1 of IntSet class
+ * @param s2 of IntSet class
+ * @return
+ */
 	public int[] union(IntSet s1, IntSet s2){
 		Arrays.sort(s1.array);
 		Arrays.sort(s2.array);
@@ -115,7 +129,11 @@ public final class IntSet {
 	    return result;
 	}
 	
-	
+/**
+ * 	This computes if the set passed as parameter is a subset of object
+ * @param s1
+ * @return returns true if it's a subset otherwise false
+ */
 	public boolean isSubset(IntSet s1){
 		int [] s1Arr= new int[s1.size];
 		
@@ -126,7 +144,11 @@ public final class IntSet {
 		}
 		return true;	
 	}
-	
+/**
+ * This method computes complement of the set where universal set 
+ * is defined for 1-1000	
+ * @return returns integer array 
+ */
 	public int[] getComplement(){
 		int[] complementArr= new int[1000- this.size];
 		
