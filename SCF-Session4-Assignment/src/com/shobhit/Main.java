@@ -9,8 +9,8 @@ import java.util.*;
  */
 
 public class Main {
-	
-	public static void main(String[] args) {
+	public static void main(String[] args){
+		
 		
 		Scanner sc= new Scanner(System.in);
 		System.out.println("Enter length of array :");
@@ -40,21 +40,21 @@ public class Main {
 			System.out.println("That's not an integer! Enter again");
 			main(args);
 		}
-
+		
 		int choice=0;
-
+		
 		do{
 			try{
 				printInstructions();
 				System.out.println("Enter your choice :");
 				choice= sc.nextInt();
-
+				
 				switch(choice){
 				case 1: 
-					System.out.println("Size of the largest Mirror section : " + ArrOperation.largestMirrorSize(arr));
+					System.out.println("Size of the largest Mirror section : " + ArrOperation.LargestMirrorSize(arr));
 					break;
 				case 2:
-					System.out.println("Number of clumps :"+ ArrOperation.numberOfClumps(arr));
+					System.out.println("Number of clumps :"+ ArrOperation.NumberOfClumps(arr));
 					break;
 				case 3:
 					int X,Y;
@@ -62,23 +62,23 @@ public class Main {
 					X = sc.nextInt();
 					System.out.println("Enter value of Y:");
 					Y = sc.nextInt();
-					int[] rearrangedArray= ArrOperation.fixXY(X, Y, arr);
+					int[] rearrangedArray= ArrOperation.FixXY(X, Y, arr);
 					System.out.println("Rearranged array after fix :");
 					for(int i=0; i<arr.length; i++){
 						System.out.print(" " + rearrangedArray[i]);
 					}
-					System.out.println();
+					
 					break;
 				case 4:
-					System.out.println("Split Index of array  : " + ArrOperation.indexOfSplitArray(arr));
-
+					System.out.println("Split Index of array  : " + ArrOperation.IndexOfSplitArray(arr));
+				
 				case 5:
 					break;
-				default: 
-					System.out.println("Invalid choice! Enter between 0 and 5");
+					default: 
+						System.out.println("Invalid choice! Enter between 0 and 5");
 				}
-
-
+				
+				
 			}catch(AssertionError e){
 				System.out.println("Assertion Error : " + e);
 			}catch(InputMismatchException e){
@@ -87,9 +87,9 @@ public class Main {
 				sc.nextLine();
 			}
 		}while(choice!=5);
-
+		
 	}
-
+	
 	/**
 	 * prints options for the user to choose from
 	 */
@@ -100,5 +100,6 @@ public class Main {
 		System.out.println("4.Split Index of array");
 		System.out.println("5.Exit");
 	}
+	
 	
 }

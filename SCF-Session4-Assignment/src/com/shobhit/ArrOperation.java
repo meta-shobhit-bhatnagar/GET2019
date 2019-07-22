@@ -8,60 +8,60 @@ import java.util.*;
  */
 
 public class ArrOperation {
-
+	
 	/**
 	 * Computes the largest section of mirror element that can be found in an array
 	 * @param arr
 	 * @return lengthOfMirror
 	 * @throws AssertionError
 	 */
-	public static int largestMirrorSize(int[] arr)throws AssertionError {
-
-
-		int lengthOfMirror = 0;
-		int tempLength = 0;
-		if(arr.length==0){
-			throw new AssertionError("Null Array Found");
-		}else{
-			for(int i=0; i<arr.length; i++){
-				int pivotIndex=i;
-				tempLength=0;
-				for(int j=arr.length-1; j>=i;){
-					if(arr[pivotIndex]==arr[j]){
-						tempLength++;
-						pivotIndex++;
-						j--;
-					}else if(tempLength > 0){
-						if(tempLength > lengthOfMirror){
-							lengthOfMirror = tempLength;
-							tempLength = 0;
-							pivotIndex = i;
+	public static int LargestMirrorSize(int[] arr)throws AssertionError {
+		
+		 
+			int lengthOfMirror = 0;
+			int tempLength = 0;
+			if(arr.length==0){
+				throw new AssertionError("Null Array Found");
+			}else{
+				for(int i=0; i<arr.length; i++){
+					int pivotIndex=i;
+					tempLength=0;
+					for(int j=arr.length-1; j>=i;){
+						if(arr[pivotIndex]==arr[j]){
+							tempLength++;
+							pivotIndex++;
+							j--;
+						}else if(tempLength > 0){
+								if(tempLength > lengthOfMirror){
+								lengthOfMirror = tempLength;
+								tempLength = 0;
+								pivotIndex = i;
+							}else{
+								tempLength = 0;
+								pivotIndex = i;
+							}	
 						}else{
 							tempLength = 0;
 							pivotIndex = i;
-						}	
-					}else{
-						tempLength = 0;
-						pivotIndex = i;
-						j--;
+							j--;
+						}
 					}
+					if(tempLength>lengthOfMirror) lengthOfMirror=tempLength;
+					
 				}
-				if(tempLength>lengthOfMirror) lengthOfMirror=tempLength;
-
 			}
+			
+			return lengthOfMirror;
 		}
-
-		return lengthOfMirror;
-	}
-
-
-	/**
-	 * 	Computes no. of same group elements in the input array
-	 * @param arrOfIntegers
-	 * @return countClump
-	 * @throws AssertionError
-	 */
-	public static int numberOfClumps(int[] arrOfIntegers) throws AssertionError{
+	
+	
+/**
+ * 	Computes no. of same group elements in the input array
+ * @param arrOfIntegers
+ * @return countClump
+ * @throws AssertionError
+ */
+	public static int NumberOfClumps(int[] arrOfIntegers) throws AssertionError{
 		int countAdjacent = 0;
 		int countClumps = 0;
 		if(arrOfIntegers.length == 0){
@@ -81,10 +81,10 @@ public class ArrOperation {
 				countClumps++;
 			}
 		}
-
+		
 		return countClumps;
 	}
-
+	
 	/**
 	 * computes an array where every X is immediately followed by a Y
 	 * @param X
@@ -93,7 +93,7 @@ public class ArrOperation {
 	 * @return newArrayAfterFixXY
 	 * @throws AssertionError
 	 */
-	public static int[] fixXY(int X, int Y, int[] arrOfIntegers) throws AssertionError{
+	public static int[] FixXY(int X, int Y, int[] arrOfIntegers) throws AssertionError{
 		int newArrayAfterFixXY[] = new int[arrOfIntegers.length];
 		if(arrOfIntegers.length == 0){
 			throw new AssertionError("Empty Array Found");
@@ -137,13 +137,13 @@ public class ArrOperation {
 
 		return newArrayAfterFixXY;
 	}
-
+	
 	/**
 	 * Computes the index of the input array where it can be split so that sum on both sides of split index are equal
 	 * @param arrOfIntegers
 	 * @return index
 	 */
-	public static int indexOfSplitArray(int[] arrOfIntegers){
+	public static int IndexOfSplitArray(int[] arrOfIntegers){
 		int index = -1;
 		if(arrOfIntegers.length == 0){
 			throw new AssertionError("Null Array Found");
