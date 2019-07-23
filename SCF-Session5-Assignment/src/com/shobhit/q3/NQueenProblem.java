@@ -32,7 +32,7 @@ public class NQueenProblem {
     			if(positions[i].row== i && positions[i].col ==j)
     				System.out.print(" Q ");
     			else
-    				System.out.print(" x");
+    				System.out.print(" x ");
     		}
     		System.out.println();
     	}
