@@ -10,8 +10,13 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+/**
+ * The test cases for verifying whether HCF and LCM are as expected
+ * @author Shobhit
+ *
+ */
 @RunWith(Parameterized.class)
-public class RecursiveHCF_LCMTest {
+public class RecursiveHCFnLCMTest {
 
 	@Parameters
 	public static Collection<Object[]> data() {
@@ -31,10 +36,10 @@ public class RecursiveHCF_LCMTest {
 	private int firstNumber;
 	private int secondNumber;
 	private int fExpected;
-	private RecursiveHCF_LCM obj1 = new RecursiveHCF_LCM();
+	private RecursiveHCFnLCM obj1 = new RecursiveHCFnLCM();
 
 
-	public RecursiveHCF_LCMTest(int fNumber, int sNumber,int expected) {
+	public RecursiveHCFnLCMTest(int fNumber, int sNumber,int expected) {
 		this.firstNumber = fNumber;
 		this.secondNumber= sNumber;
 		this.fExpected = expected;

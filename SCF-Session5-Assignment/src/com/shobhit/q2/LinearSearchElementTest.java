@@ -10,8 +10,13 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+/**
+ * The test cases for linear search 
+ * @author Shobhit
+ *
+ */
 @RunWith(Parameterized.class)
-public class SearchElementTest {
+public class LinearSearchElementTest {
 	
 	@Parameters
 	public static Collection<Object[]> data() {
@@ -31,7 +36,7 @@ public class SearchElementTest {
 	private SearchElement obj1 = new SearchElement();
 
 
-	public SearchElementTest(int[] arr, int searchitem,int findex, int expected) {
+	public LinearSearchElementTest(int[] arr, int searchitem,int findex, int expected) {
 		this.farr = arr;
 		this.fsearchItem= searchitem;
 		this.findex = findex;

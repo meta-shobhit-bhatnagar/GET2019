@@ -2,6 +2,11 @@ package com.shobhit.q2;
 
 import java.util.*;
 
+/**
+ * The program contains linearSearch and binarySearch 
+ * @author Shobhit
+ *
+ */
 public class Main {
 		public static void main(String[] args){
 			

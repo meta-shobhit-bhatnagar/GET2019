@@ -11,6 +11,12 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+
+/**
+ * The test cases for binary search
+ * @author Shobhit
+ *
+ */
 @RunWith(Parameterized.class)
 public class BinarySearchTest {
 	

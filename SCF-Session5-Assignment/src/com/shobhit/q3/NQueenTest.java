@@ -11,6 +11,11 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+/**
+ * Test case for NQueen problem 
+ * @author Shobhit
+ *
+ */
 @RunWith(Parameterized.class)
 public class NQueenTest {
 	

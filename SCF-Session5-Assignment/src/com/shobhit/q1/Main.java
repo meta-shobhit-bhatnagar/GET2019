@@ -1,10 +1,14 @@
 package com.shobhit.q1;
 
 import java.util.*;
-
+/**
+ * The program comutes HCF and LCM of two numbers using recursion implementation
+ * @author Shobhit
+ *
+ */
 public class Main {
 	public static void main(String[] args){
-		RecursiveHCF_LCM op= new RecursiveHCF_LCM();
+		RecursiveHCFnLCM op= new RecursiveHCFnLCM();
 		Scanner sc =new Scanner(System.in); 
 		
 		System.out.println("Program to calculate HCF and LCM");

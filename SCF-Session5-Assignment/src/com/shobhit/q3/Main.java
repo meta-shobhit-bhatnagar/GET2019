@@ -2,6 +2,10 @@ package com.shobhit.q3;
 
 import java.util.*;
 
+/*
+ * The program is based on the problem set NQueen. It computes whether
+ * it is possible to place say, N queens on an NXN chess board 
+ */
 public class Main {
 
 	public static void main(String[] args){

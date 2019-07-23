@@ -1,5 +1,10 @@
 package com.shobhit.q2;
 
+/**
+ * The class contains methods for searching target value. It contains methods linearSearch and binarySearch
+ * @author Shobhit
+ *
+ */
 public class SearchElement {
 
 	public int linearSearch(int[] arr, int searchItem, int index) {
