@@ -2,7 +2,7 @@ package com.shobhit;
 
 /**
  * The class contains methods to operate on sparse matrices, transpose, addition
- * ,multiplication, checking Symmetric matrix
+ * ,multiplication, checking Symmetric matrix. Time Complexity is O(N^2)
  * @author Shobhit Bhatnagar
  *
  */
@@ -37,7 +37,7 @@ public class SparseMatrix {
 	/**
 	 * Send Us The Value of Non-zero value in A matrix
 	 * @param matrix	The Integer 2-D Array/Matrix in which we have to find 
-	 * the non zero element count.
+	 * the non zero element count.Time complexity is O(N^2)
 	 * @return			The Count of non Zero element in matrix.
 	 */
 	public static int countNonZero(int matrix[][]) {
@@ -82,6 +82,7 @@ public class SparseMatrix {
 	 * @param sparseMatrix	An Sparse matrix
 	 * @param row	Number of rows in Matrix from whom it is converted.
 	 * @param col	Number of column in Matrix from whom it is converted.
+	 *	Time complexity is O(N)
 	 * @return		An 2D Array which is the matrix representation 
 	 * of the compact Sparse matrix
 	 */
@@ -114,7 +115,7 @@ public class SparseMatrix {
 	}
 	
 	/**
-	 * 
+	 * Time complexity is O(N)
 	 * @return	Returns True If the given Sparse Matrix is Symmetrical else False.
 	 */
 	public boolean isSymmetrical() {
@@ -142,7 +143,7 @@ public class SparseMatrix {
 	
 	
 	/**
-	 * 
+	 * Time complexity is O(N^2)
 	 * @param sp	Second Integer matrix to be added in the First Matrix 
 	 * @return		An 2D Integer Array, The Sum of two compact Sparse Matrix. 
 	 */
@@ -182,7 +183,7 @@ public class SparseMatrix {
 	
 	
 	/**
-	 * Returns the number of common row and col of two Sparse Matrix. 
+	 * Returns the number of common row and col of two Sparse Matrix. Time complexity is O(N^2)
 	 * @param array1	First Sparse Matrix, An integer 2D array 
 	 * @param array2	Second Sparse Matrix, An integer 2D array
 	 * @return			Returns the number of common elements that is 
@@ -205,7 +206,7 @@ public class SparseMatrix {
 	/**
 	 *  Returns a 2D Array which is equal to Multiplication of two Sparse Matrix.
 	 *  First matrix of the two matrix to be multiplied is known by this as due 
-	 *  to the reference of first matrix the method is called
+	 *  to the reference of first matrix the method is called. Time complexity is O(N^2)
 	 * @param sp 	The Second Sparse matrix, Of the Two which we have to multiply.
 	 * @return		Returns An 2D Integer Array, Which is Equal to Multiplication of two Sparse Matrix. 	
 	 */
