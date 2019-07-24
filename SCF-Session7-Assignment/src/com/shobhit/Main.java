@@ -14,14 +14,18 @@ public class Main {
 	public static void main(String[] args){
 				
 		System.out.println("Sparse Matrix program");
-		System.out.println("Enter length of row :");
+		
 		int[][] arr=null;
 		int row=0;
 		int col=0;
-		try{
-			row= sc.nextInt();
-			System.out.println("Enter length of column :");
-			col= sc.nextInt();
+		try{	
+			do{
+				System.out.println("Enter length of row :");
+				row= sc.nextInt();
+				System.out.println("Enter length of column :");
+				col= sc.nextInt();
+			}while(r<=0 || c<=0)
+			
 			arr= new int[row][col];
 			for(int i = 0; i<arr.length;i++)
 				for(int j=0; j<arr[i].length;){
@@ -141,12 +145,16 @@ public class Main {
 	 * @return returns SparseMatrix
 	 */
 	public static SparseMatrix  secondMatrix(){
-		System.out.println("Enter length of row :");
+		
 		int[][] arr=null;
 		try{
-			int r= sc.nextInt();
-			System.out.println("Enter length of column :");
-			int c= sc.nextInt();
+			do{
+				System.out.println("Enter length of row :");
+				int r= sc.nextInt();
+				System.out.println("Enter length of column :");
+				int c= sc.nextInt();
+			}while(r<=0 || c<=0)
+			
 			arr= new int[r][c];
 			for(int i = 0; i<arr.length;i++)
 				for(int j=0; j<arr[i].length;){
