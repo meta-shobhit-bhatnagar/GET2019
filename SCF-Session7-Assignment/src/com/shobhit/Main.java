@@ -24,7 +24,7 @@ public class Main {
 				row= sc.nextInt();
 				System.out.println("Enter length of column :");
 				col= sc.nextInt();
-			}while(r<=0 || c<=0)
+			}while(row<=0 || col<=0)
 			
 			arr= new int[row][col];
 			for(int i = 0; i<arr.length;i++)
