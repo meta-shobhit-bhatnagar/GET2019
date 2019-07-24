@@ -8,7 +8,7 @@ import org.junit.Test;
  * @author Shobhit
  *
  */
-public class TestPoly {
+public class TestCasePoly {
 	
 	/**
 	 * It evaluates the polynomial expression when x is supplied with numeric value, if the expression produces 
