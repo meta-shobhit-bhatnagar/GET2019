@@ -19,8 +19,8 @@ public class Main {
 		int row=0;
 		int col=0;
 		try{	
+			System.out.println("Enter positive integer only!");
 			do{
-				System.out.println("Enter positive integer only!");
 				System.out.println("Enter length of row :");
 				row= sc.nextInt();
 				System.out.println("Enter length of column :");
@@ -151,8 +151,8 @@ public class Main {
 		try{
 			int r;
 			int c;
+			System.out.println("Enter positive integer only!");
 			do{
-				System.out.println("Enter positive integer only!");
 				System.out.println("Enter length of row :");
 				r= sc.nextInt();
 				System.out.println("Enter length of column :");
