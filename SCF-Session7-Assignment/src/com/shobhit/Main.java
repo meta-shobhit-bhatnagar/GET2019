@@ -13,18 +13,19 @@ public class Main {
 	private static Scanner sc= new Scanner(System.in);
 	public static void main(String[] args){
 				
-		System.out.println("Sparse Matrix program");
+		System.out.println("Sparse Matrix program\n");
 		
 		int[][] arr=null;
 		int row=0;
 		int col=0;
 		try{	
 			do{
+				System.out.println("Enter positive integer only!");
 				System.out.println("Enter length of row :");
 				row= sc.nextInt();
 				System.out.println("Enter length of column :");
 				col= sc.nextInt();
-			}while(row<=0 || col<=0)
+			}while(row<=0 || col<=0);
 			
 			arr= new int[row][col];
 			for(int i = 0; i<arr.length;i++)
@@ -148,12 +149,15 @@ public class Main {
 		
 		int[][] arr=null;
 		try{
+			int r;
+			int c;
 			do{
+				System.out.println("Enter positive integer only!");
 				System.out.println("Enter length of row :");
-				int r= sc.nextInt();
+				r= sc.nextInt();
 				System.out.println("Enter length of column :");
-				int c= sc.nextInt();
-			}while(r<=0 || c<=0)
+				c= sc.nextInt();
+			}while(r<=0 || c<=0);
 			
 			arr= new int[r][c];
 			for(int i = 0; i<arr.length;i++)

@@ -10,7 +10,10 @@ import org.junit.Test;
  */
 public class SparseMatrixTestCase {
 	
-	
+	/**
+	 * This test case is not part of problem.
+	 * It produces compact sparse matrix internally and .getMatrix() returns the normal matrix
+	 */
 	@Test
 	public void SparseMatrixTest1 () {
 		
@@ -22,6 +25,9 @@ public class SparseMatrixTestCase {
 				
 	}
 
+	/**
+	 * adds 2 sparse matrices and checks if expected addition is correct
+	 */
 	@Test
 	public void SparseMatrixTest2 () {
 		
@@ -35,6 +41,9 @@ public class SparseMatrixTestCase {
 		assertArrayEquals(matrix3,sp1.addMatrix(sp2));		//adding two matrices
 	}
 	
+	/**
+	 * The test case verifies if the sparse matrix supplies is symmetrical or not
+	 */
 	@Test
 	public void SparseMatrixTest3 () {
 		
@@ -44,6 +53,9 @@ public class SparseMatrixTestCase {
 		assertTrue(sp1.isSymmetrical());			//checks whether matrix is symmetrical	
 	}
 	
+	/**
+	 * gets the transpose of the sparse matrix 
+	 */
 	@Test
 	public void SparseMatrixTest4 () {
 		
@@ -55,6 +67,9 @@ public class SparseMatrixTestCase {
 		assertArrayEquals(matrix2,sp1.getTranspose());			//checks the transpose of the matrix	
 	}
 	
+	/**
+	 * multiplies two sparse matrices
+	 */
 	@Test
 	public void SparseMatrixTest5 () {
 		
