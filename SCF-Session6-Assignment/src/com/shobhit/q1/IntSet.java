@@ -78,67 +78,40 @@ public final class IntSet {
  * @param s2 of IntSet class
  * @return
  */
-	public int[] union(IntSet s1, IntSet s2){
-		Arrays.sort(s1.array);
-		Arrays.sort(s2.array);
-		IntSet unionSet;
+	
+	
+	public int[] union(IntSet set1, IntSet set2) {
 		
-		ArrayList<Integer> unionArr= new ArrayList<Integer>();
-		if(s1.size==0){
-			unionSet= s2;
-		}else if(s2.size==0)
-			unionSet= s2;
-		else{
+		int addedLength=0;
+		for(int index1 = 0; index1 < set2.size; index1++)
+			if(!set1.isMember(set2.array[index1]))
+				addedLength++;
 			
-			int i=0,j=0;
-			
-			while(i< s1.size && j<s2.size){
-				if(s1.array[i] < s2.array[j]){
-					unionArr.add(Integer.valueOf(s1.array[i]));
-					i++;					
-				}else if(s1.array[i] > s2.array[j]){
-					unionArr.add(Integer.valueOf(s2.array[j]));
-					j++;
-				}else{
-					unionArr.add(Integer.valueOf(s1.array[i]));
-					i++;
-					j++;
-				}				
-			}
-			
-			if(i< s1.size){
-				for(;i<s1.size; i++)
-					unionArr.add(Integer.valueOf(s1.array[i]));
-			}
-			
-			if(j< s2.size){
-				for(;j<s2.size; j++)
-					unionArr.add(Integer.valueOf(s2.array[j]));
-			}			
+		int [] array = new int[set1.size + addedLength];
+		int index = 0;
+		for(int index1 = 0; index1 < set1.size; index1++) {
+			array[index] = set1.array[index1];
+			index++;
 		}
-		int[] result = new int[unionArr.size()];
-	    Iterator<Integer> iterator = unionArr.iterator();
-	    for (int i = 0; i < result.length; i++)
-	    {
-	        result[i] = iterator.next().intValue();
-	    }
-	    
-	    unionSet  = new IntSet(result);
-	    
-//	    return unionSet;
-	    return result;
+		for(int index1 = 0; index1 < set2.size; index1++) {
+			if(!set1.isMember(set2.array[index1])) {
+				array[index] = set2.array[index1];
+				index++;
+			}
+		}
+		return array;
 	}
 	
+		
 /**
  * 	This computes if the set passed as parameter is a subset of object
  * @param s1
  * @return returns true if it's a subset otherwise false
  */
 	public boolean isSubset(IntSet s1){
-		int [] s1Arr= new int[s1.size];
-		
-		for(int i=0; i<s1Arr.length; i++){
-			if(!isMember(s1Arr[i])){
+				
+		for(int i=0; i<s1.array.length; i++){
+			if(!isMember(s1.array[i])){
 				return false;
 			}				
 		}
@@ -153,11 +126,12 @@ public final class IntSet {
 		int[] complementArr= new int[1000- this.size];
 		
 		Arrays.sort(this.array);
-		for(int i=1; i<=1000; i++){
-			if(i== this.array[i])
-				i++;
-			else
-				complementArr[i]= i;
+		int index=0;
+		for(int i=1; i<= 1000; i++){
+			if(!this.isMember(i)){
+				complementArr[index] = i;
+				index++;
+			}	
 		}
 		IntSet complementSet = new IntSet(complementArr);
 //		return complementSet;
