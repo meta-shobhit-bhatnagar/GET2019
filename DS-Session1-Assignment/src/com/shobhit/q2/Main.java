@@ -19,13 +19,13 @@ public class Main {
 
 				switch(choice){
 				case 1: 
-					System.out.println("Insert node... ");
-					llistRef= insertNode(sc);
+					System.out.println("Inserting nodes... ");
+					llistRef= insertNode();
 					break;
 				case 2:
 					System.out.println("Detect a loop ");
 					DetectLoop isLoop= new DetectLoop();
-					if(!isLoop.foundLoop()){
+					if(!isLoop.foundLoop(llistRef.head)){
 						System.out.println("Loop not found");
 						llistRef.printList();
 					}						
@@ -47,33 +47,20 @@ public class Main {
 	}
 
 	public static void printInstructions(){
-		System.out.println("\n1.Insert a new node");
-		System.out.println("2.To rotate a sublist of linkedList");
-		System.out.println("3.Print the list");
+		System.out.println("\n1.Insert auto-generated nodes");
+		System.out.println("2.Detect loop in link list");	
 	}
 	
-	public static LinkedList insertNode(Scanner sc){
-		int entry,count=1;
+	public static LinkedList insertNode(){
+		
 		LinkedList llist= new LinkedList();
-		System.out.println("Enter "+ " node value "+count);
-		llist.head= new LinkedList.Node(sc.nextInt());
-		do{
-			try{
-				System.out.println("Enter node value "+(count+1) );
-				System.out.println("....Enter 911 to terminate linked list" );
-				entry= sc.nextInt();
-				if(entry== 911)
-					break;
-				llist.append(entry);
-				count++;
-			}
-			catch(InputMismatchException e){
-				System.out.println("Enter integer only!");
-				entry=-1;
-				sc.nextLine();
-			}
-			
-		}while(entry!= -2);
+		llist.head= new LinkedList.Node(2);							//Linked list is assumed fixed 2-> 3-> 4-> 5-> 6
+		llist.append(3);
+		llist.append(4);
+		llist.append(5);
+		llist.append(6);
+		llist.head.next.next.next.next.next= llist.head.next;				//6-> 3 
+		
 		
 		return llist;
 		

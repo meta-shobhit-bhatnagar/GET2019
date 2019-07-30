@@ -49,6 +49,7 @@ public class Main {
 	public static LinkedList insertNode(Scanner sc){
 		int entry,count=1;
 		LinkedList llist= new LinkedList();
+		
 		System.out.println("Enter "+ " node value "+count);
 		llist.head= new LinkedList.Node(sc.nextInt());
 		do{
