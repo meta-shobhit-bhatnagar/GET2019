@@ -18,19 +18,12 @@ public class LinkedListTest {
 		list.append(4);
 		list.append(5);
 		list.append(6);
-		list.rotateSubList(2, 5, 2);
+		list.rotateSubList(2, 5, 2);		
 		
+		int[] expectedArr= {2, 5, 6, 3, 4};		
 		
-		LinkedList expectedList= new LinkedList();
-		expectedList.head= new LinkedList.Node(2);							//Linked list is assumed  2-> 3-> 4-> 5-> 6->2
-		expectedList.append(5);
-		expectedList.append(6);
-		expectedList.append(3);
-		expectedList.append(4);
-		
-		for(int index = 0; index < list.size(); index++){
-		assertEquals(expectedList.get(index).data, list.get(index).data);
-		}
+		assertArrayEquals(expectedArr, list.convertListToArray(list));
+	
 	}
 
 }

@@ -104,6 +104,20 @@ public class LinkedList {
 		
 		
 	}
+	/**
+	 * This method converts integer list data into an integer Array
+	 * @param list list which will be operated
+	 * @return Integer Array of list data
+	 */
+	public int[] convertListToArray(LinkedList list){
+		int arr[] = new int[list.size()];
+		Node tempHead = list.head;
+		for(int i=0; i<arr.length;i++){
+			arr[i] = tempHead.data;
+			tempHead = tempHead.next;
+		}
+		return arr;
+	}
 	
 	/**
 	 * Give us the size of linked list.
@@ -119,19 +133,5 @@ public class LinkedList {
 		return count;
 	}
 	
-	/**
-	 * Get the node of given index of linked list.
-	 * @param index		An integer value, the index of which node you want to get of linked list.
-	 * @return		A Node type Object
-	 */
-	public Node get(int index){
-		int count = 0;
-		Node node = head;
-		while(count < index){
-			node = node.next;
-			count++;
-		}
-		return node;
-	}
 	
 }
