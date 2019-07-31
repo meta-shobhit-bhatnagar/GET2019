@@ -18,7 +18,7 @@ public class LinkedListTest {
 		list.append(4);
 		list.append(5);
 		list.append(6);
-		list.subListRotate(2, 5, 2);
+		list.rotateSubList(2, 5, 2);
 		
 		
 		LinkedList expectedList= new LinkedList();
@@ -28,7 +28,9 @@ public class LinkedListTest {
 		expectedList.append(3);
 		expectedList.append(4);
 		
-		assertEquals(expectedList, list);
+		for(int index = 0; index < list.size(); index++){
+		assertEquals(expectedList.get(index).data, list.get(index).data);
+		}
 	}
 
 }

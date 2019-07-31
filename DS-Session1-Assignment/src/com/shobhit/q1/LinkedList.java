@@ -9,12 +9,17 @@ public class LinkedList {
 	//Nested class, static 
 	
 	public static class Node{
+		
 		int data;
 		public Node next;
 		
 		public Node(int d){
 			data=d;
 			next=null;
+		}
+		
+		public int getData() {
+			return data;
 		}
 	}
 	
@@ -65,7 +70,7 @@ public class LinkedList {
 	 * @param rIndex right index of the sublist
 	 * @param n the no. of rotations for the sublist
 	 */
-	public void subListRotate(int lIndex, int rIndex, int n){
+	public void rotateSubList(int lIndex, int rIndex, int n){
 		int count=1;
 		n= n%(rIndex- lIndex +1);
 		Node tNode= head,tNodeLeft=null, tNodeRight=null,linkNode=null;
@@ -98,6 +103,35 @@ public class LinkedList {
 		
 		
 		
+	}
+	
+	/**
+	 * Give us the size of linked list.
+	 * @return	An integer value, Return the size of Linked List.
+	 */
+	public int size(){
+		int count = 0;
+		Node node = head;
+		while(node != null){
+			node = node.next;
+			count++;
+		}
+		return count;
+	}
+	
+	/**
+	 * Get the node of given index of linked list.
+	 * @param index		An integer value, the index of which node you want to get of linked list.
+	 * @return		A Node type Object
+	 */
+	public Node get(int index){
+		int count = 0;
+		Node node = head;
+		while(count < index){
+			node = node.next;
+			count++;
+		}
+		return node;
 	}
 	
 }

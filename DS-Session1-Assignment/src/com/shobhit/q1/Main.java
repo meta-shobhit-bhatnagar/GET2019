@@ -96,7 +96,7 @@ public class Main {
 				int rIndex= sc.nextInt();
 				System.out.println("Enter N, no.of rotations for the subList");
 				int N= sc.nextInt();
-				llistRef.subListRotate(lIndex, rIndex, N);
+				llistRef.rotateSubList(lIndex, rIndex, N);
 				break;
 			}catch(InputMismatchException e){
 				System.out.println("Enter integer only!");
