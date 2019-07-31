@@ -4,6 +4,11 @@ import java.util.*;
 import com.shobhit.q1.LinkedList;
 import com.shobhit.q2.DetectLoop;
 
+/**
+ * This class contains the main method for generating polynomial
+ * @author Shobhit
+ * Dated 07/30/2019
+ */
 public class Main {
 	public static void  main(String[] args){
 		

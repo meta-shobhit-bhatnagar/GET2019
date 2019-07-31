@@ -1,9 +1,12 @@
 package com.shobhit.q1;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
-
-
+/**
+ * The main method contains the UI for substring generation and furthur its output after
+ * rotations
+ * @author Shobhit
+ *
+ */
 public class Main {
 	public static void main(String[] args){
 		
@@ -39,13 +42,19 @@ public class Main {
 		}while(choice!=5);
 	}
 	
-	
+	/**
+	 * Prints instructions for the user
+	 */
 	public static void printInstructions(){
 		System.out.println("\n1.Insert a new node");
 		System.out.println("2.To rotate a sublist of linkedList");
 		System.out.println("3.Print the list");
 	}
-	
+	/**
+	 * The function creates a link list by inserting nodes
+	 * @param sc
+	 * @return
+	 */
 	public static LinkedList insertNode(Scanner sc){
 		int entry,count=1;
 		LinkedList llist= new LinkedList();
@@ -72,7 +81,12 @@ public class Main {
 		return llist;
 		
 	}
-	
+	/**
+	 * The method is a helper method to subListRotate(), asks user to input
+	 * leftIndex, rightIndex and N, the no. of rotations
+	 * @param llistRef is a object reference to LinkedList type
+	 * @param sc Scanner object
+	 */
 	public static void subList(LinkedList llistRef, Scanner sc){
 		do{
 			try{

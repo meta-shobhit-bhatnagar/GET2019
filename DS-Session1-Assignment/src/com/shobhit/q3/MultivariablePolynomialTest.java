@@ -9,6 +9,11 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * This class tests the methods of MultivariablePolynomial class
+ * @author Shobhit
+ * Dated 07/30/2019
+ */
 public class MultivariablePolynomialTest {
 
 List<Term> termList = new ArrayList<>();

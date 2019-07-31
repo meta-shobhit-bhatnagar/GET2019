@@ -2,6 +2,11 @@ package com.shobhit.q2;
 
 import com.shobhit.q1.LinkedList;
 
+/**
+ * The class contains method for detecting loop in a linked list
+ * @author Shobhit
+ *
+ */
 public class DetectLoop extends LinkedList{
 	
 	public boolean foundLoop(Node head){

@@ -4,7 +4,12 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.shobhit.q1.LinkedList;
-
+/**
+ * This is the main method from where the program begins execution.
+ * It contains user interface for generating linked list conaining loop
+ * @author Shobhit
+ *
+ */
 public class Main {
 	public static void main(String[] args){
 		Scanner sc= new Scanner(System.in);
@@ -46,11 +51,17 @@ public class Main {
 		}while(choice!=3);
 	}
 
+	/**
+	 * It will display instructions on screen
+	 */
 	public static void printInstructions(){
 		System.out.println("\n1.Insert auto-generated nodes");
 		System.out.println("2.Detect loop in link list");	
 	}
-	
+	/**
+	 * The method to reate a circular linked list
+	 * @return
+	 */
 	public static LinkedList insertNode(){
 		
 		LinkedList llist= new LinkedList();

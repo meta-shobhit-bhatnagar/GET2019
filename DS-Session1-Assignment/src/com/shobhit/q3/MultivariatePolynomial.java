@@ -2,15 +2,27 @@ package com.shobhit.q3;
 
 import java.util.*;
 
+/**
+ * This class represents a multivariable polynomial using nested lists of its terms and powers of variable
+ * @author Shobhit
+ * Dated 07/30/2019
+ */
 public class MultivariatePolynomial {
 	
 	
 	public List<Term> polynomialTerms= new ArrayList<>();
 	
+	/**
+	 * Constructor for multivariable polynomial
+	 */
 	public MultivariatePolynomial(List<Term> terms){
 		this.polynomialTerms= terms;
 	}
 	
+	/**
+	 * Method to calculate the degree of the multivariable polynomial
+	 * @return int degree of the multivariable polynomial
+	 */
 	public int calculatePolynomialDegree()
 	{
 		int variablePowerSum;
@@ -28,7 +40,10 @@ public class MultivariatePolynomial {
 		return degreeOfPolynomial;
 	}
 	
-	
+	/**
+	 * The method represents the Multivariable polynomial into string format for better readability
+	 * @return {String} Multivariable Polynomial
+	 */
 	public String toString(){
 		
 		String polynomial= new String("");

@@ -59,7 +59,12 @@ public class LinkedList {
             tempNode = tempNode.next; 
 		}
 	}
-	
+	/**
+	 * The function rotates the sublist by n rotations
+	 * @param lIndex left index of the sublist
+	 * @param rIndex right index of the sublist
+	 * @param n the no. of rotations for the sublist
+	 */
 	public void subListRotate(int lIndex, int rIndex, int n){
 		int count=1;
 		n= n%(rIndex- lIndex +1);
@@ -76,7 +81,7 @@ public class LinkedList {
 					tNodeLeft= head;
 					head= linkNode.next;
 					linkNode.next= tNodeRight.next;
-					tNodeRight.next= tNodeLeft.next;
+					tNodeRight.next= tNodeLeft;
 					break;
 				}else{
 					Node tempNode= linkNode.next;
