@@ -11,9 +11,9 @@ public class MainDriver {
 
 		ReadExcel r1 = new ReadExcel();
 
-		r1.readStudentList("C:\\Users\\Shobhit\\Downloads\\StudentList.xls");
+		r1.readStudentList("C:\\Users\\Shobhit\\Desktop\\GIT\\GET2019\\DS-Session2-Assignment\\src\\com\\shobhit\\q3\\StudentList.xls");
 
-		r1.readProgramList("C:\\Users\\Shobhit\\Downloads\\ProgramList.xls");
+		r1.readProgramList("C:\\Users\\Shobhit\\Desktop\\GIT\\GET2019\\DS-Session2-Assignment\\src\\com\\shobhit\\q3\\ProgramList.xls");
 
 		AllocateProgram a1 = new AllocateProgram();
 

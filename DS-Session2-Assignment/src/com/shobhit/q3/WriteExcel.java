@@ -18,7 +18,7 @@ public class WriteExcel {
 		AllocateProgram  result = new  AllocateProgram ();		
 		int i = 0;
 		try {
-			WritableWorkbook workbook = Workbook.createWorkbook(new File("C:\\Users\\Shobhit\\Downloads\\Result.xls"));
+			WritableWorkbook workbook = Workbook.createWorkbook(new File("C:\\Users\\Shobhit\\Desktop\\GIT\\GET2019\\DS-Session2-Assignment\\src\\com\\shobhit\\q3\\Result.xls"));
 			WritableSheet workbookSheet = workbook.createSheet("sheet1", 0);
 			int j;
 			for (j = 0; j < result.getStudentAllocate().size(); j++) {

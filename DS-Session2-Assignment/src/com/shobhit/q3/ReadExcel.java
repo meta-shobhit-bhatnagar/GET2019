@@ -28,7 +28,6 @@ public class ReadExcel {
 
 	public void readStudentList(String n) throws IOException  {
 		setInputFile(n);
-		File inputWorkbook = new File(inputFile);
 		Workbook workbook;
 		Student s;
 
@@ -62,7 +61,6 @@ public class ReadExcel {
 
 	public void readProgramList(String n) throws IOException  {
 		setInputFile(n);
-		File inputWorkbook = new File(inputFile);
 		Workbook workbook2;
 		Program p;
 		try {
