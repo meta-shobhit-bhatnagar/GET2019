@@ -6,10 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/bhavnagupta/GET2019/DS-Session2-Assignment/src/com/shobhit/q3/jxl.jar">
-		<attributes>
-			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="DS-Session2-Assignment/src/com/shobhit/q3"/>
-		</attributes>
-	</classpathentry>
+	<classpathentry kind="lib" path="lib/jxl.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
