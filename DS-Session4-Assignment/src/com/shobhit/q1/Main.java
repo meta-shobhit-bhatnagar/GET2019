@@ -1,5 +1,11 @@
 package com.shobhit.q1;
 
+/**
+ * Driver main method which adds employees to user defined Collections in Java and without 
+ * duplicate ID's only
+ * @author Shobhit
+ *
+ */
 public class Main {
 
 	public static void main(String[] args) {
@@ -12,7 +18,8 @@ public class Main {
 		e.addEmployee(new Employee(1,"Vijay","Morar, Gwalior"));
 		e.addEmployee(new Employee(5,"Rajneesh","L.A, California"));
 
-		e.employeeSortedOrder();
+		e.employeeSortOnId();
+		e.employeeSortOnName();
 	}
 
 }

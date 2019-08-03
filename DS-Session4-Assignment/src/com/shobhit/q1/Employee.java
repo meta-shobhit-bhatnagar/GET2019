@@ -1,5 +1,10 @@
 package com.shobhit.q1;
 
+/**
+ * Employee class which contains Constructor and getter methods
+ * @author Shobhit
+ *
+ */
 public class Employee {
 	int id;
 	String name;
@@ -16,7 +21,10 @@ public class Employee {
 		this.name = empName;
 		this.address = address;
 	}
-
+	/**
+	 * Getter for Employee name
+	 * @return
+	 */
 	public String getName() {
 		return name;
 	}

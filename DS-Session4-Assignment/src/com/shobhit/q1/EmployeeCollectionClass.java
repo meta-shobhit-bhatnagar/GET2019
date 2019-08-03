@@ -5,6 +5,12 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
+/**
+ * The class contains functions to add Employee details in the Collection<Employee> and 
+ * remove any duplicate entries by id
+ * @author Shobhit
+ *
+ */
 public class EmployeeCollectionClass {
 	
 	List<Employee> empCollection= new ArrayList<Employee>();
@@ -17,20 +23,25 @@ public class EmployeeCollectionClass {
 			System.out.println("Employee already exists");
 	}
 	
-	void employeeSortedOrder(){
+	/**
+	 * sorts employees on the basis of their ID's
+	 */
+	void employeeSortOnId(){
 		Collections.sort(empCollection , new sortOnId());
 		System.out.println();
 		for(Employee Iterator :empCollection)
 			System.out.println(Iterator.id);
-		
-		System.out.println();
-		
+	}
+	
+	/**
+	 * sorts employees on the basis of their names
+	 */
+	void employeeSortOnName(){
 		Collections.sort(empCollection,new sortOnName());
 		for(Employee Iterator :empCollection)
 			System.out.println(Iterator.getName());
+		
 	}
-	
-	
 	
 	
 }
