@@ -2,6 +2,7 @@ package com.shobhit.q1;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
@@ -17,11 +18,39 @@ public class EmployeeTestCase {
 		EmployeeCollectionClass eObject = new EmployeeCollectionClass();
 		eObject.addEmployee(new Employee(13,"Twinkle","Gandhi Marg, Jaipur"));
 		eObject.addEmployee(new Employee(3,"Rajesh","Plot-21, C.P Colony, Ghaziabad"));
-		eObject.addEmployee(new Employee(10,"Ramesh","Shashtri Colony, Golkonda"));
+		eObject.addEmployee(new Employee(10,"Ramesh","Shashtri Colony, Hyderabad"));
 		 
+		List<Employee> expectedResult= new ArrayList<Employee>();
+		expectedResult.add(new Employee(3,"Rajesh","Plot-21, C.P Colony, Ghaziabad"));
+		expectedResult.add(new Employee(10,"Ramesh","Shashtri Colony, Hyderabad"));
+		expectedResult.add(new Employee(13,"Twinkle","Gandhi Marg, Jaipur"));
+		
 		eObject.employeeSortOnId();
-		Employee Iterator= eObject Iterator();
-		assertEquals("Rajesh", eObject.Iterator().next.getName());
-		assertEquals("Ramesh", employeeList.get(1).getName());
+		
+		for (int i = 0; i < expectedResult.size(); i++) {
+			assertEquals(expectedResult.get(i).getId(), eObject
+					.empCollectionList.get(i).getId());
+		}
+	}
+	
+	@Test
+	public void testEmployeeAlreadyExists(){
+		EmployeeCollectionClass eObject = new EmployeeCollectionClass();
+		eObject.addEmployee(new Employee(13,"Twinkle","Gandhi Marg, Jaipur"));
+		eObject.addEmployee(new Employee(3,"Rajesh","Plot-21, C.P Colony, Ghaziabad"));
+		eObject.addEmployee(new Employee(10,"Ramesh","Shashtri Colony, Hyderabad"));
+		eObject.addEmployee(new Employee(13,"Twinkle","Gandhi Marg, Jaipur"));
+		
+		List<Employee> expectedResult= new ArrayList<Employee>();
+		expectedResult.add(new Employee(3,"Rajesh","Plot-21, C.P Colony, Ghaziabad"));
+		expectedResult.add(new Employee(10,"Ramesh","Shashtri Colony, Hyderabad"));
+		expectedResult.add(new Employee(13,"Twinkle","Gandhi Marg, Jaipur"));
+		
+eObject.employeeSortOnId();
+		
+		for (int i = 0; i < expectedResult.size(); i++) {
+			assertEquals(expectedResult.get(i).getId(), eObject
+					.empCollectionList.get(i).getId());
+		}
 	}
 }
