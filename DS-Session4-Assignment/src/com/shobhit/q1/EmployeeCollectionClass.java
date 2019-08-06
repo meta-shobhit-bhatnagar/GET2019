@@ -28,7 +28,7 @@ public class EmployeeCollectionClass {
 	 * sorts employees on the basis of their ID's
 	 */
 	void employeeSortOnId(){
-		Collections.sort(empCollectionList , new sortOnId());
+		Collections.sort(empCollectionList , new SortOnId());
 		System.out.println();
 		for(Employee Iterator :empCollectionList)
 			System.out.println(Iterator.id);
@@ -38,7 +38,7 @@ public class EmployeeCollectionClass {
 	 * sorts employees on the basis of their names
 	 */
 	void employeeSortOnName(){
-		Collections.sort(empCollectionList,new sortOnName());
+		Collections.sort(empCollectionList,new SortOnName());
 		for(Employee Iterator :empCollectionList)
 			System.out.println(Iterator.getName());
 		

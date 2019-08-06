@@ -3,7 +3,11 @@ package com.shobhit.q3;
 import java.util.HashMap;
 import java.util.Stack;
 
-
+/**
+ * The class contains methods to calculate molecular weight of a molecular compound
+ * @author Shobhit
+ *
+ */
 public class MolecularWeight {
 
 		//map for molecules mass
@@ -11,6 +15,9 @@ public class MolecularWeight {
 		//stack for compound
 		Stack<String> stack = new Stack<String>();
 
+		/**
+		 * Constructor for Molecular Weight
+		 */
 		public MolecularWeight() {
 			//put mass of molecules
 			molecules.put('C', 12);
@@ -18,6 +25,7 @@ public class MolecularWeight {
 			molecules.put('H', 1);
 		}
 		/**
+		 * function to calculate Molecular weight when compound formula is passed as String
 		 * @param compound for mass calculation
 		 * @return mass of compound
 		 */
