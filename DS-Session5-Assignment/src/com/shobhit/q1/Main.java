@@ -3,7 +3,7 @@ package com.shobhit.q1;
 public class Main {
 	public static void main(String args[]) {
 
-		String filePath = "C:\\Users\\Shobhit\\Desktop\\GIT\\GIT2019\\DS-Session5-Assignment\\src\\com\\shobhit\\q1\\pairs.json";
+		String filePath = "pairs.json";
 
 		BST bst = new BST(filePath);
 
