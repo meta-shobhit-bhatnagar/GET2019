@@ -39,13 +39,14 @@ public class BST implements DictionaryInterface {
 				Object object = parser.parse(new FileReader(filepath));
 				JSONArray listOfObjects = (JSONArray) object;
 				Iterator<JSONObject> itr = listOfObjects.iterator();
-
+				System.out.println("Json file output...");
 				while (itr.hasNext()) {
 					JSONObject obj = itr.next();
 					Node node = new Node(Integer.parseInt((String) obj.get("key")),
 							(String) obj.get("value"));
 
-					System.out.println(node.getKey() + "  :  " + node.getValue());
+					System.out.format("%5d%2s%10s",node.getKey() , "  :  " , node.getValue());
+					System.out.println();
 					this.add(node, root);
 				}
 
@@ -183,7 +184,7 @@ public class BST implements DictionaryInterface {
 
 			if (root != null) {
 				sortedList(root.left);
-				sortedListValues.add(root);
+				sortedListValues.add(root);							//InOrder Traversal
 				sortedList(root.right);
 			}
 		}

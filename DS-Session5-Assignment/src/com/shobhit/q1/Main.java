@@ -16,7 +16,7 @@ public class Main {
 
 		System.out.println("Sorted List***************************** After Deletion");
 
-		Node objdel1 = bst.delete(45, bst.root);
+		bst.delete(45, bst.root);														//key 45 to be deleted
 
 		bst.sortedList(bst.root);
 
@@ -32,10 +32,7 @@ public class Main {
 		if (objsearch == null)
 			System.out.println("Given key is not found.. Wrong input key!!.. So null value returned!!..");
 		else
-			System.out.println(objsearch);
-
-		System.out.println("Sorted*****************************List");
-		bst.sortedList(bst.root);
+			System.out.println("Key found! " + objsearch);
 
 		System.out.println("Sorted list of the Dictionary according to Key is:");
 		for (int i = 0; i < bst.sortedListValues.size(); i++) {
