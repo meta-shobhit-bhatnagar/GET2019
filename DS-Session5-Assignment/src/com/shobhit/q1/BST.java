@@ -142,6 +142,7 @@ public class BST implements DictionaryInterface {
 				if (root.left != null && root.right != null) {
 					Node node = findMin(root.right);
 					root.setKey(node.getKey());
+					root.setValue(node.getValue());
 					return root;
 				}
 			}

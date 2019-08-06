@@ -7,7 +7,7 @@ public class Main {
 
 		BST bst = new BST(filePath);
 
-		Node obj3 = new Node(3, "Ram");
+		Node obj3 = new Node(3, "Seeta");
 		Node obj4 = new Node(4, "Komal");
 
 		// Adding nodes to the BST.
@@ -16,7 +16,7 @@ public class Main {
 
 		System.out.println("Sorted List***************************** After Deletion");
 
-		bst.delete(45, bst.root);														//key 45 to be deleted
+		bst.delete(11, bst.root);														//key 45 to be deleted
 
 		bst.sortedList(bst.root);
 
