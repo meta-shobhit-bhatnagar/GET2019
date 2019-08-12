@@ -6,8 +6,7 @@ import org.junit.Test;
 
 public class ZooTest {
 
-	
-	/**
+    /**
      * test for adding zones in the zoo
      */
     @Test
@@ -90,7 +89,7 @@ public class ZooTest {
         zoo.addZone(AnimalFamily.MAMMAL, 2, true, true);
         zoo.addCage(AnimalName.LION, 3);
         zoo.addCage(AnimalName.LION, 3);
-        zoo.addCage(AnimalName.LION, 3);		; //Negative Test Case: adding the third cage when capacity of zone is two
+        zoo.addCage(AnimalName.LION, 3);		//Negative Test Case: adding the third cage when capacity of zone is two
     }
     
     
