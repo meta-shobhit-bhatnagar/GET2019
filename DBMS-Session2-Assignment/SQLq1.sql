@@ -3,6 +3,7 @@ CREATE DATABASE store_front;
 show databases;
 USE store_front;
 show tables;
+-- select database();
 
 -- DROP TABLE user;
 -- DROP TABLE admin;
@@ -111,6 +112,7 @@ CREATE TABLE ordertable(
     FOREIGN KEY(address_id) REFERENCES address(address_id)
      ON DELETE CASCADE
 );
+
 CREATE TABLE ordersItem(
     status VARCHAR(30) NOT NULL DEFAULT "IN PROCESS",
     orderid INT,

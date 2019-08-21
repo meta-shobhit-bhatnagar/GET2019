@@ -1,4 +1,5 @@
 show tables;
+
 /* 15 enteries of user table */
 INSERT INTO user(userId, name, password, email) 
               VALUES(11,"Shobhit", "9660360364429","shobhit@gmail.com"),
@@ -22,7 +23,7 @@ INSERT INTO user(userId, name, password, email)
 /* display user table*/
 SELECT * FROM user;
 
-/* 10 enteries of shopper table which also link with user table by shopper_id */
+/* 10 enteries of shopper table which are linked to user table by shopper_id */
 INSERT INTO shopper(shopper_id, phone_no, sex) 
                     VALUES(11,966036442,"male"),
                     (12,966036441,"male"),
@@ -38,20 +39,19 @@ INSERT INTO shopper(shopper_id, phone_no, sex)
 /* display shopper table*/
 SELECT * FROM shopper;
 
-/* entries Address of users */
-
+/* Address entries of shoppers */
 INSERT INTO address(street, district, state, pincode, shopper_id)
             VALUES("Anantpura","Jaipur", "Rajasthan", 323507, 11),
             ("JAITPURA","Jaipur", "Rajasthan", 323502, 11),
             ("RAJA PARK","Jaipur", "Rajasthan",323206, 12),
             ("SITAPURA","Jaipur", "Rajasthan", 323509,13),
             ("Anantpura","kota", "Rajasthan", 323521,14),
-            ("hello","jodhpur", "Rajasthan",3235377, 15),
-            ("malviya nagar","Jaipur", "Rajasthan",323624, 16),
+            ("Jamdoli","jodhpur", "Rajasthan",3235377, 15),
+            ("Malviya nagar","Jaipur", "Rajasthan",323624, 16),
             ("RAJA PARK","ajmer", "Rajasthan",323563, 17),
             ("RAJA PARK","alwar", "Rajasthan",323573, 18),
             ("Shastri nagar","Jaipur", "Rajasthan",323519, 19),
-            ("Mansarover","Jaipur", "Rajasthan",323787, 20);
+            ("Mansarovar","Jaipur", "Rajasthan",323787, 20);
 
 /* Display address of shoppers*/
 select * from address;
@@ -71,8 +71,8 @@ INSERT INTO category(id,name, parent_id)
                         (2,"Appreal",NULL),
                         (3,"Mobile",1),
                         (4,"TV",1),
-                        (5,"Men's",2),
-                        (6,"Women's",2),
+                        (5,"Men's wear",2),
+                        (6,"Women's wear",2),
                         (7,"Apple",3),
                         (8,"Nokia",3),
                         (9,"MI",3);
@@ -81,8 +81,8 @@ SELECT * FROM  category;
 
 -- DELETE FROM category;
 describe category;
-/*display categories with parent category using Self Join*/
 
+/*display categories with parent category name using Self Join*/
 SELECT A.id as categoryId, A.name as CategoryName, IFNULL(B.name, 'Top Category') as ParentCategory
 FROM category A
 LEFT JOIN category B
@@ -90,7 +90,7 @@ ON A.parent_id = B.id;
 
 
 
-/* inserting 14 products with diffrent diffrent category with price */
+/* inserting 14 products with diffrent different category along with price */
 INSERT INTO product(product_id, price, name, description, category_id,date) 
                         Values(101, 15000 ,"Nokia 6.1 plus","Android phone with 6 inch screen", 8 , "2019-08-16"),
                         (102, 25000 ,"iphone 5s","4 Gb Ram and 64 gb storage", 7, "2019-08-10"),
@@ -146,39 +146,38 @@ SELECT * FROM stock;
 
 
 /* Display Id, Title, Category Title, Price of the products which are Active and recently added products should be at top. */
-SELECT A.product_id as Id, A.description as Title, B.name as Category, A.price as Price
+SELECT A.product_id as Id, A.name as Title, B.name as Category, A.price as Price, A.date as Date_added
 From product A
 LEFT JOIN category B
-ON A.category_id = B.id;
+ON A.category_id = B.id
+ORDER BY A.date DESC;
 
-/* Display the list of products which don't have any images */
-SELECT DISTINCT A.product_id as Id, A.name as Name
-From product A
-INNER JOIN image B
-ON A.product_id = B.product_id;
+-- Display the list of products which don't have any images
+SELECT * FROM product 
+WHERE product.product_id NOT IN(
+        SELECT image.product_id FROM image)  ;
 
-/* Display all Id, Title and Parent Category Title for all the Categories listed, sorted by Parent Category Title and then Category Title.
-(If Category is top category then Parent Category Title column should display “Top Category” as value.) */
+--  Display all Id, Title and Parent Category Title for all the Categories listed, 
+-- sorted by Parent Category Title and then Category Title
+SELECT c1.id,c1.name,
+       IFNULL(c2.name,'Top category')as parent
+FROM category c1 
+LEFT JOIN category c2
+     ON c1.parent_id = c2.id
+ORDER BY c2.name, c1.name;
 
-SELECT A.id as categoryId, A.name as CategoryName, IFNULL(B.name, 'Top Category') as ParentCategory
-FROM category A
-LEFT JOIN category B
-ON A.parent_id = B.id;
 
 /*  Display Id, Title, Parent Category Title of all the leaf Categories (categories which are not parent of any other category) */
-SELECT A.id as categoryId, A.name as CategoryName, IFNULL(B.name, 'Top Category') as ParentCategory
-FROM category A 
-LEFT JOIN category B
-ON A.parent_id = B.id
-WHERE NOT EXISTS(
-    SELECT C.id
-    FROM category C
-    WHERE A.id = C.parent_id
-);
-
+SELECT c1.id, c1.name,c1.parent_id
+FROM category c1
+WHERE c1.id NOT IN (SELECT c2.parent_id
+                    FROM category c2
+                    WHERE c2.parent_id IS NOT NULL);
+                    
+                    
 /* Display Product Title, Price & Description which falls into particular category Title */
 SELECT product.name , product.price, product.description, A.name
-From product
+FROM product
 LEFT JOIN category A
 ON product.category_id = A.id
 where A.name = "MI";
@@ -190,6 +189,7 @@ where A.name = "MI";
 SELECT A.product_id, A.name, IFNULL(B.quantity, 0)
 FROM product A
 LEFT JOIN stock B
-ON A.product_id = B.product_id;
+ON A.product_id = B.product_id
+WHERE B.quantity< 50;
 
 

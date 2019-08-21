@@ -75,7 +75,7 @@ INSERT INTO ordersItem(status, orderid, product_id,  quantity)
 SELECT* FROM ordersItem;
 
 
-/* Display Recent 15 Orders placed (Id, Order Date, Order Total) */
+/* Display Recent 15(same as 50) Orders placed (Id, Order Date, Order Total) */
 
 SELECT orderid, orderDate, ordertotal
 FROM ordertable
@@ -92,12 +92,18 @@ LIMIT 5;
 
 /*Display all the Orders which are placed more than 10 days old and one or more items from those orders are still not shipped. */
 
-SELECT DISTINCT A.orderid,  B.status
+-- SELECT DISTINCT A.orderid,  B.status
+-- FROM ordertable A
+-- INNER JOIN ordersItem B
+-- ON A.orderid = B.orderid 
+-- WHERE  A.orderDate >= DATE_SUB(CURDATE(),INTERVAL 10 DAY) && B.status = "IN PROCESS" ;
+-- 
+
+SELECT A.orderid, A.orderdate, A.ordertotal, B.product_id
 FROM ordertable A
 INNER JOIN ordersItem B
-ON A.orderid = B.orderid 
-WHERE  A.orderDate >= DATE_SUB(CURDATE(),INTERVAL 10 DAY) && B.status = "IN PROCESS" ;
-
+ON A.orderid= B.orderid
+WHERE B.status = 'IN PROCESS' AND DATEDIFF(CURDATE(),A.orderdate) >= 10;
 
 /* Display list of shoppers which haven't ordered anything since last month */
 /* doubt */
