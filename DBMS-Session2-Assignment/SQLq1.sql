@@ -103,8 +103,6 @@ CREATE TABLE cart(
 CREATE TABLE ordertable(
     orderid INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     orderDate Date,
-    ordertotal INT NOT NULL,
-    status VARCHAR(15) NOT NULL,
     shopper_id INT,
     address_id INT,
     FOREIGN KEY(shopper_id) REFERENCES shopper(shopper_id)
