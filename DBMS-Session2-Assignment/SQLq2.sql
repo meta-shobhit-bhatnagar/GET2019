@@ -91,21 +91,21 @@ ON A.parent_id = B.id;
 
 
 /* inserting 14 products with diffrent different category along with price */
-INSERT INTO product(product_id, price, name, description, category_id,date) 
-                        Values(101, 15000 ,"Nokia 6.1 plus","Android phone with 6 inch screen", 8 , "2019-08-16"),
-                        (102, 25000 ,"iphone 5s","4 Gb Ram and 64 gb storage", 7, "2019-08-10"),
-                        (103, 45000 ,"iphone 6s","4 Gb Ram and 64 gb storage", 7 , "2019-08-10"),
-                        (104, 22000 ,"Nokia 7.1 plus","4 Gb Ram and 64 gb storage", 8 , "2019-08-02"),   
-                        (105, 25000 ,"Samsung Led Tv","32 inch", 4 , "2019-07-15"),
-                        (106, 15000 ,"MI NOTE 4","4 Gb Ram and 64 gb storage", 9 , "2019-03-10"),    
-                        (107, 20000 ,"MI NOTE 5","6 Gb Ram and 128 gb storage", 9 , "2019-04-10"),    
-                        (108, 22000 ,"MI NOTE 6 PRO ","4 Gb Ram and 256 gb storage", 9 , "2019-07-10"),
-                        (109, 35000 ,"led Sony","44 inch", 4 , "2019-08-16"),
-                        (110, 2000 ,"Black shirt Mens","cotten shirt", 5 , "2019-01-10"),   
-                        (111, 5000 ,"Women Skirt","Summer skirt with full comfort", 6 , "2019-01-9"),    
-                        (112, 250 ,"Men's Tshirt","V nech", 5 , "2018-08-10"),   
-                        (113, 25000 ,"Men's suit","Raymond suit", 5 , "2019-08-11"),    
-                        (114, 150 ,"Women Scarp","fully comfort scarp", 6 , "2019-08-10");
+INSERT INTO product(product_id, price, name, description, category_id,date,status) 
+                        Values(101, 15000 ,"Nokia 6.1 plus","Android phone with 6 inch screen", 8 , "2019-08-16", 'Active'),
+                        (102, 25000 ,"iphone 5s","4 Gb Ram and 64 gb storage", 7, "2019-08-10",'Active'),
+                        (103, 45000 ,"iphone 6s","4 Gb Ram and 64 gb storage", 7 , "2019-08-10",'Active'),
+                        (104, 22000 ,"Nokia 7.1 plus","4 Gb Ram and 64 gb storage", 8 , "2019-08-02",'Active'),   
+                        (105, 25000 ,"Samsung Led Tv","32 inch", 4 , "2019-07-15",'Active'),
+                        (106, 15000 ,"MI NOTE 4","4 Gb Ram and 64 gb storage", 9 , "2019-03-10",'Active'),    
+                        (107, 20000 ,"MI NOTE 5","6 Gb Ram and 128 gb storage", 9 , "2019-04-10",'Active'),    
+                        (108, 22000 ,"MI NOTE 6 PRO ","4 Gb Ram and 256 gb storage", 9 , "2019-07-10", 'Active'),
+                        (109, 35000 ,"led Sony","44 inch", 4 , "2019-08-16", 'Active'),
+                        (110, 2000 ,"Black shirt Mens","cotten shirt", 5 , "2019-01-10",'Active'),   
+                        (111, 5000 ,"Women Skirt","Summer skirt with full comfort", 6 , "2019-01-9", 'Active'),    
+                        (112, 250 ,"Men's Tshirt","V nech", 5 , "2018-08-10", 'Active'),   
+                        (113, 25000 ,"Men's suit","Raymond suit", 5 , "2019-08-11", 'Active'),    
+                        (114, 150 ,"Women Scarp","fully comfort scarp", 6 , "2019-08-10", 'Active');
                         
 /* PRODUCT DISPLAY in date decending order */   
 SELECT * FROM product
@@ -146,10 +146,11 @@ SELECT * FROM stock;
 
 
 /* Display Id, Title, Category Title, Price of the products which are Active and recently added products should be at top. */
-SELECT A.product_id as Id, A.name as Title, B.name as Category, A.price as Price, A.date as Date_added
+SELECT A.product_id as Id, A.name as Title, B.name as Category, A.price as Price, A.date as Date_added, A.status AS status
 From product A
 LEFT JOIN category B
 ON A.category_id = B.id
+WHERE A.status='Active'
 ORDER BY A.date DESC;
 
 -- Display the list of products which don't have any images

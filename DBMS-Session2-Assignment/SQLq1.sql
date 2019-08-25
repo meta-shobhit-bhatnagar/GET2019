@@ -68,6 +68,7 @@ CREATE TABLE product(
     description VARCHAR(35) NOT NULL,
     category_id INT,
     date Date,
+    status VARCHAR(10),
     FOREIGN KEY(category_id) REFERENCES category(id)
      ON DELETE CASCADE
     

@@ -86,7 +86,7 @@ on o.orderid = A.orderid;
 
 
 
-/* Display Recent 15(same as 50) Orders placed (Id, Order Date, Order Total) */
+/* Display Recent 15(same as 50) Orders placed (Id, Order Date) */
 
 SELECT A.orderid, A.orderDate, B.status
 FROM ordertable A
@@ -98,7 +98,7 @@ LIMIT 15;
 
 /* Display 5 most expensive Orders */
 
-SELECT A.orderid, A.orderDate, B.status, SUM((C.price * B.quantity))
+SELECT A.orderid, A.orderDate, B.status, SUM((C.price * B.quantity)) as orderTotal
 FROM ordertable A
 INNER JOIN ordersItem B
 ON A.orderid = B.orderid
