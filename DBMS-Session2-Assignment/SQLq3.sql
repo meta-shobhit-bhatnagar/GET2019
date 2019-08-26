@@ -88,10 +88,13 @@ on o.orderid = A.orderid;
 
 /* Display Recent 15(same as 50) Orders placed (Id, Order Date) */
 
-SELECT A.orderid, A.orderDate, B.status
+SELECT A.orderid, A.orderDate, B.status, SUM((C.price * B.quantity)) as orderTotal
 FROM ordertable A
 INNER JOIN ordersItem B
 ON A.orderid = B.orderid
+INNER JOIN product C
+ON B.product_id= C.product_id
+GROUP BY A.orderid
 ORDER BY orderDate DESC
 LIMIT 15;
 
@@ -142,7 +145,7 @@ SELECT B.orderid, A.product_id, A.name, B.status
 FROM product A
 INNER JOIN ordersItem B
 ON A.product_id = B.product_id
-WHERE B.status = "SHIPPED"
+WHERE B.status = "SHIPPED"  && B.orderid=16 
 ORDER BY B.orderid;
 
 /* Display list of order items along with order placed date which fall between Rs 16000 to Rs 50000 price */
