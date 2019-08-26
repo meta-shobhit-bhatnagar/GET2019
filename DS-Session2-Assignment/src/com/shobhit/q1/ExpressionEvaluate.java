@@ -88,8 +88,21 @@ public class ExpressionEvaluate {
 					s1.pop();
 				}
 				s1.pop();
-			} else
+			} else{
+				try 
+		        { 
+		            // checking valid integer using parseInt() method 
+		            Integer.parseInt(infixExpresionSplit[index]); 
+		        }  
+		        catch (NumberFormatException e)  
+		        { 
+		            System.out.println(infixExpresionSplit[index] + " is not a valid integer number"); 
+		            return "";
+		        } 
 				postfix += infixExpresionSplit[index] + " ";
+			}
+				
+				
 		}
 		while (!s1.isEmpty()) {
 			postfix += s1.top();
