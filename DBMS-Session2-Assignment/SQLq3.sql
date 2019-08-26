@@ -108,7 +108,7 @@ ON A.orderid = B.orderid
 INNER JOIN product C
 ON B.product_id= C.product_id
 GROUP BY A.orderid
-ORDER BY C.price DESC
+ORDER BY orderTotal DESC
 LIMIT 10;
 
 /* Display all the Orders which are placed more than 10 days old and one or more items from those orders are still not shipped. */
