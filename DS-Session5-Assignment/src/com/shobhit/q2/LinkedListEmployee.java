@@ -162,7 +162,7 @@ public class LinkedListEmployee {
     void printList(Node headref) 
     { 
         while (headref != null) { 
-            System.out.print("Name : "+ headref.data.getName() + ", age:  "+ headref.data.getAge()+ ", Salary :"+ headref.data.getSalary()); 
+            System.out.println("Name : "+ headref.data.getName() + ", age:  "+ headref.data.getAge()+ ", Salary :"+ headref.data.getSalary()); 
             headref = headref.next; 
         } 
     } 
