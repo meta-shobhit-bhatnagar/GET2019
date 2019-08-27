@@ -1,10 +1,14 @@
 package com.shobhit.q2;
 
-
+/**
+ * The class contains methods to Sort employee based on their salaries provided equal salaried get sorted based on their age in increasing order
+ * @author Shobhit
+ *
+ */
 public class LinkedListEmployee {
 	Node head;
 	
-	public class Node{
+	public static class Node{
 		Employee data;
 		Node next;
 		
@@ -16,30 +20,31 @@ public class LinkedListEmployee {
 	}
 	
 	
-	/*@Override
-    public boolean equals(Object obj) 
-    { 
-          
-    // checking if both the object references are  
-    // referring to the same object. 
-    if(this == obj) 
-            return true; 
-          
-        // it checks if the argument is of the  
-        // type Geek by comparing the classes  
-        // of the passed argument and this object. 
-        // if(!(obj instanceof Geek)) return false; ---> avoid. 
-        if(obj == null || obj.getClass()!= this.getClass()) 
-            return false; 
-          
-        // type casting of the argument.  
-        LinkedListEmployee eList = (LinkedListEmployee) obj; 
-          
-        // comparing the state of argument with  
-        // the state of 'this' Object. 
-        return (eList.head.data.getName() == this.head.data.getName()); 
-    } 
-      
+	/**
+	 * Overriding Equals object
+	 */
+	@Override
+	public boolean equals(Object obj) {
+
+	    if (obj == null)
+	        return false;
+	    LinkedListEmployee listToCompare = (LinkedListEmployee) obj;
+	    LinkedListEmployee thisList = this;
+	    while (listToCompare.head != null && thisList.head != null) {
+	        if (!listToCompare.head.data.getName().equals(thisList.head.data.getName()))
+	            return false;
+
+	        listToCompare.head = listToCompare.head.next;
+	        thisList.head = thisList.head.next;
+	    }
+	    if (listToCompare.head == null && thisList.head == null)
+	        return true;
+
+	    return false;
+
+	}
+	
+	
     @Override
     public int hashCode() 
     { 
@@ -53,7 +58,7 @@ public class LinkedListEmployee {
         // it depends on how you implement  
         // hashCode() method. 
         return 1; 
-    } */
+    }
 	
 	/**
 	 * The method adds new Node to the linked list with Employee data
@@ -80,7 +85,12 @@ public class LinkedListEmployee {
 		return;
 			
 	}
-	
+	/**
+	 * Merge method of MergeSort
+	 * @param e1
+	 * @param e2
+	 * @return
+	 */
 	Node sortedMerge(Node e1, Node e2 ) 
     { 
         Node result = null; 
@@ -110,6 +120,11 @@ public class LinkedListEmployee {
         return result; 
     } 
 	
+	/**
+	 * Divide method of MergeSort
+	 * @param h
+	 * @return
+	 */
 	Node mergeSort(Node h) 
     { 
         // Base case : if head is null or there is only one element in the linked list
