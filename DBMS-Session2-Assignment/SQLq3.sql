@@ -99,6 +99,30 @@ ORDER BY orderDate DESC
 LIMIT 15;
 
 
+ALTER table ordertable
+ADD orderTotal INT DEFAULT 0;
+
+ALTER table ordertable
+DROP orderTotal;
+
+UPDATE ordertable
+SET orderTotal= (
+    SELECT SUM((C.price * B.quantity)) 
+    FROM  ordersItem B
+    INNER JOIN product C
+    ON B.product_id= C.product_id
+     -- INNER JOIN ordertable A
+     -- ON A.orderid = B.orderid
+    -- GROUP BY A.orderid
+);
+
+
+
+
+SET SQL_SAFE_UPDATES = 0;
+
+SELECT * FROM ordertable;
+
 /* Display 5 most expensive Orders */
 
 SELECT A.orderid, A.orderDate, B.status, SUM((C.price * B.quantity)) as orderTotal
