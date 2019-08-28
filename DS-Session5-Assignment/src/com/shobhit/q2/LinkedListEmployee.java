@@ -21,6 +21,33 @@ public class LinkedListEmployee {
 	
 	
 	/**
+	 * The method adds new Node to the linked list with Employee data
+	 * @param new_data 
+	 */
+	public void append(Employee data){
+		
+		
+		if(head==null){
+			head= new Node(data);
+			return;
+		}
+		Node new_Node= new Node(data);
+		new_Node.next= null;
+		
+		Node tempHead= head;
+		while(tempHead.next !=null){
+			tempHead= tempHead.next;
+		}
+		
+		tempHead.next= new_Node;
+		
+		
+		return;
+			
+	}
+	
+	
+	/**
 	 * Overriding Equals object
 	 */
 	@Override
@@ -33,7 +60,10 @@ public class LinkedListEmployee {
 	    while (listToCompare.head != null && thisList.head != null) {
 	        if (!listToCompare.head.data.getName().equals(thisList.head.data.getName()))
 	            return false;
-
+	        if (listToCompare.head.data.getSalary()!=(thisList.head.data.getSalary()))
+	        	return false;
+	        if (listToCompare.head.data.getAge()!=(thisList.head.data.getAge()))
+	        	return false;
 	        listToCompare.head = listToCompare.head.next;
 	        thisList.head = thisList.head.next;
 	    }
@@ -60,31 +90,7 @@ public class LinkedListEmployee {
         return 1; 
     }
 	
-	/**
-	 * The method adds new Node to the linked list with Employee data
-	 * @param new_data 
-	 */
-	public void append(Employee data){
-		
-		
-		if(head==null){
-			head= new Node(data);
-			return;
-		}
-		Node new_Node= new Node(data);
-		new_Node.next= null;
-		
-		Node tempHead= head;
-		while(tempHead.next !=null){
-			tempHead= tempHead.next;
-		}
-		
-		tempHead.next= new_Node;
-		
-		
-		return;
-			
-	}
+	
 	/**
 	 * Merge method of MergeSort
 	 * @param e1
@@ -147,7 +153,8 @@ public class LinkedListEmployee {
   
         // Merge the left and right lists 
         Node sortedlist = sortedMerge(left, right); 
-        return sortedlist; 
+        head= sortedlist;
+        return head; 
     } 
   
     // Utility function to get the middle of the linked list 
