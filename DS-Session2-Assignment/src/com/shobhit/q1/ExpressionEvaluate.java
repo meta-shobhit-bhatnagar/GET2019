@@ -9,15 +9,15 @@ public class ExpressionEvaluate {
 
 		
 		//Arithmetic Operators
-		map.put("*", 6);
-		map.put("/", 6);
-		map.put("+", 5);
-		map.put("-", 5);
+		map.put("*", 7);
+		map.put("/", 7);
+		map.put("+", 6);
+		map.put("-", 6);
 		//Relational Operators
-		map.put(">", 4);
-		map.put(">=", 4);
-		map.put("<", 4);
-		map.put("<=", 4);
+		map.put(">", 5);
+		map.put(">=", 5);
+		map.put("<", 5);
+		map.put("<=", 5);
 		map.put("==", 4);
 		map.put("!=", 4);
 		
@@ -97,7 +97,7 @@ public class ExpressionEvaluate {
 		        catch (NumberFormatException e)  
 		        { 
 		            System.out.println(infixExpresionSplit[index] + " is not a valid integer number"); 
-		            return "";
+		            System.exit(0);
 		        } 
 				postfix += infixExpresionSplit[index] + " ";
 			}
@@ -149,42 +149,19 @@ public class ExpressionEvaluate {
 		case "==":
 			return (operand1 == operand2 ) ? 1 : 0;
 			
+		case "&&":
+			return (operand1 * operand2>0 )? 1 : 0;
+			
+		case "!=":
+			return (operand1 == operand2 ) ? 1 : 0;
+			
+		case "||":
+			return (operand1 + operand2>0 ) ? 1 : 0;
+			
 		}
 		return 0;
 	}
 
 
-	
-
-
-	/**
-	 * Evaluate the Expression
-	 * @param expression An string variable, The Expression you want to Evaluate.
-	 * @return	An Boolean Variable, The Evaluate Value of Expression.
-	 * @throws StackException 
-	 * 
-	 */
-	public boolean evaluateForLogical(String expression) throws StackException {
-
-		String postfix = infixToPostfix(expression);
-		StackArray operands = new StackArray(5);
-		int operand1, operand2;
-		String splittedString[] = postfix.split(" ");
-		for (int i = 0; i < splittedString.length; i++) {
-			if (map.containsKey(splittedString[i])) {
-
-				operand1 = Integer.parseInt(operands.top());
-				operands.pop();
-				operand2 = Integer.parseInt(operands.top());
-				operands.pop();
-				operands.push(Integer.toString((evaluate(operand2, operand1,
-						splittedString[i]))));
-			} else {
-
-				operands.push(splittedString[i]);
-			}
-		}
-		return ("1".equals(operands.top())) ? true : false;
-	}
 
 }
