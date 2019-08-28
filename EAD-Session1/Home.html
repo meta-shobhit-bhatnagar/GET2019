@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> SignUp_page</title>
+
+    
+    <script src="validation.js"></script>
+
+    <style>
+        table,
+        td,
+        th {
+            font-size: 20px;
+            padding: 6px;
+            text-align: center;
+        }
+
+        span{
+            font-size: 12px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        textarea {
+            width: 175px;
+        }
+    </style>
+
+    
+    <script>
+
+        var pdaily;
+        var pmonthly;
+        var pyearly;
+
+
+        function submitForm(){
+                var validation= empFormValidation();
+
+
+
+                if(validation == true){
+                    document.getElementById("1").innerHTML= "Your Registeration ID: "+ Math.floor((Math.random() * 10000) + 1);
+                    document.getElementById("2").style.display= "block";
+                }
+        }
+        function prices() {
+            var val = document.getElementById("selectType").value;
+            document.getElementById("2").innerHTML = "Choose plan for " + document.getElementById("selectType").value;
+            document.getElementById("currency").style.display = "block";
+            switch (val) {
+                case "Cycle":
+                    pdaily = 0.070;
+                    pmonthly = 1.39;
+                    pyearly = 6.96;
+                    break;
+
+                case "MotorCycle":
+                    pdaily = 0.14;
+                    pmonthly = 2.79;
+                    pyearly = 13.93;
+                    break;
+                case "FourWheelers":
+                    pdaily = 0.28;
+                    pmonthly = 6.96;
+                    pyearly = 48.75;
+                    break;
+                default:
+                    break;
+            }
+
+            document.getElementById("daily_price").innerHTML = pdaily;
+            document.getElementById("dailyID").value = pdaily;
+
+            document.getElementById("monthly_price").innerHTML = pmonthly;
+            document.getElementById("monthlyID").value = pmonthly;
+
+            document.getElementById("yearly_price").innerHTML = pyearly;
+            document.getElementById("yearlyID").value = pyearly;
+
+        }
+
+        function showCurrency() {
+            document.getElementById("plan").style.display = "block";
+            var currency_type = document.getElementById("select_currency").value;
+
+            if (currency_type == "INR") {
+                document.getElementById("daily_price").innerHTML = convertINR(pdaily);
+                document.getElementById("dailyID").value = pdaily;
+
+                document.getElementById("monthly_price").innerHTML = convertINR(pmonthly);
+                document.getElementById("monthlyID").value = pmonthly;
+
+                document.getElementById("yearly_price").innerHTML = convertINR(pyearly);
+                document.getElementById("yearlyID").value = pyearly;
+            }
+
+            else if (currency_type == "YEN") {
+                document.getElementById("daily_price").innerHTML = convertYEN(pdaily);
+                document.getElementById("dailyID").value = pdaily;
+
+                document.getElementById("monthly_price").innerHTML = convertYEN(pmonthly);
+                document.getElementById("monthlyID").value = pmonthly;
+
+                document.getElementById("yearly_price").innerHTML = convertYEN(pyearly);
+                document.getElementById("yearlyID").value = pyearly;
+
+            }
+            else {
+                document.getElementById("daily_price").innerHTML = pdaily;
+                document.getElementById("dailyID").value = pdaily;
+
+                document.getElementById("monthly_price").innerHTML = pmonthly;
+                document.getElementById("monthlyID").value = pmonthly;
+
+                document.getElementById("yearly_price").innerHTML = pyearly;
+                document.getElementById("yearlyID").value = pyearly;
+            }
+        }
+
+        function convertINR(usd) {
+            return Math.round(70 * usd);
+        }
+
+        function convertYEN(usd) {
+            return Math.round(105.64 * usd);
+        }
+
+
+        function showPrice() {
+            var totalPrice=0;
+
+            if (document.getElementById("dailyID").checked)
+                totalPrice = convertINR(document.getElementById("dailyID").value);
+            else if (document.getElementById("monthlyID").checked)
+                totalPrice = convertINR(document.getElementById("monthlyID").value);
+            else if (document.getElementById("yearlyID").checked)
+                totalPrice = convertINR(document.getElementById("yearlyID").value);
+
+            document.getElementById("currency").innerHTML= "Congratulations! You got a Pass <br> Total Price :Rs." + totalPrice;
+         
+        }
+
+    </script>
+
+
+
+</head>
+
+<body>
+    <form>
+        <div id="1" style="text-align:center">
+            <h1 align="center">Metacube Parking System</h1>
+            <table align="center">
+
+
+                <tr>
+                    <td> Full Name</td>
+                    <td><input type="text" id="name" placeholder="Enter FullName">
+                        <br>
+                        <span id="eName" class="error"></span>
+                    </td>
+                    
+                </tr>
+
+                <tr>
+                    <td> Gender</td>
+                    <td><input type="radio" name="gender" value="male"> Male<br></td>
+                    <td><input type="radio" name="gender" value="female"> Female<br></td>
+                </tr>
+
+                <tr>
+                    <td> Email </td>
+                    <td><input type="text" id="email" placeholder="email"><br><span class="error" id="eEmail"></span></td>
+                    
+                </tr>
+
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" id="password" name="pwd" placeholder="Password">
+                        <br>
+                        <span id="ePassword" class="error"></span>
+                    </td>
+                    
+                </tr>
+
+                <tr>
+                    <td>Confirm Password</td>
+                    <td><input type="password" id="confirm_password" name="pwd" placeholder="Confirm Password">
+                        <br>
+                        <span id="eConfirmPassword" class="error"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Contact No.</td>
+                    <td><input type="tel" id="number" name="contactNumber" placeholder="Enter 10 digit mobile no.">
+                        <br>
+                        <span id="eContactNo" class="error"></span>
+                    </td>
+                </tr>
+
+            </table>
+
+            <input type="submit" form="" value="Click to Register" onclick="submitForm()">
+            <br><br><br><br><br><br>
+        </div>
+        <div id="2" style="text-align:center; display: none" >
+            <h1 align="center">Vehicle Registeration Form</h1>
+            <table align="center">
+
+                <tr>
+                    <td>Vehicle Name</td>
+                    <td><input type="text" id=Vname placeholder="Enter Vehicle name "></td>
+                </tr>
+
+                <tr>
+                    <td>Type</td>
+                    <td>
+                        <select id="selectType">
+                            <option value="Cycle">Cycle</option>
+                            <option value="MotorCycle">MotorCycle</option>
+                            <option value="FourWheelers">FourWheelers</option>
+                        </select>
+                    </td>
+
+                    <!-- <td><input type="text" id=Vname placeholder="Enter VehicleType "></td>   -->
+                </tr>
+
+                <tr>
+                    <td>Vehicle Number</td>
+                    <td><input type="text" id=Vname placeholder="Enter VehicleNumber "></td>
+                </tr>
+
+                <tr>
+                    <td>Employee Id</td>
+                    <td><input type="text" id=Vname placeholder="Enter EmployeeID "></td>
+                </tr>
+
+                <tr>
+                    <td>Identification details</td>
+                    <td><textarea rows="4"></textarea></td>
+
+                    </textarea>
+
+
+                <tr>
+                    <td align="center" colspan="2">
+                        <input type="submit" id="register" value="RegisterVehicle" onclick="prices()">
+                    </td>
+                </tr>
+                </tr>
+            </table>
+        </div>
+        <br><br>
+
+
+
+        <div id="currency" style="display: none; text-align: center">
+            <br>
+            Currency:
+            <select id="select_currency" onchange="showCurrency()">
+                <option value="" selected disabled hidden>Choose here</option>
+                <option value="INR">INR</option>
+                <option value="USD">USD</option>
+                <option value="YEN">YEN</option> <br>
+            </select>
+            <div id="plan">
+
+                <table align="center">
+                    <tr>
+                        <th>Period</th>
+                        <th>Price</th>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="plan" id="dailyID">Daily</td>
+                        <td> <span id="daily_price"> </span> </td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="radio" name="plan" id="monthlyID">Monthly</td>
+                        <td> <span id="monthly_price"> </span> </td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="plan" id="yearlyID">Yearly</td>
+                        <td> <span id="yearly_price"> </span> </td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <div>
+                <input type="submit" id="getPass" value="Get Pass" onclick="showPrice()">
+            </div>
+
+
+        </div>
+    </form>
+
+</body>
+
+</html>
