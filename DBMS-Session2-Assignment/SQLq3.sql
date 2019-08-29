@@ -105,18 +105,30 @@ ADD orderTotal INT DEFAULT 0;
 ALTER table ordertable
 DROP orderTotal;
 
-UPDATE ordertable
-SET orderTotal= (
-    SELECT SUM((C.price * B.quantity)) 
-    FROM  ordersItem B
-    INNER JOIN product C
-    ON B.product_id= C.product_id
-     -- INNER JOIN ordertable A
-     -- ON A.orderid = B.orderid
-    -- GROUP BY A.orderid
-);
-
-
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 1 ) WHERE D.orderid = 1;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 2 ) WHERE D.orderid = 2;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 3 ) WHERE D.orderid = 3;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 4 ) WHERE D.orderid = 4;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 5 ) WHERE D.orderid = 5;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 6 ) WHERE D.orderid = 6;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 7 ) WHERE D.orderid = 7;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 8 ) WHERE D.orderid = 8;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 9 ) WHERE D.orderid = 9;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 10 ) WHERE D.orderid = 10;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 11 ) WHERE D.orderid = 11;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 12 ) WHERE D.orderid = 12;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 13 ) WHERE D.orderid = 13;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 14 ) WHERE D.orderid = 14;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 15 ) WHERE D.orderid = 15;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 16 ) WHERE D.orderid = 16;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 17 ) WHERE D.orderid = 17;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 18 ) WHERE D.orderid = 18;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 19 ) WHERE D.orderid = 19;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 20 ) WHERE D.orderid = 20;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 21 ) WHERE D.orderid = 21;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 22 ) WHERE D.orderid = 22;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 23 ) WHERE D.orderid = 23;
+UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 24 ) WHERE D.orderid = 24;
 
 
 SET SQL_SAFE_UPDATES = 0;
