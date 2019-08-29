@@ -124,7 +124,11 @@ inner join ordersItem A
 on o.orderid = A.orderid;
 
 
+ALTER table ordertable
+ADD orderTotal INT DEFAULT 0;
 
+-- ALTER table ordertable
+-- DROP orderTotal;
 
 /* Display Recent 15(same as 50) Orders placed (Id, Order Date, Order Total) */
 
@@ -134,11 +138,7 @@ ORDER BY orderDate DESC
 LIMIT 15;
 
 
-ALTER table ordertable
-ADD orderTotal INT DEFAULT 0;
 
--- ALTER table ordertable
--- DROP orderTotal;
 
 UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 1 ) WHERE D.orderid = 1;
 UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 2 ) WHERE D.orderid = 2;
