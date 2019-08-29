@@ -62,14 +62,11 @@ public class DataBaseOperation {
 		if(setConnection()){
 			try{
 
-				String sql = " SELECT shopper_id, orderDate, SUM((C.price * B.quantity)) as orderTotal " +
+				String sql = " SELECT shopper_id, orderDate, A.orderTotal " +
 						"FROM ordertable A " +
 						"INNER JOIN ordersItem B "+
 						"ON A.orderid = B.orderid && B.status = 'SHIPPED' && shopper_id="+  Integer.toString(shopperId)+
-						" INNER JOIN product C "+
-						"ON B.product_id= C.product_id "+
-						"GROUP BY A.shopper_id "+
-						"ORDER BY A.orderDate DESC;";
+						" ORDER BY A.orderDate DESC;";
 
 						
 				statementObj  = connectionObj.prepareStatement(sql);
