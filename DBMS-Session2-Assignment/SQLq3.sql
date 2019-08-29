@@ -76,7 +76,47 @@ INSERT INTO ordersItem(status, orderid, product_id,  quantity)
                 ( "IN PROCESS", 23, 101, 1 ),
                 ( "IN PROCESS", 24, 101, 1 );
 
+
+
+
+ALTER table ordersItem
+ADD product_price INT DEFAULT 0;
+
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 1 AND D.product_id=101;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 2 AND D.product_id=101;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 2 AND D.product_id=102;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 3 AND D.product_id=105;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 4 AND D.product_id=106;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 5 AND D.product_id=107;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 6 AND D.product_id=108;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 7 AND D.product_id=109;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 8 AND D.product_id=110;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 9 AND D.product_id=106;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 10 AND D.product_id=101;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 11 AND D.product_id=109;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 12 AND D.product_id=103;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 13 AND D.product_id=103;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 14 AND D.product_id=106;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 15 AND D.product_id=107;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 16 AND D.product_id=112;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 17 AND D.product_id=112;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 18 AND D.product_id=112;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 19 AND D.product_id=107;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 19 AND D.product_id=110;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 20 AND D.product_id=110;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 20 AND D.product_id=101;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 21 AND D.product_id=101;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 21 AND D.product_id=102;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 22 AND D.product_id=101;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 22 AND D.product_id=102;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 22 AND D.product_id=103;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 22 AND D.product_id=104;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 23 AND D.product_id=101;
+UPDATE ordersItem D SET product_price= (SELECT product.price FROM product WHERE D.product_id= product.product_id) WHERE D.orderid= 24 AND D.product_id=101;
+
 SELECT * FROM ordersItem;
+
+
 
 SELECT o.orderid, o.orderDate, A.status, A.product_id
 FROM ordertable o
@@ -86,15 +126,10 @@ on o.orderid = A.orderid;
 
 
 
-/* Display Recent 15(same as 50) Orders placed (Id, Order Date) */
+/* Display Recent 15(same as 50) Orders placed (Id, Order Date, Order Total) */
 
-SELECT A.orderid, A.orderDate, B.status, SUM((C.price * B.quantity)) as orderTotal
+SELECT A.orderid, A.orderDate, A.orderTotal
 FROM ordertable A
-INNER JOIN ordersItem B
-ON A.orderid = B.orderid
-INNER JOIN product C
-ON B.product_id= C.product_id
-GROUP BY A.orderid
 ORDER BY orderDate DESC
 LIMIT 15;
 
@@ -102,8 +137,8 @@ LIMIT 15;
 ALTER table ordertable
 ADD orderTotal INT DEFAULT 0;
 
-ALTER table ordertable
-DROP orderTotal;
+-- ALTER table ordertable
+-- DROP orderTotal;
 
 UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 1 ) WHERE D.orderid = 1;
 UPDATE ordertable D SET orderTotal= ( SELECT SUM((C.price * B.quantity)) FROM  ordersItem B INNER JOIN product C ON B.product_id= C.product_id WHERE B.orderid = 2 ) WHERE D.orderid = 2;
@@ -137,13 +172,8 @@ SELECT * FROM ordertable;
 
 /* Display 5 most expensive Orders */
 
-SELECT A.orderid, A.orderDate, B.status, SUM((C.price * B.quantity)) as orderTotal
-FROM ordertable A
-INNER JOIN ordersItem B
-ON A.orderid = B.orderid
-INNER JOIN product C
-ON B.product_id= C.product_id
-GROUP BY A.orderid
+SELECT orderid, orderDate, orderTotal
+FROM ordertable 
 ORDER BY orderTotal DESC
 LIMIT 10;
 
@@ -185,10 +215,13 @@ WHERE B.status = "SHIPPED"  && B.orderid=16
 ORDER BY B.orderid;
 
 /* Display list of order items along with order placed date which fall between Rs 16000 to Rs 50000 price */
-SELECT A.product_id, B.name , B.price, C.orderDate
+
+
+SELECT A.product_id, B.name , C.orderDate,A.status, A.product_price
 FROM ordersItem A
 INNER JOIN product B
 ON A.product_id = B.product_id
 INNER JOIN ordertable C
 ON C.orderid = A.orderid
-WHERE B.price BETWEEN 16000 AND 50000 ;
+WHERE A.product_price BETWEEN 16000 AND 50000
+ORDER BY A.product_price;
