@@ -168,8 +168,11 @@
 
                 <tr>
                     <td> Gender</td>
-                    <td><input type="radio" name="gender" value="male"> Male<br></td>
-                    <td><input type="radio" name="gender" value="female"> Female<br></td>
+                    <td><label>
+                            <input type="radio" name="gender" value="male"> Male
+                            <input type="radio" name="gender" value="female"> Female<br>
+                        </label>
+                    </td>
                 </tr>
 
                 <tr>
@@ -208,6 +211,7 @@
             <input type="submit" form="" value="Click to Register" onclick="submitForm()">
             <br><br><br><br><br><br>
         </div>
+
         <div id="2" style="text-align:center; display: none" >
             <h1 align="center">Vehicle Registeration Form</h1>
             <table align="center">
@@ -276,16 +280,16 @@
                         <th>Price</th>
                     </tr>
                     <tr>
-                        <td><input type="radio" name="plan" id="dailyID">Daily</td>
+                        <td style="text-align:left"><input type="radio" name="plan" id="dailyID">Daily</td>
                         <td> <span id="daily_price"> </span> </td>
                     </tr>
 
                     <tr>
-                        <td><input type="radio" name="plan" id="monthlyID">Monthly</td>
+                        <td style="text-align:left"><input type="radio" name="plan" id="monthlyID">Monthly</td>
                         <td> <span id="monthly_price"> </span> </td>
                     </tr>
                     <tr>
-                        <td><input type="radio" name="plan" id="yearlyID">Yearly</td>
+                        <td style="text-align:left"><input type="radio" name="plan" id="yearlyID">Yearly</td>
                         <td> <span id="yearly_price"> </span> </td>
                     </tr>
                 </table>
