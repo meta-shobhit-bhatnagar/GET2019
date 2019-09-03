@@ -14,7 +14,7 @@ function empFormValidation(){
         var message= "Name must be atleast 2 characters";
         document.getElementById("eName").innerHTML= message;
         flag=false;
-    }else if(!name.match(/^[a-zA-Z]+$/)){
+    }else if(!name.match(/^[a-zA-Z ]+$/)){
         var message= "Name should contain alphabets only";
         document.getElementById("eName").innerHTML= message;
         flag=false;
