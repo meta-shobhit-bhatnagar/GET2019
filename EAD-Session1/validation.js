@@ -22,14 +22,7 @@ function empFormValidation(){
         document.getElementById("eName").innerHTML="";
     }
 
-    //Gender Validation
-    if(!(document.getElementById("gender_female").checked && document.getElementById("gender_male"))){
-        var message= "Select Gender";
-        document.getElementById("gender_").innerHTML= message;
-        flag=false;
-    }else{
-        document.getElementById("gender_").innerHTML= "";
-    }
+   
 
     //Email Validation
     if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){
