@@ -22,6 +22,15 @@ function empFormValidation(){
         document.getElementById("eName").innerHTML="";
     }
 
+    //Gender Validation
+    if(!(document.getElementById("gender_female").checked && document.getElementById("gender_male"))){
+        var message= "Select Gender";
+        document.getElementById("gender_").innerHTML= message;
+        flag=false;
+    }else{
+        document.getElementById("gender_").innerHTML= "";
+    }
+
     //Email Validation
     if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))){
         var message= "You have entered Invalid emailID";
@@ -36,7 +45,7 @@ function empFormValidation(){
         var message= "Password length should be atleast 8";
         document.getElementById("ePassword").innerHTML = message;
         flag = false;
-    }else if(!(/^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]+$/.test(password))){
+    }else if(!(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9!@#\$%\^&]*$/.test(password))){
         var message = "Password should be at least One Upper and One Lower case and one digit";
         document.getElementById("ePassword").innerHTML = message;
         flag = false;
