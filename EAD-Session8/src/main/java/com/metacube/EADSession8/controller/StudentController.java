@@ -18,16 +18,17 @@ import com.metacube.EADSession8.model.commands.StudentCommands;
 @Controller
 public class StudentController {
 
-	//To get value from the yml file for notice at home page
+	// To get value from the yml file for notice at home page
 	@Value("${home.notice}")
 	private String schoolNotice;
-	
-	
-	List<StudentCommands> studentList = new ArrayList<StudentCommands>();
-	
-	
+	StudentData obj = new StudentData();
+	int size = 0;
+
+
+
 	/**
 	 * redirects to home page
+	 * 
 	 * @param model
 	 * @return home page address
 	 */
@@ -35,12 +36,13 @@ public class StudentController {
 	public String home(Model model) {
 		System.out.println(schoolNotice);
 		model.addAttribute("notice", schoolNotice);
-		
+
 		return "home";
 	}
-	
+
 	/**
 	 * redirects to signup form
+	 * 
 	 * @param model
 	 * @return signup form page address
 	 */
@@ -49,45 +51,52 @@ public class StudentController {
 		model.addAttribute("studentCommands", new StudentCommands());
 		return "signup";
 	}
-	
+
 	/**
 	 * method to submit the form data
+	 * 
 	 * @param student
 	 * @param result
 	 * @return ModelAndView
 	 */
 	@PostMapping("/signup")
 	public String doSignup(@Validated StudentCommands student, BindingResult result) {
-		
+
 		System.out.println(student.toString());
-		
-		if(result.hasErrors()) { //If field errors occur
+
+		if (result.hasErrors()) { // If field errors occur
 			return "signup";
-		}else {
-			if(student.getEmail().equals("shobhit.bhatnagar@metacube.com")) {
-				ObjectError objectError = new ObjectError("Email","Email must be unique");
+		} else {
+			if (student.getEmail().equals("shobhit.bhatnagar@metacube.com")) {
+				ObjectError objectError = new ObjectError("Email", "Email must be unique");
 				result.addError(objectError);
 				return "signup";
-			}else {
-				studentList.add(student);
+			} else {
+				obj.getAllStudent(student, ++size);
 				
+
 				return "redirect:/home";
 			}
 		}
-		
+
 	}
-	
+
 	/**
 	 * redirects to showAll jsp page
+	 * 
 	 * @param model
 	 * @return showAll page address
 	 */
 	@GetMapping("/showAll")
 	public String showAllStudent(Model model) {
-		StudentData obj = new StudentData();
-		model.addAttribute("list", obj.getAllStudent(studentList));
+		
+		try {
+			model.addAttribute("list", obj.getAllStudent(null,size));
+			size++;
+		} catch (NullPointerException npe) {
+			System.out.println("no more list items");
+		}
 		return "showAll";
 	}
-	
-	
+
 }
