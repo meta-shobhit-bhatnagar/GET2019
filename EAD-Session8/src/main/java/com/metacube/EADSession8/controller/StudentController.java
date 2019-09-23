@@ -72,7 +72,7 @@ public class StudentController {
 				result.addError(objectError);
 				return "signup";
 			} else {
-				obj.getAllStudent(student, ++size);
+				obj.getAllStudent(student, 1);
 				
 
 				return "redirect:/home";
