@@ -18,50 +18,51 @@
 
 <body>
 	<div class="container">
-		<form:form modelAttribute="studentCommands">
-			<!--  modelAttribute="userCommands"  -->
+		
+		<form:form method="POST" modelAttribute="studentCommands">
 			<!-- Gobal Error for unique email id -->
+			
 			<form:errors cssClass="text-danger" />
 
 			<div class="form-group">
 				<form:label path="fName">First Name</form:label>
 				<form:input path="fName" cssClass="form-control"
-					id="nameInputEmail1" placeholder="Enter First Name" />
+					id="fname" placeholder="Enter First Name" />
 				<form:errors path="fName" cssClass="text-danger" />
 			</div>
 
 			<div class="form-group">
 				<form:label path="lName">Last Name</form:label>
 				<form:input path="lName" cssClass="form-control"
-					id="nameInputEmail1" placeholder="Enter Last Name" />
+					id="lname" placeholder="Enter Last Name" />
 				<form:errors path="lName" cssClass="text-danger" />
 			</div>
 
 			<div class="form-group">
 				<form:label path="fatherName">Father Name</form:label>
 				<form:input path="fatherName" cssClass="form-control"
-					id="nameInputEmail1" placeholder="Enter Father's Name" />
+					id="fatherName" placeholder="Enter Father's Name" />
 				<form:errors path="fatherName" cssClass="text-danger" />
 			</div>
 
 			<div class="form-group">
 				<form:label path="email">Email address</form:label>
 				<form:input path="email" cssClass="form-control"
-					id="exampleInputEmail1" placeholder="Enter email" />
+					id="email" placeholder="Enter email" />
 				<form:errors path="email" cssClass="text-danger" />
 			</div>
 
 			<div class="form-group">
 				<form:label path="classNo">Class</form:label>
 				<form:input path="classNo" cssClass="form-control"
-					id="exampleInputEmail1" placeholder="Enter class" />
+					id="classNo" placeholder="Enter class" />
 				<form:errors path="classNo" cssClass="text-danger" />
 			</div>
 
 			<div class="form-group">
 				<form:label path="age">Age</form:label>
 				<form:input path="age" cssClass="form-control"
-					id="exampleInputEmail1" placeholder="Enter age" />
+					id="age" placeholder="Enter age" />
 				<form:errors path="age" cssClass="text-danger" />
 			</div>
 

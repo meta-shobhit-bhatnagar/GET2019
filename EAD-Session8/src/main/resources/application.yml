@@ -7,6 +7,6 @@ spring:
    suffix: .jsp
 
 home: 
-  notice: Our School got Rank 1 in the State Sports tournament
+  notice: Welcome to Student page
       
 

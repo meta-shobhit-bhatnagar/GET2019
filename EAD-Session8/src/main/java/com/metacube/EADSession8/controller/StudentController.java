@@ -1,5 +1,8 @@
 package com.metacube.EADSession8.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +22,15 @@ public class StudentController {
 	@Value("${home.notice}")
 	private String schoolNotice;
 	
+	
+	List<StudentCommands> studentList = new ArrayList<StudentCommands>();
+	
+	
+	/**
+	 * redirects to home page
+	 * @param model
+	 * @return home page address
+	 */
 	@GetMapping("/home")
 	public String home(Model model) {
 		System.out.println(schoolNotice);
@@ -27,12 +39,23 @@ public class StudentController {
 		return "home";
 	}
 	
+	/**
+	 * redirects to signup form
+	 * @param model
+	 * @return signup form page address
+	 */
 	@GetMapping("/signup")
 	public String signup(Model model) {
-		model.addAttribute(new StudentCommands());
+		model.addAttribute("studentCommands", new StudentCommands());
 		return "signup";
 	}
 	
+	/**
+	 * method to submit the form data
+	 * @param student
+	 * @param result
+	 * @return ModelAndView
+	 */
 	@PostMapping("/signup")
 	public String doSignup(@Validated StudentCommands student, BindingResult result) {
 		
@@ -42,20 +65,27 @@ public class StudentController {
 			return "signup";
 		}else {
 			if(student.getEmail().equals("shobhit.bhatnagar@metacube.com")) {
-				ObjectError objectError = new ObjectError("Email","Email Must be unique");
+				ObjectError objectError = new ObjectError("Email","Email must be unique");
 				result.addError(objectError);
 				return "signup";
 			}else {
-				return "redirect:/home";	
+				studentList.add(student);
+				
+				return "redirect:/home";
 			}
 		}
 		
 	}
 	
+	/**
+	 * redirects to showAll jsp page
+	 * @param model
+	 * @return showAll page address
+	 */
 	@GetMapping("/showAll")
 	public String showAllStudent(Model model) {
 		StudentData obj = new StudentData();
-		model.addAttribute("list", obj.getAllStudent());
+		model.addAttribute("list", obj.getAllStudent(studentList));
 		return "showAll";
 	}
 	

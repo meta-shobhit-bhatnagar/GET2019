@@ -9,15 +9,15 @@ public class StudentCommands {
 	private int id = -1;
 
 	
-	@Pattern(regexp="^[a-zA-Z ]{0,15}",message="First name should contain aplhabets only")
+	@Pattern(regexp="^[a-zA-Z ]{0,15}",message="First name should contain  only")
 	@Size(min = 2, max =  15,message = "{fName}")
 	private String fName;
 	
-	@Pattern(regexp="^[a-zA-Z ]{0,15}",message="Last name should contain aplhabets only")
+	@Pattern(regexp="^[a-zA-Z ]{0,15}",message="Last name should contain alphabets only")
 	@Size(min=2, max =15, message = "{lName}")
 	private String lName;
 	
-	@Pattern(regexp="^[a-zA-Z ]{0,50}",message="Father name should contain aplhabets only")
+	@Pattern(regexp="^[a-zA-Z ]{0,50}",message="Father name should contain alphabets only")
 	@Size(min = 2, max = 50, message = "{blankFatherName}")
 	private String fatherName;
 	
@@ -147,7 +147,7 @@ public class StudentCommands {
 
 	@Override
 	public String toString() {
-		return "StudentCommands [id=" + id + ", fName=" + fName + ", lName=" + lName + ", fatherName=" + fatherName
+		return "StudentCommands [fName=" + fName + ", lName=" + lName + ", fatherName=" + fatherName
 				+ ", email=" + email + ", classNo=" + classNo + ", age=" + age + "]";
 	}
 	

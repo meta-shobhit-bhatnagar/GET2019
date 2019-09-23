@@ -16,7 +16,6 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>#Id</th>
 						<th>First Name</th>
 						<th>Last Name</th>
 						<th>Father Name</th>
@@ -28,7 +27,6 @@
 				<tbody>
 					<c:forEach items="${list}" var="student">
 						<tr>
-							<td>${student.id}</td>
 							<td>${student.fName}</td>
 							<td>${student.lName}</td>
 							<td>${student.fatherName}</td>
