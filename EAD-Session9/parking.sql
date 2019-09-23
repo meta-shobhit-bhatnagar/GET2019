@@ -24,7 +24,7 @@ FOREIGN KEY(empId) REFERENCES employeeDetails(empId) ON DELETE SET NULL
 
 
 SET FOREIGN_KEY_CHECKS=0;
-DROP TABLE vehicleDetails;
+-- DROP TABLE vehicleDetails;
 
 
 CREATE TABLE plan_details (
