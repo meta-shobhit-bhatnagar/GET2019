@@ -65,7 +65,7 @@ public class MainDriver {
 						break;
 					}
 
-					directory = "/" + directory;
+					directory = "\\" + directory;
 					if (cmd.changeDirectory(directory) != null) {
 						currentAddress += directory;
 						System.out.print(currentAddress + "> ");

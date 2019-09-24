@@ -26,7 +26,7 @@ public class DirectoryCommands {
 	 */
 	Directory changeDirectory(String directoryAddress) {
 
-		String splitAddress[] = directoryAddress.split("/");
+		String splitAddress[] = directoryAddress.split("\\\\");
 		if (MainDriver.currentDirectory == null) {
 			return null;
 		}
@@ -77,7 +77,7 @@ public class DirectoryCommands {
 
 		for (int i = 0; result == null && i < children.size(); i++) {
 			if (i == 0) {
-				tempString += root.directoryName.toString() + "/";
+				tempString += root.directoryName.toString() + "\\\\";
 			}
 			directoryAddress = findDirectory(children.get(i), directoryToSearch);
 			if (!directoryAddress.toString().equals(""))
