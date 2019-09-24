@@ -2,7 +2,7 @@ CREATE DATABASE school;
 SHOW databases;
 
 USE school;
-drop TABLE student_details;
+-- drop TABLE student_details;
 
 CREATE TABLE student_details(
      student_ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
