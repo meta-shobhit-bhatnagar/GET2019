@@ -41,11 +41,11 @@ public class MainDriver {
 						}
 					}
 					if (index1 != currentDirectory.subDirectory.size()) {
-						System.out.print(currentAddress + " ");
+						System.out.print(currentAddress + "> ");
 						break;
 					}
 					cmd.makeDirectory(directory);
-					System.out.print(currentAddress + " ");
+					System.out.print(currentAddress + "> ");
 					break;
 
 				case "cd":
@@ -56,11 +56,11 @@ public class MainDriver {
 						currentDirectory = root;
 						if (cmd.changeDirectory(directory) != null) {
 							currentAddress = directory;
-							System.out.print(currentAddress + " ");
+							System.out.print(currentAddress + "> ");
 						} else {
 							System.out.println("wrong directory entered..");
 							currentDirectory = dummyCurrent;
-							System.out.print(currentAddress + " ");
+							System.out.print(currentAddress + "> ");
 						}
 						break;
 					}
@@ -68,18 +68,18 @@ public class MainDriver {
 					directory = "/" + directory;
 					if (cmd.changeDirectory(directory) != null) {
 						currentAddress += directory;
-						System.out.print(currentAddress + " ");
+						System.out.print(currentAddress + "> ");
 					} else {
 						System.out.println("wrong directory entered..");
 						currentDirectory = dummyCurrent;
-						System.out.print(currentAddress + " ");
+						System.out.print(currentAddress + "> ");
 					}
 					break;
 
 				case "bk":
 					if (currentDirectory == root) {
 						System.out.println("You are in root directory");
-						System.out.print(currentAddress + " ");
+						System.out.print(currentAddress + "> ");
 						break;
 					}
 					Directory temp = currentDirectory;
@@ -87,7 +87,7 @@ public class MainDriver {
 					currentAddress = currentAddress.replace("/"
 							+ temp.directoryName, "");
 					cmd.changeDirectory(currentAddress);
-					System.out.print(currentAddress + " ");
+					System.out.print(currentAddress + "> ");
 					break;
 
 				case "find":
@@ -98,14 +98,14 @@ public class MainDriver {
 					else {
 						System.out.println("directory not found.. ");
 					}
-					System.out.print(currentAddress + " ");
+					System.out.print(currentAddress + "> ");
 					break;
 
 				case "tree":
 					System.out.println("R:");
 					System.out.print("\u2502");
 					cmd.printDirectory(root);
-					System.out.print(currentAddress + " ");
+					System.out.print(currentAddress + "> ");
 					break;
 
 				case "ls":
@@ -115,7 +115,7 @@ public class MainDriver {
 					}
 					System.out.println("total folder : "
 							+ currentDirectory.subDirectory.size());
-					System.out.print(currentAddress + " ");
+					System.out.print(currentAddress + "> ");
 					break;
 
 				case "exit":
