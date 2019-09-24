@@ -7,7 +7,7 @@ package com.database;
  */
 public class Student {
 	
-	private int studentId;
+	
 	private String firstName;
 	private String lastName;
 	private String fatherName;
@@ -15,8 +15,8 @@ public class Student {
 	private int classNo;
 	private int age;
 
-	public Student( int studentId,String firstName, String lastName, String fatherName, String email, int classNo, int age){
-		this.studentId = studentId;
+	public Student(String firstName, String lastName, String fatherName, String email, int classNo, int age){
+		
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.fatherName = fatherName;
@@ -25,9 +25,7 @@ public class Student {
 		this.age = age;
 	}
 	
-	public int getStudentId(){
-		return studentId;
-	}
+	
 	
 	public String getFirstName(){
 		return firstName;

@@ -13,9 +13,9 @@
 	<%@ page import = "com.database.DataBaseOperation" %>
 	<%@ page import = "com.database.Student" %>
 	
-    <%  int studentId = Integer.parseInt(request.getParameter("studentId"));
+    <%  String studentEmail = (request.getParameter("studentEmail"));
         DataBaseOperation db = new DataBaseOperation(); 
-		Student studentObj = db.getStudentById(studentId);
+		Student studentObj = db.getStudentByEmail(studentEmail);
 		String firstName = studentObj.getFirstName();
 		String lastName = studentObj.getLastName();
 		String fatherName = studentObj.getFatherName();
@@ -27,9 +27,6 @@
         <h1>Update Student Details</h1> <hr>
         <form action="Update"  onsubmit="return studentFormValidation()" method="PUT"  >
             <table>
-                <tr>
-                    <td> <input type="hidden" name="studentId" value=<%=studentId %> >  </td>
-                </tr>
                 <tr>
                     <td>First Name</td>
                     <td><input type="text" name="fname" value=<%=firstName %>  placeholder="first name" id="fname" >

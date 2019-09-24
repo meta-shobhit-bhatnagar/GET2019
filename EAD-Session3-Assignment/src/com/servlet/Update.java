@@ -33,7 +33,7 @@ public class Update extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter data = response.getWriter();	
 		DataBaseOperation db = new DataBaseOperation();
-		int value = db.updateStudent(Integer.parseInt(request.getParameter("studentId")),request.getParameter("fname"),request.getParameter("lname"),request.getParameter("father_name"),request.getParameter("email"),
+		int value = db.updateStudent(request.getParameter("fname"),request.getParameter("lname"),request.getParameter("father_name"),request.getParameter("email"),
 				Integer.parseInt(request.getParameter("class")),Integer.parseInt(request.getParameter("age")));
 		String upperBody = "<html> <head><title>Add Student</title></head> <body style ='background-color: antiquewhite'>";
 		String lowerBody = "</body> <html>";

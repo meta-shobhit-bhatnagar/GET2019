@@ -41,11 +41,10 @@ public class ShowStudent extends HttpServlet {
 				+ "</head> <body> <a href='index.html'>Back to Home</a>";
 		String lowerBody = "</body> <html>";
 		String content = "<table>"+
-							"<th>StudentId</th> <th>FirstName</th> <th>LastName</th> <th>FatherName</th> <th>Email</th> <th>Class</th> <th>Age</th>";
+							"<th>FirstName</th> <th>LastName</th> <th>FatherName</th> <th>Email</th> <th>Class</th> <th>Age</th>";
 		if(studentList != null){
 			for(int i=0; i<studentList.size(); i++){
 				content = content + "<tr>" +
-									"<td>" + studentList.get(i).getStudentId() + "</td>" +
 									"<td>" + studentList.get(i).getFirstName() + "</td>" +
 									"<td>" + studentList.get(i).getLastName() + "</td>" +
 									"<td>" + studentList.get(i).getFatherName() + "</td>" +
@@ -54,7 +53,7 @@ public class ShowStudent extends HttpServlet {
 									"<td>" + studentList.get(i).getAge() + "</td>" +
 									"<td>" + "<a href=" + request.getContextPath() +
 									"/updateStudent.jsp?" +
-									"studentId=" + studentList.get(i).getStudentId() + ">Update</a>" + "</td>";	
+									"studentEmail=" + studentList.get(i).getEmail() + ">Update</a>" + "</td>";	
 				
 			}
 		}else{

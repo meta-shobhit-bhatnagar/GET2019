@@ -105,8 +105,8 @@ public class DataBaseOperation {
 				ResultSet result = statementObj.executeQuery(sql);
 				studentList = new ArrayList<Student>();
 				while(result.next()){
-					Student studentObj = new Student(result.getInt(1),result.getString(2), result.getString(3),result.getString(4),result.getString(5),
-															result.getInt(6),result.getInt(7));
+					Student studentObj = new Student(result.getString(1), result.getString(2),result.getString(3),result.getString(4),
+															result.getInt(5),result.getInt(6));
 					studentList.add(studentObj);
 				}
 				statementObj.close();
@@ -123,18 +123,17 @@ public class DataBaseOperation {
 		return studentList;
 	}
 	
-	public Student getStudentById(int studentId){
+	public Student getStudentByEmail(String studentEmail){
 		Student studentObj = null;
 		if(setConnection()){
 			try{
-
-				String sql = "SELECT * FROM student_details WHERE student_ID =" + studentId; 
+				String sql = "SELECT * FROM student_details WHERE email ='" + studentEmail+"'" ; 
 				statementObj  = connectionObj.prepareStatement(sql);
 				ResultSet result = statementObj.executeQuery(sql);
 
 				while(result.next()){
-					studentObj = new Student(result.getInt(1),result.getString(2), result.getString(3),result.getString(4),result.getString(5),
-															result.getInt(6),result.getInt(7));
+					studentObj = new Student(result.getString(1),result.getString(2), result.getString(3),result.getString(4),
+															result.getInt(5),result.getInt(6));
 				}
 				statementObj.close();
 				connectionObj.close();
@@ -149,12 +148,12 @@ public class DataBaseOperation {
 		return studentObj;
 	}
 	
-	public int updateStudent(int studentId,String firstName, String lastName, String fatherName, String email, int classNo, int age){
+	public int updateStudent(String firstName, String lastName, String fatherName, String email, int classNo, int age){
 			int value = -1;
 			if(setConnection()){
 				try{
 					
-					System.out.println(studentId);
+					//System.out.println(email);
 
 					String sql = "UPDATE student_details"
 							+ " SET firstName='" + firstName
@@ -163,7 +162,7 @@ public class DataBaseOperation {
 							+"', email='" + email
 							+"', classNo='" + classNo
 							+"', age='" + age
-							+ "' WHERE student_ID =" + studentId; 
+							+ "' WHERE email ='" + email+ "'"; 
 					statementObj  = connectionObj.prepareStatement(sql);
 					value = statementObj.executeUpdate();
 					statementObj.close();
@@ -191,8 +190,8 @@ public class DataBaseOperation {
 				
 				studentList = new ArrayList<Student>();
 				while(result.next()){
-					studentList.add(new Student(result.getInt(1),result.getString(2), result.getString(3),result.getString(4),result.getString(5),
-															result.getInt(6),result.getInt(7)));
+					studentList.add(new Student(result.getString(1),result.getString(2), result.getString(3),result.getString(4),
+															result.getInt(5),result.getInt(6)));
 				}
 				statementObj.close();
 				connectionObj.close();
