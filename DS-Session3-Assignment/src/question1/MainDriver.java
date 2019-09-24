@@ -23,7 +23,7 @@ public class MainDriver {
 
 		String command;
 		String directory = "";
-		System.out.print(root.directoryName + " ");
+		System.out.print(root.directoryName + "> ");
 		do {
 
 			try {
