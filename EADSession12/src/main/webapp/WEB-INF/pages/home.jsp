@@ -23,5 +23,9 @@
 	<div>
 		<a href="showAll">Show All Student</a>
 	</div>	
+	
+	<div>
+		<a href="SearchStudent">Search Student</a>
+	</div>	
 </body>
 </html>

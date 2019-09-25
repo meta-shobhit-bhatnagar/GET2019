@@ -15,6 +15,7 @@ import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.metacube.EADSession12.model.commands.StudentCommands;
@@ -85,5 +86,17 @@ public class StudentController{
 		return "showAll";
 	}
 	
+	@GetMapping("/SearchStudent")
+	public String search() {
+		System.out.println("jksdkg");
+		return "search";
+	}
+	
+	@PostMapping("/SearchStudent")
+	public String doSearch(@RequestParam("firstName") String firstName,Model model, RedirectAttributes attributes ) {
+		
+		model.addAttribute("list", service.getBySearch(firstName));
+		return "showAll";
+	}
 	
 }

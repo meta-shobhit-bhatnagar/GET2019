@@ -25,5 +25,7 @@ public interface StudentService {
 	public StudentCommands getByEmail(String email);
 	
 	public boolean isEmailExist(String email);
+	
+	public List<StudentCommands> getBySearch(String fullName);
 
 }

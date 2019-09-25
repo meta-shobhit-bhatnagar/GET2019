@@ -52,6 +52,16 @@ public class StudentServiceImpl implements StudentService {
 			return true;
 		}
 	}
+
+	@Override
+	public List<StudentCommands> getBySearch(String firstName) {
+		List<StudentCommands> list = repository.findByFNameContainingIgnoreCase(firstName);
+		if(list.size()==1){
+			return list;
+		}else{
+			return null;
+		}
+	}
 	
 	
 	

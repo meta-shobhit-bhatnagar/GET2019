@@ -11,5 +11,7 @@ import com.metacube.EADSession12.model.commands.StudentCommands;
 public interface StudentCommandsRepository extends JpaRepository<StudentCommands,Long>{
 	
 	public List<StudentCommands> findByEmailContainingIgnoreCase(String searchString);
+	
+	public List<StudentCommands> findByFNameContainingIgnoreCase(String searchString);
 
 }

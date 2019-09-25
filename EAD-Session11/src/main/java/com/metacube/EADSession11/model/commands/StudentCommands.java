@@ -24,7 +24,7 @@ import javax.validation.constraints.Size;
 public class StudentCommands {
 	
 
-	@Id@GeneratedValue
+	@Id@GeneratedValue					
 	@Column(name= "studentId")
 	private int id;
 	
