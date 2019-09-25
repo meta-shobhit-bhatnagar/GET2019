@@ -6,9 +6,10 @@
     <style>
         div {
             padding: 15px;
+            /*border:1px solid red;*/
         }
 
-        #cyclePriceCircle, #MotorCyclePriceCircle, #FourWheelersPriceCircle {
+        #cyclePriceCircle, #MotorCyclePriceCircle, #FourWheelerPriceCircle {
             padding: 2px;
         }
     </style>
@@ -31,19 +32,19 @@
         <img src="parking.jpg">
     </div>
 
-    <div style="border:1px solid red" id="Employee_Details" align="center" name="Employee_Details"
+    <div id="Employee_Details" align="center" name="Employee_Details"
         class="Employee_Details">
         <form id="Employee_Details_Form" name="Employee_Details_Form">
             <h2>Employee’s details</h2> <br>
 
-            <div style="border:1px solid red">
+            <diV>
                 <label>Full Name :</label>
                 <label>
                     <input type="text" placeholder="Please enter Full name">
                 </label>
             </div>
 
-            <div style="border:1px solid red">
+            <div>
                 <label>Gender :</label>
                 <label>
                     <input type="radio" name="gender">Male
@@ -51,14 +52,14 @@
                 </label>
             </div>
 
-            <div style="border:1px solid red">
+            <div>
                 <label>Email :</label>
                 <label>
                     <input type="email" id="email" placeholder="email" name="email" required>
                 </label>
             </div>
 
-            <div style="border:1px solid red">
+            <div>
                 <label>Password :</label>
                 <label>
                     <input type="password" id="password" placeholder="password" name="password" max="20" min="8"
@@ -87,7 +88,7 @@
         </form>
     </div>
 
-    <div style="border:1px solid red" id="Vehicle_Details" name="Vehicle_Details" class="Vehicle_Details"
+    <div  id="Vehicle_Details" name="Vehicle_Details" class="Vehicle_Details"
         align="center">
         <form action="" id="Vehicle_Details_Form" name="Vehicle_Details_Form">
             <h2> Vehicle Details</h2>
@@ -140,8 +141,8 @@
         </form>
     </div>
 
-    <div id="Feedback_Details" name="Feedback_Details" align= "center" style="border:4px solid blue">                
-        <form action="" id="Feedback_Details_Form" name="Feedback_Details_Form" style="border:4px solid blue;  width: 50%;">
+    <div id="Feedback_Details" name="Feedback_Details" align= "center">                
+        <form action="" id="Feedback_Details_Form" name="Feedback_Details_Form" style="width: 50%;">
 
                 <h2> Get in Touch </h2>
 
@@ -165,12 +166,12 @@
         </form>
     </div>
 
-    <div id="Pricing_Details" name="Pricing_Details" align= "center" style="border:4px solid green">
+    <div id="Pricing_Details" name="Pricing_Details" align= "center" >
         <form action="" id="Pricing_Details_Form" name="Pricing_Details_Form">
             <div id="CyclePrice" name="" style="border:1px solid grey;  width: 25%;">
                 <h3>Cycle</h3>
                 <div id="cyclePriceCircle" name ="cyclePriceCircle" 
-                                style="width: 60px; height: 60px; border-radius: 50%; border:2px solid lightskyblue;">
+                                style="width: 60px; height: 60px; border-radius: 50%;">
                     <label id="cyclePass">$100</label><br>
                     <label>/month</label><br>
                 </div>
@@ -185,14 +186,13 @@
             <div id="MotorCyclePrice" name="" style="border:1px solid grey;  width: 25%;">
                 <h3>MotorCycle</h3>
                 <div id="MotorCyclePriceCircle" name ="MotorCyclePriceCircle" 
-                        style="width: 60px; height: 60px; border-radius: 50%; border:2px solid lightskyblue;">
-                    <label style="border:2px solid lightskyblue;">$100</label><br>
-                    <label>/month</label><br>
+                        style="width: 60px; height: 60px; border-radius: 50%;">
+                    <label>$200<br>/month</label>
                 </div>
                 <div>
-                        <label>$5/day</label><br>
-                        <label>$100/month</label><br>
-                        <label>$500/yearly</label><br>
+                        <label>$10/day</label><br>
+                        <label>$200/month</label><br>
+                        <label>$1000/yearly</label><br>
                 </div>
                 <button>Purchase Now</button>
             </div><br>
@@ -200,14 +200,13 @@
             <div id="FourWheelerPrice" name="" style="border:1px solid grey;  width: 25%;">
                 <h3>FourWheelers</h3>
                 <div id="FourWheelerPriceCircle" name ="FourWheelerPriceCircle" 
-                        style="width: 60px; height: 60px; border-radius: 50%; border:2px solid lightskyblue;">
-                    <label style="border:2px solid lightskyblue;">$100</label><br>
-                    <label>/month</label><br>
+                        style="width: 60px; height: 60px; border-radius: 50%;">
+                    <label>$500<br>/month</label>
                 </div>
                 <div>
-                        <label>$5/day</label><br>
-                        <label>$100/month</label><br>
-                        <label>$500/yearly</label><br>
+                        <label>$20/day</label><br>
+                        <label>$500/month</label><br>
+                        <label>$3500/yearly</label><br>
                 </div>
                 <button>Purchase Now</button>
             </div>
