@@ -1,16 +1,16 @@
 /**
  * 
  */
-package com.metacube.EADSession11.model.commands;
+package com.metacube.EADSession12.model.commands;
 
-import javax.annotation.Generated;
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -21,10 +21,10 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name= "student_details")
-public class StudentCommands {
+public class StudentCommands implements Serializable{
 	
 
-	@Id@GeneratedValue					
+	@Id@GeneratedValue
 	@Column(name= "studentId")
 	private int id;
 	
