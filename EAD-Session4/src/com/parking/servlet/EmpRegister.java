@@ -42,7 +42,7 @@ public class EmpRegister extends HttpServlet {
 		
 		//Employee Register Form will come here
 		Employee empObj = new Employee(request.getParameter("name"),request.getParameter("gender"),request.getParameter("email"),request.getParameter("password"),
-					Long.parseLong(request.getParameter("number")),request.getParameter("org"),-1);
+					Long.parseLong(request.getParameter("number")),request.getParameter("org"),1);
 		
 		DatabaseOperation db = new DatabaseOperation();
 		Validation validation = new Validation();
