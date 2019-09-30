@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.metacube.EADSession14.model.commands.StudentCommands;
 
 /**
- * This interface used to retrive data from database using JpaRepository 
+ * This interface used to retrieve data from database using JpaRepository 
  * @author Shobhit
  *
  */
