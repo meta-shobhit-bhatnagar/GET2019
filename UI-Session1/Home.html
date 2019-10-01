@@ -9,6 +9,33 @@
             /*border:1px solid red;*/
         }
 
+        .pricing_box{
+            border:1px solid grey; 
+             width: 25%;
+        }
+        .pricing_circle{
+            width: 60px; 
+            height: 60px;
+            margin: 10px;
+            border-radius: 50%;
+            border: 1px solid black;
+        }
+        .pricing_circle span{
+            margin:2px;
+            margin-top: 10px;
+        }
+
+        .price_in_circle{
+            padding: 12px;
+            text-align: center;
+        }
+
+        .form_reg{
+            border-style: solid;
+            border-color: black;
+        }
+
+        
         #cyclePriceCircle, #MotorCyclePriceCircle, #FourWheelerPriceCircle {
             padding: 2px;
         }
@@ -16,122 +43,124 @@
 </head>
 
 <body>
-
+    <!-- Div for nav bar -->
     <nav>
-        <a href="#Employee_Details">Add Employee</a>
-        <a href="#Vehicle_Details">Add Vehicle </a>
-        <a href="#Feedback_Details">Give feedback</a>
-        <a href="#Pricing_Details">Pricing</a>
+        <ul>
+            <li> <a href="#Employee_Details">Add Employee</a></li>
+            <li> <a href="#Vehicle_Details">Add Vehicle </a></li>
+            <li> <a href="#Feedback_Details">Give feedback</a></li>
+            <li> <a href="#Pricing_Details">Pricing</a></li>
+        </ul>       
     </nav>
-
-    <div align="center">
+    <!-- Div for heading -->
+    <div>
         <h1>Metacube Parking System</h1>
     </div>
-
-    <div align="center">
+    <!-- Div for image -->
+    <div>
         <img src="parking.jpg">
     </div>
-
-    <div id="Employee_Details" align="center" name="Employee_Details"
-        class="Employee_Details">
+    <!-- Div for employee registration-->
+    <div id="Employee_Details" name="Employee_Details"
+        class="form_reg">
         <form id="Employee_Details_Form" name="Employee_Details_Form">
             <h2>Employee’s details</h2> <br>
 
-            <diV>
-                <label>Full Name :</label>
-                <label>
+            <div>
+                <span>Full Name :</span>
+                <span>
                     <input type="text" placeholder="Please enter Full name">
-                </label>
+                </span>
             </div>
 
             <div>
-                <label>Gender :</label>
-                <label>
+                <span>Gender :</span>
+                <span>
                     <input type="radio" name="gender">Male
                     <input type="radio" name="gender">Female
-                </label>
+                </span>
             </div>
 
             <div>
-                <label>Email :</label>
-                <label>
+                <span>Email :</span>
+                <span>
                     <input type="email" id="email" placeholder="email" name="email" required>
-                </label>
+                </span>
             </div>
 
             <div>
-                <label>Password :</label>
-                <label>
+                <span>Password :</span>
+                <span>
                     <input type="password" id="password" placeholder="password" name="password" max="20" min="8"
                         required>
-                </label>
+                </span>
             </div>
 
             <div>
-                <label>Confirm Password :</label>
-                <label>
+                <span>Confirm Password :</span>
+                <span>
                     <input type="password" placeholder="Confirm password" name="confirmPassword" id="confirm_password"
                         max="20" min="8" required>
-                </label>
+                </span>
             </div>
 
             <div>
-                <label>Contact No. :</label>
-                <label>
+                <span>Contact No. :</span>
+                <span>
                     <input type="tel" placeholder="contact number" name="contactnumber" id="number" max="10" min="8"
                         required>
-                </label>
+                </span>
             </div>
             <div>
                 <button type="submit" value="register">Submit Button</button>
             </div>
         </form>
     </div>
-
-    <div  id="Vehicle_Details" name="Vehicle_Details" class="Vehicle_Details"
-        align="center">
+    <!-- Div for Vehicle Registration-->
+    <div  id="Vehicle_Details" name="Vehicle_Details" class="form_reg"
+       >
         <form action="" id="Vehicle_Details_Form" name="Vehicle_Details_Form">
             <h2> Vehicle Details</h2>
 
             <div>
-                <label>Vehicle Name :</label>
-                <label>
+                <span>Vehicle Name :</span>
+                <span>
                     <input type="text" placeholder="Please enter vehicle name" name="vehiclename" max="20" min="2"
                         required>
-                </label>
+                </span>
             </div>
 
             <div>
-                <label>Type :</label>
-                <label>
+                <span>Type :</span>
+                <span>
                     <select id="selectType">
                         <option value="" selected disabled hidden>Choose here</option>
                         <option value="Cycle">Cycle</option>
                         <option value="MotorCycle">MotorCycle</option>
                         <option value="FourWheelers">Four Wheeler</option>
                     </select>
-                </label>
+                </span>
             </div>
 
             <div>
-                <label>Vehicle Number :</label>
-                <label>
+                <span>Vehicle Number :</span>
+                <span>
                     <input type="text" placeholder="Vehicle number" name="vehiclenumber" max="20" min="8" required>
-                </label>
+                </span>
             </div>
 
             <div>
-                <label>Emplopye Id :</label>
-                <label>
+                <span>Emplopye Id :</span>
+                <span>
                     <input type="text" placeholder="Employe Id" name="employeId" max="12" min="1" required>
-                </label>
+                </span>
             </div>
 
             <div>
-                <label>Identification :</label>
-                <label>
+                <span>Identification :</span>
+                <span>
                     <textarea rows="4" cols="50" maxlength="200" required placeholder="Enter details of your vehicle"></textarea>
-                </label>
+                </span>
         </div>
 
         <div>
@@ -140,73 +169,73 @@
 
         </form>
     </div>
-
-    <div id="Feedback_Details" name="Feedback_Details" align= "center">                
+    <!-- Div for feedback form-->
+    <div id="Feedback_Details" name="Feedback_Details" class="form_reg">                
         <form action="" id="Feedback_Details_Form" name="Feedback_Details_Form" style="width: 50%;">
 
                 <h2> Get in Touch </h2>
 
             <div>
-                <label><input type="text" placeholder="Your Name" name="name" required></label>
+                <span><input type="text" placeholder="Your Name" name="name" required></span>
             </div>
 
             <div>
-                <label><input type="email" placeholder="email" name="email_feedback" required></label>
+                <span><input type="email" placeholder="email" name="email_feedback" required></span>
             </div>
 
             <div>
-                <label><input type="text" placeholder="subject" name="subject_feedback" required></label>
+                <span><input type="text" placeholder="subject" name="subject_feedback" required></span>
             </div>
             <div>
-                <label><textarea rows="4" cols="50" placeholder="Message" name="message" required></textarea></label>
+                <span><textarea rows="4" cols="50" placeholder="Message" name="message" required></textarea></span>
             </div>
             <div>
                 <button type="submit" value="register">Submit Button</button>
             </div>
         </form>
     </div>
-
-    <div id="Pricing_Details" name="Pricing_Details" align= "center" >
+    <!-- Div for Pricing Plans-->
+    <div id="Pricing_Details" name="Pricing_Details" class="">
         <form action="" id="Pricing_Details_Form" name="Pricing_Details_Form">
-            <div id="CyclePrice" name="" style="border:1px solid grey;  width: 25%;">
+            <!-- Div for cycle pricing-->
+            <div id="CyclePrice" name="" class="pricing_box" >
                 <h3>Cycle</h3>
                 <div id="cyclePriceCircle" name ="cyclePriceCircle" 
-                                style="width: 60px; height: 60px; border-radius: 50%;">
-                    <label id="cyclePass">$100</label><br>
-                    <label>/month</label><br>
+                        class="pricing_circle">
+                    <span class="price_in_circle">$100<br>/month</span>
                 </div>
                 <div>
-                    <label>$5/day</label><br>
-                    <label>$100/month</label><br>
-                    <label>$500/yearly</label><br>
+                    <span>$5/day</span><br>
+                    <span>$100/month</span><br>
+                    <span>$500/yearly</span><br>
             </div>
             <button>Purchase Now</button>
             </div><br>
-
-            <div id="MotorCyclePrice" name="" style="border:1px solid grey;  width: 25%;">
+            <!-- Div for motorcycle pricing-->
+            <div id="MotorCyclePrice" name="" class="pricing_box">
                 <h3>MotorCycle</h3>
                 <div id="MotorCyclePriceCircle" name ="MotorCyclePriceCircle" 
-                        style="width: 60px; height: 60px; border-radius: 50%;">
-                    <label>$200<br>/month</label>
+                        class="pricing_circle">
+                    <span class="price_in_circle">$200<br>/month</span>
                 </div>
                 <div>
-                        <label>$10/day</label><br>
-                        <label>$200/month</label><br>
-                        <label>$1000/yearly</label><br>
+                        <span>$10/day</span><br>
+                        <span>$200/month</span><br>
+                        <span>$1000/yearly</span><br>
                 </div>
                 <button>Purchase Now</button>
             </div><br>
-
-            <div id="FourWheelerPrice" name="" style="border:1px solid grey;  width: 25%;">
+            <!-- Div for fourWheeler pricing-->
+            <div id="FourWheelerPrice" name="" class="pricing_box" class="pricing_circle">
                 <h3>FourWheelers</h3>
                 <div id="FourWheelerPriceCircle" name ="FourWheelerPriceCircle" 
-                        style="width: 60px; height: 60px; border-radius: 50%;">
-                    <label>$500<br>/month</label>
+                class="pricing_circle" >
+                    <span class="price_in_circle">$500<br>/month</span>
                 </div>
                 <div>
-                        <label>$20/day</label><br>
-                        <label>$500/month</label><br>
-                        <label>$3500/yearly</label><br>
+                        <span>$20/day</span><br>
+                        <span>$500/month</span><br>
+                        <span>$3500/yearly</span><br>
                 </div>
                 <button>Purchase Now</button>
             </div>
