@@ -36,3 +36,158 @@ header li a {
 .position-absolute {
     position: absolute!important;
 }
+
+.collapsible{
+    background-color: rgb(9, 19, 41);
+    color: rgb(240, 212, 212);
+    cursor: pointer;
+    padding: 18px;
+    padding-left: 50px;
+    width: 100%;
+    border: solid rgb(9, 19, 41)3px;
+    border-radius: 10px;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background: #ddd;
+    color: black;
+  }
+
+.content {
+    margin: 2px;
+    padding: 50px 18px;
+    border: solid rgb(9, 19, 41) 2px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
+
+.pricing_box{
+    border:1px solid grey; 
+    float: left;
+    width: 25%;
+    text-align: center;
+    margin: auto;
+    margin-left: 30px;
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+
+  .pricing_box button{
+    margin: 5px;
+    background-color: white; /* Green */
+    border: solid rgb(9, 19, 41) 1px;
+    border-radius: 2px;
+    color: rgb(9, 19, 41);
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 8px 16px;
+}
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .text-white {
+    color: #fff!important;
+}
+
+#image_feedback{
+    width: 50%;
+    float: left;
+  }
+
+.feedback-form{
+    float: left;
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+    float: left;
+    width: 40%;
+    padding: 5px;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .form-field {
+    margin: 20px;
+     font-size: 15 px;
+ }
+
+  /* for input fields*/
+  input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    border: none;
+    border: solid rgb(9, 19, 41) 1px;
+    border-radius: 10px;
+    background-color: white;
+    color: grey;
+  }
+  input[type=email] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border: solid rgb(9, 19, 41) 1px;
+    border-radius: 10px;
+    background-color: white;
+    color: grey;
+  }
+  input[type=password] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: solid rgb(9, 19, 41) 1px;
+    border-radius: 10px;
+    background-color: white;
+    color: grey;
+  }
+  
+  input[type=submit] {
+
+    background: #0066A2;
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 30px;
+    width: 80px;
+    font: bold 15px arial, sans-serif;
+    text-shadow:none;
+    
+    }
+
+    .pricing_circle{
+        
+        margin: auto;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        border: solid rgb(9, 19, 41) 1px;
+        border-radius: 35px ;
+    }
+
+    .price_in_circle{
+        font-weight: bold;
+        font-size: 1.2em;
+    }

@@ -5,34 +5,16 @@
     <title>UI-Assignment1</title>
     <style>
         div {
-            padding: 15px;
+            padding: 2px;
             /*border:1px solid red;*/
         }
 
-        .pricing_box{
-            border:1px solid grey; 
-             width: 25%;
-        }
-        .pricing_circle{
-            width: 60px; 
-            height: 60px;
-            margin: 10px;
-            border-radius: 50%;
-            border: 1px solid black;
-        }
-        .pricing_circle span{
-            margin:2px;
-            margin-top: 10px;
-        }
-
-        .price_in_circle{
-            padding: 12px;
-            text-align: center;
-        }
+        
 
         .form_reg{
-            border-style: solid;
+            /** border-style: solid; **/
             border-color: black;
+            width: 100%;
         }
 
         
@@ -40,6 +22,8 @@
             padding: 2px;
         }
     </style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -58,22 +42,16 @@
         </nav>
     </header>
    
-    <!-- Div for heading -->
-    <div>
-        <h1>Metacube Parking System</h1>
-    </div>
     <!-- Div for image -->
     <div >
-        <img src="parking.jpg" class="position-absolute">
-        <div class="col-md-5 mx-auto text-center">
-                <h1 class="h1 font-muli font-weight-bold px-sm-2 pb-2 mt-5" style=""><span class="text-white">We Integrate</span><br><span class="color-green-2">Parking </span> <span class="text-white">and</span> <span class="color-green-2">Mobility </span></h1>
-                <br>
-          </div>   
+        <img src="parking.jpg" width="100%">
     </div>
+    
     <!-- Div for employee registration-->
-    <div id="Employee_Details" name="Employee_Details"
+    <div id="Employee_Details"
         class="form_reg">
-        <form id="Employee_Details_Form" name="Employee_Details_Form">
+        <button type="button" class="collapsible">Employee Registration Form </button>
+        <form id="Employee_Details_Form" name="Employee_Details_Form" style="display:none" class="form-field">
             <h2>Employee’s details</h2> <br>
 
             <div>
@@ -122,14 +100,15 @@
                 </span>
             </div>
             <div>
-                <button type="submit" value="register">Submit Button</button>
+                <input type="submit" value="Submit">
             </div>
         </form>
     </div>
     <!-- Div for Vehicle Registration-->
-    <div  id="Vehicle_Details" name="Vehicle_Details" class="form_reg"
+    <div  id="Vehicle_Details" class="form_reg"
        >
-        <form action="" id="Vehicle_Details_Form" name="Vehicle_Details_Form">
+       <button type="button" class="collapsible">Vehicle Registration Form </button>
+        <form action="" id="Vehicle_Details_Form" name="Vehicle_Details_Form" style="display:none" class="form-field">
             <h2> Vehicle Details</h2>
 
             <div>
@@ -174,84 +153,118 @@
         </div>
 
         <div>
-            <button type="submit" value="register">Submit Button</button>    
+            <input type="submit" value="Register">   
         </div>
 
         </form>
     </div>
     <!-- Div for feedback form-->
-    <div id="Feedback_Details" name="Feedback_Details" class="form_reg">                
-        <form action="" id="Feedback_Details_Form" name="Feedback_Details_Form" style="width: 50%;">
 
-                <h2> Get in Touch </h2>
 
-            <div>
-                <span><input type="text" placeholder="Your Name" name="name" required></span>
-            </div>
 
-            <div>
-                <span><input type="email" placeholder="email" name="email_feedback" required></span>
-            </div>
 
-            <div>
-                <span><input type="text" placeholder="subject" name="subject_feedback" required></span>
+    <!-- -->
+    <div id="Feedback_Details" class="form_reg">
+        <button type="button" class="collapsible">Get in Touch </button>
+        <div class="row">
+    
+    
+            <div id="image_feedback" class="column">
+                <img src="email_feedback.jpg">
             </div>
-            <div>
-                <span><textarea rows="4" cols="50" placeholder="Message" name="message" required></textarea></span>
+            <div class="column">
+                <form action="" id="Feedback_Details_Form" name="Feedback_Details_Form" class="feedback-form" style="width: 100%" class="form-field">
+                    <div>
+                        <input type="text" placeholder="Your Name" name="name" required style="width: 100%">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Enter your email" name="email_feedback" required style="width: 100%">
+                    </div>
+                
+                    <div>
+                        <input type="text" placeholder="subject" name="subject_feedback" required>
+                    </div>
+                
+                
+                    <textarea rows="4" cols="50" placeholder="Message" name="message" required></textarea>
+                    <div>
+                        <input type="submit" value="Submit">
+                    </div>
+                    
+                </form>
             </div>
-            <div>
-                <button type="submit" value="register">Submit Button</button>
-            </div>
-        </form>
+    
+    
+    
+        </div>
+    
+    </div>
+    
     </div>
     <!-- Div for Pricing Plans-->
-    <div id="Pricing_Details" name="Pricing_Details" class="">
-        <form action="" id="Pricing_Details_Form" name="Pricing_Details_Form">
+    <div id="Pricing_Details" class="form_reg">
+            <button type="button" class="collapsible"> Click For Pricing </button>
+
+        <form action="" id="Pricing_Details_Form" name="Pricing_Details_Form" class="content" style="display:none" class="form-field">
             <!-- Div for cycle pricing-->
-            <div id="CyclePrice" name="" class="pricing_box" >
+            <div id="CyclePrice" name="" class="pricing_box">
                 <h3>Cycle</h3>
-                <div id="cyclePriceCircle" name ="cyclePriceCircle" 
-                        class="pricing_circle">
-                    <span class="price_in_circle">$100<br>/month</span>
+                <div id="cyclePriceCircle" name="cyclePriceCircle" class="pricing_circle" >
+                    <span class="price_in_circle">$100</span> <br>/month
                 </div>
                 <div>
                     <span>$5/day</span><br>
                     <span>$100/month</span><br>
                     <span>$500/yearly</span><br>
+                </div>
+                <button>Purchase Now</button>
             </div>
-            <button>Purchase Now</button>
-            </div><br>
             <!-- Div for motorcycle pricing-->
             <div id="MotorCyclePrice" name="" class="pricing_box">
                 <h3>MotorCycle</h3>
-                <div id="MotorCyclePriceCircle" name ="MotorCyclePriceCircle" 
-                        class="pricing_circle">
-                    <span class="price_in_circle">$200<br>/month</span>
+                <div id="MotorCyclePriceCircle" name="MotorCyclePriceCircle" class="pricing_circle">
+                    <span class="price_in_circle">$200</span><br>/month
                 </div>
                 <div>
-                        <span>$10/day</span><br>
-                        <span>$200/month</span><br>
-                        <span>$1000/yearly</span><br>
+                    <span>$10/day</span><br>
+                    <span>$200/month</span><br>
+                    <span>$1000/yearly</span><br>
                 </div>
                 <button>Purchase Now</button>
-            </div><br>
+            </div>
             <!-- Div for fourWheeler pricing-->
-            <div id="FourWheelerPrice" name="" class="pricing_box" class="pricing_circle">
+            <div id="FourWheelerPrice" name="" class="pricing_box" >
                 <h3>FourWheelers</h3>
-                <div id="FourWheelerPriceCircle" name ="FourWheelerPriceCircle" 
-                class="pricing_circle" >
-                    <span class="price_in_circle">$500<br>/month</span>
+                <div id="FourWheelerPriceCircle" name="FourWheelerPriceCircle" class="pricing_circle">
+                    <span class="price_in_circle">$500</span><br>/month
                 </div>
                 <div>
-                        <span>$20/day</span><br>
-                        <span>$500/month</span><br>
-                        <span>$3500/yearly</span><br>
+                    <span>$20/day</span><br>
+                    <span>$500/month</span><br>
+                    <span>$3500/yearly</span><br>
                 </div>
                 <button>Purchase Now</button>
             </div>
         </form>
+        
     </div>
 
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
