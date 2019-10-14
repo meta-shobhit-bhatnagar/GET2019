@@ -191,3 +191,17 @@ header li a {
         font-weight: bold;
         font-size: 1.2em;
     }
+
+    .form-field span {
+      display: inline-block;
+      width: 140px;
+      text-align: right;
+    }
+
+    select {
+      width: 20%;
+      padding: 12px 20px;
+      border: solid rgb(9, 19, 41) 1px;
+      border-radius: 10px;
+      background-color: white;
+  }
