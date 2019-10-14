@@ -205,3 +205,16 @@ header li a {
       border-radius: 10px;
       background-color: white;
   }
+
+  input[type=tel] {
+
+    background: #0066A2;
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 30px;
+    width: 80px;
+    font: bold 15px arial, sans-serif;
+    text-shadow:none;
+    
+    }
