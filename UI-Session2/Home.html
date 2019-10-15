@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>UI-Assignment1</title>
+    <style>
+        div {
+            padding: 2px;
+            /*border:1px solid red;*/
+        }
+
+        
+
+        .form_reg{
+            /** border-style: solid; **/
+            border-color: black;
+            width: 100%;
+        }
+
+        
+        #cyclePriceCircle, #MotorCyclePriceCircle, #FourWheelerPriceCircle {
+            padding: 2px;
+        }
+    </style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Div for nav bar -->
+    <header>
+            <img src="logo.png">
+        <nav>
+            <ul>
+                <li> <a href="#Employee_Details">Add Employee</a></li>
+                <li> <a href="#Vehicle_Details">Add Vehicle </a></li>
+                <li> <a href="#Feedback_Details">Give feedback</a></li>
+                <li> <a href="#Pricing_Details">Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+   
+    <!-- Div for image -->
+    <div >
+        <img src="parking.jpg" width="100%">
+    </div>
+    
+    <!-- Div for employee registration-->
+    <div id="Employee_Details"
+        class="form_reg">
+        <button type="button" class="collapsible">Employee Registration Form </button>
+        <form id="Employee_Details_Form" name="Employee_Details_Form" style="display:none" class="form-field">
+            <h2>Employee’s details</h2> <br>
+
+            <div>
+                <span>Full Name :</span>
+                <label>
+                    <input type="text" placeholder="Please enter Full name">
+                </label>
+            </div>
+
+            <div>
+                <span>Gender :</span>
+                <label>
+                    <input type="radio" name="gender">Male
+                    <input type="radio" name="gender">Female
+                </label>
+            </div>
+
+            <div>
+                <span>Email :</span>
+                <label>
+                    <input type="email" id="email" placeholder="email" name="email" required>
+                </label>
+            </div>
+
+            <div>
+                <span>Password :</span>
+                <label>
+                    <input type="password" id="password" placeholder="password" name="password" max="20" min="8"
+                        required>
+                </label>
+            </div>
+
+            <div>
+                <span>Confirm Password :</span>
+                <label>
+                    <input type="password" placeholder="Confirm password" name="confirmPassword" id="confirm_password"
+                        max="20" min="8" required>
+                </label>
+            </div>
+
+            <div>
+                <span>Contact No. :</span>
+                <label>
+                    <input type="tel" placeholder="contact number" name="contactnumber" id="number" max="10" min="8"
+                        required>
+                </label>
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+    <!-- Div for Vehicle Registration-->
+    <div  id="Vehicle_Details" class="form_reg"
+       >
+       <button type="button" class="collapsible">Vehicle Registration Form </button>
+        <form action="" id="Vehicle_Details_Form" name="Vehicle_Details_Form" style="display:none" class="form-field">
+            <h2> Vehicle Details</h2>
+
+            <div>
+                <span>Vehicle Name :</span>
+                <label>
+                    <input type="text" placeholder="Please enter vehicle name" name="vehiclename" max="20" min="2"
+                        required>
+                </label>
+            </div>
+
+            <div>
+                <span>Type :</span>
+                <label>
+                    <select id="selectType">
+                        <option value="" selected disabled hidden>Choose here</option>
+                        <option value="Cycle">Cycle</option>
+                        <option value="MotorCycle">MotorCycle</option>
+                        <option value="FourWheelers">Four Wheeler</option>
+                    </select>
+                </label>
+            </div>
+
+            <div>
+                <span>Vehicle Number :</span>
+                <label>
+                    <input type="text" placeholder="Vehicle number" name="vehiclenumber" max="20" min="8" required>
+                </label>
+            </div>
+
+            <div>
+                <span>Emplopye Id :</span>
+                <label>
+                    <input type="text" placeholder="Employe Id" name="employeId" max="12" min="1" required>
+                </label>
+            </div>
+
+            <div>
+                <span>Identification :</span>
+                <label>
+                    <textarea rows="4" cols="50" maxlength="200" required placeholder="Enter details of your vehicle"></textarea>
+                </label>
+        </div>
+
+        <div>
+            <input type="submit" value="Register">   
+        </div>
+
+        </form>
+    </div>
+    <!-- Div for feedback form-->
+
+
+
+
+    <!-- -->
+    <div id="Feedback_Details" class="form_reg">
+        <button type="button" class="collapsible">Get in Touch </button>
+        <div class="row">
+    
+    
+            <div id="image_feedback" class="column">
+                <img src="email_feedback.jpg">
+            </div>
+            <div class="column">
+                <form action="" id="Feedback_Details_Form" name="Feedback_Details_Form" class="feedback-form" style="width: 100%" class="form-field">
+                    <div>
+                        <input type="text" placeholder="Your Name" name="name" required style="width: 100%">
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Enter your email" name="email_feedback" required style="width: 100%">
+                    </div>
+                
+                    <div>
+                        <input type="text" placeholder="subject" name="subject_feedback" required>
+                    </div>
+                
+                
+                    <textarea rows="4" cols="50" placeholder="Message" name="message" required></textarea>
+                    <div>
+                        <input type="submit" value="Submit">
+                    </div>
+                    
+                </form>
+            </div>
+    
+    
+    
+        </div>
+    
+    </div>
+    
+    </div>
+    <!-- Div for Pricing Plans-->
+    <div id="Pricing_Details" class="form_reg">
+            <button type="button" class="collapsible"> Click For Pricing </button>
+
+        <form action="" id="Pricing_Details_Form" name="Pricing_Details_Form" class="content" style="display:none" class="form-field">
+            <!-- Div for cycle pricing-->
+            <div id="CyclePrice" name="" class="pricing_box">
+                <h3>Cycle</h3>
+                <div id="cyclePriceCircle" name="cyclePriceCircle" class="pricing_circle" >
+                    <span class="price_in_circle">$100</span> <br>/month
+                </div>
+                <div>
+                    <span>$5/day</span><br>
+                    <span>$100/month</span><br>
+                    <span>$500/yearly</span><br>
+                </div>
+                <button>Purchase Now</button>
+            </div>
+            <!-- Div for motorcycle pricing-->
+            <div id="MotorCyclePrice" name="" class="pricing_box">
+                <h3>MotorCycle</h3>
+                <div id="MotorCyclePriceCircle" name="MotorCyclePriceCircle" class="pricing_circle">
+                    <span class="price_in_circle">$200</span><br>/month
+                </div>
+                <div>
+                    <span>$10/day</span><br>
+                    <span>$200/month</span><br>
+                    <span>$1000/yearly</span><br>
+                </div>
+                <button>Purchase Now</button>
+            </div>
+            <!-- Div for fourWheeler pricing-->
+            <div id="FourWheelerPrice" name="" class="pricing_box" >
+                <h3>FourWheelers</h3>
+                <div id="FourWheelerPriceCircle" name="FourWheelerPriceCircle" class="pricing_circle">
+                    <span class="price_in_circle">$500</span><br>/month
+                </div>
+                <div>
+                    <span>$20/day</span><br>
+                    <span>$500/month</span><br>
+                    <span>$3500/yearly</span><br>
+                </div>
+                <button>Purchase Now</button>
+            </div>
+        </form>
+        
+    </div>
+
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
